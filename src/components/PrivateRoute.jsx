@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import isLogin from "../utils";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  const token = useSelector((state) => state.users.usertoken);
+  const token = true;
   return (
     <Route
       {...rest}
       render={(props) =>
-        isLogin(token) ? <Component {...props} /> : <Redirect to="/welcome" />
+        isLogin(token) ? <Component {...props} /> : <Redirect to="/" />
       }
     />
   );

@@ -10,7 +10,6 @@ function App() {
     <Router>
       <div className="App">
         <PublicRoute restricted={false} component={Home} path="/" exact />
-        <PrivateRoute />
       </div>
     </Router>
   );
