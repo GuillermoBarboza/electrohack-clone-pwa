@@ -11,7 +11,7 @@ const NavBar = () => {
     <>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand as={Link} to="/">
-          React-Bootstrap
+          ELECTRO-HACK
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -22,6 +22,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/">
               Link
             </Nav.Link>
+
             <Form inline>
               <FormControl
                 type="text"
