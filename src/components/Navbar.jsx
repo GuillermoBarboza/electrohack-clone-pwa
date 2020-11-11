@@ -26,6 +26,8 @@ const NavBar = () => {
               />
               <Button variant="outline-success">Search</Button>
             </Form>
+            
+            <Nav.Link  as={Link} to="/cart">Carrito</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

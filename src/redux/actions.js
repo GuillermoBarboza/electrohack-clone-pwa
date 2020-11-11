@@ -5,4 +5,11 @@ const getProducts = (products) => {
   };
 };
 
-export { getProducts };
+const logIn = credentials => {
+  return {
+    type: "LOGIN",
+    payload: credentials
+  }
+}
+
+export { getProducts, logIn };
