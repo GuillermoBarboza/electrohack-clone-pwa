@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import ProductsList from "./ProductsList";
+import CarouselComp from "./CarouselComp";
 import { getProducts } from "../redux/actions";
 
 const Home = ({ match }) => {
@@ -16,6 +17,7 @@ const Home = ({ match }) => {
 
   return (
     <div className="bg-light">
+      <CarouselComp />
       <div className="container bg-light">
         <ProductsList />
       </div>

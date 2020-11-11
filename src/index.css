@@ -15,3 +15,8 @@ code {
 .card-height {
   height: 250px;
 }
+
+.carousel-img {
+  object-fit: cover;
+  object-position: 50% 75%;
+}
