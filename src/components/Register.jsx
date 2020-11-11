@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import { useDispatch } from "react-redux"
-import {createUser} from '../redux/actions'
-import axios from 'axios'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { createUser } from "../redux/actions";
+import axios from "axios";
 
 const Register = () => {
   const [name, setName] = useState("");

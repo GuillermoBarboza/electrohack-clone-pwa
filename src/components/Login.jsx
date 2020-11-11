@@ -1,9 +1,8 @@
-import React, {useState} from "react";
-import { useDispatch } from "react-redux"
-import {logIn} from '../redux/actions'
-import axios from 'axios'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { logIn } from "../redux/actions";
+import axios from "axios";
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -43,7 +42,7 @@ const Login = () => {
               Username or Email
             </label>
             <input
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               name="email"
               className="form-control"
               id="email"
@@ -54,11 +53,10 @@ const Login = () => {
               Password
             </label>
             <input
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               name="password"
               className="form-control"
               id="password"
-
               type="password"
             />
             <div className="d-flex justify-content-center">

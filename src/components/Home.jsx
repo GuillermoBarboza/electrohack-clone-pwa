@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {Route} from 'react-router-dom'
+import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import NavBar from "./NavBar";
@@ -22,9 +22,8 @@ const Home = ({ match }) => {
     <div className="bg-light">
       <NavBar />
       <div className="container bg-light">
-      <Route exact path='/' component={ProductsList} />
-      <Route path='/cart' component={Cart}/>
-        
+        <Route exact path="/" component={ProductsList} />
+        <Route path="/cart" component={Cart} />
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Cart = () => {
-    console.log('cart page');
-    
-    return (
-        <div>
-            <h1>cart</h1>
-        </div>
-    )
-}
+  console.log("cart page");
 
-export default Cart
+  return (
+    <div>
+      <h1>cart</h1>
+    </div>
+  );
+};
+
+export default Cart;
