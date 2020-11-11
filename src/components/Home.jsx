@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
-import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import NavBar from "./NavBar";
-import Cart from "./Cart";
 import ProductsList from "./ProductsList";
 import { getProducts } from "../redux/actions";
-import PublicRoute from "./PublicRoute";
 
 const Home = ({ match }) => {
   const dispatch = useDispatch();
@@ -22,8 +19,7 @@ const Home = ({ match }) => {
     <div className="bg-light">
       <NavBar />
       <div className="container bg-light">
-        <Route exact path="/" component={ProductsList} />
-        <Route path="/cart" component={Cart} />
+        <ProductsList />
       </div>
     </div>
   );
