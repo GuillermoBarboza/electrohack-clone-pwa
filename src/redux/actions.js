@@ -5,16 +5,23 @@ const getProducts = (products) => {
   };
 };
 
-const logIn = credentials => {
+const addToCart = (product) => {
+  return {
+    type: "ADD_TO_CART",
+    payload: product,
+  };
+};
+
+const logIn = (credentials) => {
   return {
     type: "LOGIN",
-    payload: credentials
-  }
-}
-const createUser = credentials => {
+    payload: credentials,
+  };
+};
+const createUser = (credentials) => {
   return {
     type: "CREATE_USER",
-    payload: credentials
-  }
-}
-export { getProducts, logIn, createUser };
+    payload: credentials,
+  };
+};
+export { getProducts, addToCart, logIn, createUser };

@@ -16,6 +16,11 @@ code {
   height: 250px;
 }
 
+.img-cart {
+  height: 100px;
+  width: 100px;
+}
+
 .carousel-img {
   object-fit: cover;
   object-position: 50% 75%;
