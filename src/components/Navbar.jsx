@@ -1,12 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Navbar, Form, FormControl, Nav, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { changeCarousel } from "../redux/actions";
 
 const NavBar = () => {
   const state = useSelector((state) => state.state);
-  function handleClick() {}
+  const dispatch = useDispatch();
+
+  function handleClick(option) {
+    dispatch(changeCarousel(option));
+  }
+
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -19,13 +24,28 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/">
+            <Nav.Link
+              as={Link}
+              onClick={() => {
+                handleClick("sonido");
+              }}
+            >
               Imagen y Sonido
             </Nav.Link>
-            <Nav.Link as={Link} to="/">
-              Climatización
+            <Nav.Link
+              as={Link}
+              onClick={() => {
+                handleClick("baño");
+              }}
+            >
+              Baño
             </Nav.Link>
-            <Nav.Link as={Link} to="/">
+            <Nav.Link
+              as={Link}
+              onClick={() => {
+                handleClick("cocina");
+              }}
+            >
               Cocina
             </Nav.Link>
 

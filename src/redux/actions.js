@@ -5,6 +5,13 @@ const getProducts = (products) => {
   };
 };
 
+const changeCarousel = (option) => {
+  return {
+    type: "CHANGE_CAROUSEL",
+    payload: option,
+  };
+};
+
 const addToCart = (product) => {
   return {
     type: "ADD_TO_CART",
@@ -31,4 +38,11 @@ const createUser = (credentials) => {
     payload: credentials,
   };
 };
-export { getProducts, addToCart, removeFromCart, logIn, createUser };
+export {
+  getProducts,
+  changeCarousel,
+  addToCart,
+  removeFromCart,
+  logIn,
+  createUser,
+};
