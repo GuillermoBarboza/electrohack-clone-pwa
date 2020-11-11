@@ -12,6 +12,13 @@ const addToCart = (product) => {
   };
 };
 
+const removeFromCart = (product) => {
+  return {
+    type: "REMOVE_FROM_CART",
+    payload: product,
+  };
+};
+
 const logIn = (credentials) => {
   return {
     type: "LOGIN",
@@ -24,4 +31,4 @@ const createUser = (credentials) => {
     payload: credentials,
   };
 };
-export { getProducts, addToCart, logIn, createUser };
+export { getProducts, addToCart, removeFromCart, logIn, createUser };

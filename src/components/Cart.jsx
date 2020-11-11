@@ -1,8 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart, removeFromCart } from "../redux/actions";
 
 const Cart = () => {
   const cart = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -34,7 +36,21 @@ const Cart = () => {
                   <div className="col-2">
                     <i className="">{"$" + product.price}</i>
                   </div>
-                  <div className="col-2">{product.quantity}</div>
+                  <div className="col-2">
+                    <i
+                      className="btn"
+                      onClick={() => dispatch(removeFromCart(product))}
+                    >
+                      -
+                    </i>
+                    {product.quantity}
+                    <i
+                      className="btn"
+                      onClick={() => dispatch(addToCart(product))}
+                    >
+                      +
+                    </i>
+                  </div>
                 </div>
               );
             })}

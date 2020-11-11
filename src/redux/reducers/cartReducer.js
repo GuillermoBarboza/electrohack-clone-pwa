@@ -2,8 +2,8 @@ const cart = (state = [], action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       let is_id = false;
-      let arr = [];
-      arr = state.map((product) => {
+      let addArr = [];
+      addArr = state.map((product) => {
         if (product._id !== action.payload._id) {
           return product;
         } else {
@@ -14,9 +14,22 @@ const cart = (state = [], action) => {
       });
       if (!is_id) {
         action.payload.quantity = 1;
-        arr = [...state, action.payload];
+        addArr = [...state, action.payload];
       }
-      return arr;
+      return addArr;
+
+    case "REMOVE_FROM_CART":
+      let removeArr = [];
+      removeArr = state.map((product) => {
+        if (product._id !== action.payload._id) {
+          return product;
+        } else {
+          product.quantity = product.quantity - 1;
+          return product;
+        }
+      });
+
+      return removeArr.filter((product) => product.quantity !== 0);
 
     default:
       return state;
