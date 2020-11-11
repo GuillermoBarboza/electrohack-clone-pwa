@@ -20,7 +20,13 @@ const NavBar = () => {
               Home
             </Nav.Link>
             <Nav.Link as={Link} to="/">
-              Link
+              Imagen y Sonido
+            </Nav.Link>
+            <Nav.Link as={Link} to="/">
+              Climatización
+            </Nav.Link>
+            <Nav.Link as={Link} to="/">
+              Cocina
             </Nav.Link>
 
             <Form inline>
