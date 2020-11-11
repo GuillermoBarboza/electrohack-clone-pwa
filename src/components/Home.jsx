@@ -22,8 +22,8 @@ const Home = ({ match }) => {
     <div className="bg-light">
       <NavBar />
       <div className="container bg-light">
-      <Route exact path={match.url} component={ProductsList} />
-      <Route path={match.url + '/cart'} component={Cart}/>
+      <Route exact path='/' component={ProductsList} />
+      <Route path='/cart' component={Cart}/>
         
       </div>
     </div>

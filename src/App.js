@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Switch>
       
-        <PublicRoute restricted={false} component={Home} path="/home" exact />
+        <PublicRoute restricted={false} component={Home} path="/" exact />
         
         <PublicRoute restricted={false} component={Login} path="/login"  />
         <PublicRoute

@@ -11,5 +11,10 @@ const logIn = credentials => {
     payload: credentials
   }
 }
-
-export { getProducts, logIn };
+const createUser = credentials => {
+  return {
+    type: "CREATE_USER",
+    payload: credentials
+  }
+}
+export { getProducts, logIn, createUser };
