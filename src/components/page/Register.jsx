@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createUser } from "../redux/actions";
+import { createUser } from "../../redux/actions";
 import axios from "axios";
 
 const Register = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { logIn } from "../redux/actions";
+import { logIn } from "../../redux/actions";
 import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");

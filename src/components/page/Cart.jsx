@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../redux/actions";
+import { addToCart, removeFromCart } from "../../redux/actions";
 
 const Cart = () => {
   const cart = useSelector((store) => store.cart);
