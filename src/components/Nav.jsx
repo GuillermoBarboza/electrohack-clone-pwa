@@ -12,7 +12,6 @@ const NavBar = () => {
     axios
       .get(`http://localhost:8000/api/v1/categories/${option}`)
       .then((res) => {
-        console.log(res.data);
         dispatch(getProducts(res.data[0].productsList));
         dispatch(changeCarousel(res.data[0].banner));
       });
@@ -42,6 +41,7 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link
               as={Link}
+              to="/categories/home-audio"
               onClick={() => {
                 handleClick("home-audio");
               }}
@@ -50,6 +50,7 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link
               as={Link}
+              to="/categories/bathroom"
               onClick={() => {
                 handleClick("bathroom");
               }}
@@ -58,6 +59,7 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link
               as={Link}
+              to="/categories/kitchen"
               onClick={() => {
                 handleClick("kitchen");
               }}

@@ -18,7 +18,7 @@ function App() {
         <PublicRoute restricted={false} component={Home} path="/" exact />
         <PublicRoute
           restricted={false}
-          component={Home}
+          component={Category}
           path="/categories/:category"
           exact
         />
