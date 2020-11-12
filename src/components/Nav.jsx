@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Form, FormControl, Nav, Button } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getProducts, changeCarousel } from "../redux/actions";
 
 const NavBar = () => {
@@ -27,7 +27,17 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link
+              as={Link}
+              to="/"
+              onClick={() => {
+                dispatch(
+                  changeCarousel([
+                    "https://image.shutterstock.com/image-vector/brush-sale-banner-promotion-ribbon-260nw-1182942766.jpg",
+                  ])
+                );
+              }}
+            >
               Home
             </Nav.Link>
             <Nav.Link
