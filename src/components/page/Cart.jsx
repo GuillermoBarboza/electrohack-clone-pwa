@@ -19,14 +19,14 @@ const Cart = () => {
           <div className="row border-bottom border-dark mb-3">
             <div className="col-2">
               {" "}
-              <h3>Articulo</h3>
+              <h3>Item</h3>
             </div>
             <div className="col-6"></div>
             <div className="col-2">
-              <h3>Precio</h3>
+              <h3>Price</h3>
             </div>
             <div className="col-2">
-              <h3>Cantidad</h3>
+              <h3>Amount</h3>
             </div>
           </div>
           {cart.length > 0 &&

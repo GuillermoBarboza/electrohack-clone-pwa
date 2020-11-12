@@ -36,10 +36,10 @@ const Register = () => {
       });
   };
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container pt-5">
+      <div className="row pt-5">
         <div className="col-md-12">
-          <h1 className="text-center">Sign Up on Twita</h1>
+          <h1 className="text-center">Carlitos</h1>
         </div>
         <div className="col-md-12">
           <form

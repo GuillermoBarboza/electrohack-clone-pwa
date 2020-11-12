@@ -28,7 +28,7 @@ const removeFromCart = (product) => {
 
 const logIn = (credentials) => {
   return {
-    type: "LOGIN",
+    type: "GET_USER",
     payload: credentials,
   };
 };

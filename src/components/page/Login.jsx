@@ -27,10 +27,10 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container pt-5">
+      <div className="row pt-5">
         <div className="col-md-12">
-          <h1 className="text-center">Log In to Twita</h1>
+          <h1 className="text-center">Carlitos</h1>
         </div>
         <div className="col-md-12">
           <form
@@ -65,9 +65,7 @@ const Login = () => {
               </button>
             </div>
             <div className="text-center">
-              <a className="link-logIn" href="/register">
-                Regístrate en Twita
-              </a>
+              <a className="link-logIn" href="/register"></a>
             </div>
           </form>
         </div>
