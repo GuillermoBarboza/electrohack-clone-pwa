@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/actions";
+import { useHistory, Link } from "react-router-dom";
+import { getUser } from "../../redux/actions";
 import axios from "axios";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -19,7 +22,8 @@ const Login = () => {
       },
     })
       .then((res) => {
-        dispatch(logIn(res.data));
+        dispatch(getUser(res.data));
+        history.goBack();
       })
       .catch((err) => {
         console.log(err);
@@ -65,7 +69,9 @@ const Login = () => {
               </button>
             </div>
             <div className="text-center">
-              <a className="link-logIn" href="/register"></a>
+              <Link className="link-logIn" to="/register">
+                Register
+              </Link>
             </div>
           </form>
         </div>

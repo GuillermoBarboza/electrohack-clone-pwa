@@ -31,6 +31,9 @@ const cart = (state = [], action) => {
 
       return removeArr.filter((product) => product.quantity !== 0);
 
+    case "RESET_CART":
+      return [];
+
     default:
       return state;
   }

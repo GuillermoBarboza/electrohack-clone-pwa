@@ -3,13 +3,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts, changeCarousel } from "../redux/actions";
+import { getUser, getProducts, changeCarousel } from "../redux/actions";
 import SearchBox from "./SearchBox";
 
 const NavBar = () => {
   const cartQuantity = useSelector((store) =>
     store.cart.reduce((sum, val) => sum + val.quantity, 0)
   );
+
+  const user = useSelector((store) => store.user);
+
   const dispatch = useDispatch();
 
   function handleClick(option) {
@@ -72,6 +75,23 @@ const NavBar = () => {
             </Nav.Link>
 
             <SearchBox />
+
+            {user.token ? (
+              <>
+                <Nav.Link>Hola {user.name}</Nav.Link>
+                <Nav.Link
+                  onClick={() => {
+                    dispatch(getUser({}));
+                  }}
+                >
+                  Logout
+                </Nav.Link>
+              </>
+            ) : (
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
+            )}
 
             <Nav.Link as={Link} to="/cart">
               <i class="fas fa-shopping-cart"></i>

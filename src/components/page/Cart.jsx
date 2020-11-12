@@ -1,15 +1,39 @@
 import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "../../redux/actions";
+import { resetCart, addToCart, removeFromCart } from "../../redux/actions";
 
 const Cart = () => {
   const cart = useSelector((store) => store.cart);
+  const token = useSelector((store) => store.user.token);
+
   const dispatch = useDispatch();
 
   const total = () => {
     return cart
       .map((product) => product.quantity * product.price)
       .reduce((sum, val) => sum + val, 0);
+  };
+
+  const handlePurchase = () => {
+    axios({
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: "http://localhost:8000/api/v1/orders",
+      data: {
+        cart: cart,
+      },
+    })
+      .then((res) => {
+        dispatch(resetCart([]));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -67,6 +91,18 @@ const Cart = () => {
               TOTAL:
             </h3>
             <i className="font-italic">${total()}</i>
+            {token ? (
+              <i
+                className="btn btn-primary btn-block my-3"
+                onClick={handlePurchase}
+              >
+                Buy
+              </i>
+            ) : (
+              <Link to="/login">
+                <i className="btn btn-success btn-block my-3">Login</i>
+              </Link>
+            )}
           </div>
         </div>
       </div>

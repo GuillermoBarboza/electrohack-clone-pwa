@@ -26,23 +26,25 @@ const removeFromCart = (product) => {
   };
 };
 
-const logIn = (credentials) => {
+const resetCart = (product) => {
+  return {
+    type: "RESET_CART",
+    payload: product,
+  };
+};
+
+const getUser = (credentials) => {
   return {
     type: "GET_USER",
     payload: credentials,
   };
 };
-const createUser = (credentials) => {
-  return {
-    type: "CREATE_USER",
-    payload: credentials,
-  };
-};
+
 export {
   getProducts,
   changeCarousel,
   addToCart,
   removeFromCart,
-  logIn,
-  createUser,
+  resetCart,
+  getUser,
 };

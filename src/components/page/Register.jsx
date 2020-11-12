@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createUser } from "../../redux/actions";
+import { useHistory } from "react-router-dom";
+import { getUser } from "../../redux/actions";
 import axios from "axios";
 
 const Register = () => {
@@ -12,6 +13,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +31,8 @@ const Register = () => {
       },
     })
       .then((res) => {
-        dispatch(createUser(res.data));
+        dispatch(getUser(res.data));
+        history.goBack();
       })
       .catch((err) => {
         console.log(err);
@@ -48,7 +51,7 @@ const Register = () => {
             onSubmit={handleSubmit}
           >
             <label for="firstname" className="">
-              Nombre
+              Name
             </label>
             <input
               onChange={(e) => setName(e.target.value)}
@@ -59,7 +62,7 @@ const Register = () => {
             />
 
             <label for="lastname" className="">
-              Apellido
+              Lastname
             </label>
             <input
               onChange={(e) => setLastname(e.target.value)}
@@ -70,7 +73,7 @@ const Register = () => {
             />
 
             <label for="address" className="">
-              Username
+              Adress
             </label>
             <input
               onChange={(e) => setAddress(e.target.value)}
