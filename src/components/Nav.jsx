@@ -3,17 +3,19 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Form, FormControl, Nav, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { getCategory, changeCarousel } from "../redux/actions";
+import { getProducts, changeCarousel } from "../redux/actions";
 
 const NavBar = () => {
-  const state = useSelector((state) => state.state);
   const dispatch = useDispatch();
 
   function handleClick(option) {
-    axios.get(`http://localhost:8000/api/v1/products/${option}`).then((res) => {
-      dispatch(getCategory(res.data));
-    });
-    dispatch(changeCarousel(option));
+    axios
+      .get(`http://localhost:8000/api/v1/categories/${option}`)
+      .then((res) => {
+        console.log(res.data);
+        dispatch(getProducts(res.data[0].productsList));
+        dispatch(changeCarousel(res.data[0].banner));
+      });
   }
 
   return (
@@ -31,7 +33,7 @@ const NavBar = () => {
             <Nav.Link
               as={Link}
               onClick={() => {
-                handleClick("home audio");
+                handleClick("home-audio");
               }}
             >
               Home Audio
