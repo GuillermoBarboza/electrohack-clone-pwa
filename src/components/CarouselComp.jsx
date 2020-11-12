@@ -3,33 +3,39 @@ import Carousel from "react-bootstrap/Carousel";
 import { useSelector } from "react-redux";
 
 const CarouselComp = () => {
-  const images = useSelector((state) => state.carousel);
+	const images = useSelector((state) => state.carousel);
 
-  return (
-    <Carousel>
-      <Carousel.Item style={{ height: "500px" }}>
-        <img
-          className="d-block w-100 carousel-img"
-          src={images[0]}
-          alt="First slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item style={{ height: "500px" }}>
-        <img
-          className="d-block w-100 carousel-img"
-          src={images[1]}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item style={{ height: "500px" }}>
-        <img
-          className="d-block w-100 carousel-img"
-          src={images[2]}
-          alt="Third slide"
-        />
-      </Carousel.Item>
-    </Carousel>
-  );
+	return (
+		<Carousel>
+			<Carousel.Item>
+				<div
+					className="carousel-img"
+					style={{
+						backgroundImage: `url(${images[0]})`,
+					}}
+					alt="First slide"
+				></div>
+			</Carousel.Item>
+			<Carousel.Item>
+				<div
+					className="carousel-img"
+					style={{
+						backgroundImage: `url(${images[1]})`,
+					}}
+					alt="Second slide"
+				></div>
+			</Carousel.Item>
+			<Carousel.Item>
+				<div
+					className="carousel-img"
+					style={{
+						backgroundImage: `url(${images[2]})`,
+					}}
+					alt="Third slide"
+				></div>
+			</Carousel.Item>
+		</Carousel>
+	);
 };
 
 export default CarouselComp;
