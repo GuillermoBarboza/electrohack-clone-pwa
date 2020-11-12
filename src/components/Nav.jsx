@@ -1,12 +1,15 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Navbar, Form, FormControl, Nav, Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { Navbar, Nav } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { getProducts, changeCarousel } from "../redux/actions";
 import SearchBox from "./SearchBox";
 
 const NavBar = () => {
+  const cartQuantity = useSelector((store) =>
+    store.cart.reduce((sum, val) => sum + val.quantity, 0)
+  );
   const dispatch = useDispatch();
 
   function handleClick(option) {
@@ -71,7 +74,8 @@ const NavBar = () => {
             <SearchBox />
 
             <Nav.Link as={Link} to="/cart">
-              Cart
+              <i class="fas fa-shopping-cart"></i>
+              <span>{cartQuantity}</span>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

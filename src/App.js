@@ -4,6 +4,7 @@ import { Switch } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./components/page/Home";
 import Category from "./components/page/Category";
+import Product from "./components/page/Product";
 import Cart from "./components/page/Cart";
 import PublicRoute from "./components/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute";
@@ -20,6 +21,12 @@ function App() {
           restricted={false}
           component={Category}
           path="/categories/:category"
+          exact
+        />
+        <PublicRoute
+          restricted={false}
+          component={Product}
+          path="/products/:product"
           exact
         />
         <PublicRoute restricted={false} component={Cart} path="/cart" exact />
