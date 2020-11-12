@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../../redux/actions";
 
@@ -6,8 +6,14 @@ const Cart = () => {
   const cart = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
+  const total = () => {
+    return cart
+      .map((product) => product.quantity * product.price)
+      .reduce((sum, val) => sum + val, 0);
+  };
+
   return (
-    <div className="container">
+    <div className="container pt-5">
       <div className="row pt-5">
         <div className="col-md-9">
           <div className="row border-bottom border-dark mb-3">
@@ -34,7 +40,7 @@ const Cart = () => {
                     <h4 className="">{product.name}</h4>
                   </div>
                   <div className="col-2">
-                    <i className="">{"$" + product.price}</i>
+                    <i className="">{"c/u $" + product.price}</i>
                   </div>
                   <div className="col-2">
                     <i
@@ -55,7 +61,14 @@ const Cart = () => {
               );
             })}
         </div>
-        <div className="col-md-3"></div>
+        <div className="col-md-3 text-center">
+          <div className="container border">
+            <h3 className="mb-5 border-bottom border-dark font-italic">
+              TOTAL:
+            </h3>
+            <i className="font-italic">${total()}</i>
+          </div>
+        </div>
       </div>
     </div>
   );

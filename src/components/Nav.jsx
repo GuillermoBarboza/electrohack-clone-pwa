@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Form, FormControl, Nav, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getProducts, changeCarousel } from "../redux/actions";
+import SearchBox from "./SearchBox";
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const NavBar = () => {
 
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" fixed="top">
         <Navbar.Brand as={Link} to="/">
           ELECTRO-HACK
         </Navbar.Brand>
@@ -67,14 +68,7 @@ const NavBar = () => {
               Kitchen
             </Nav.Link>
 
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
+            <SearchBox />
 
             <Nav.Link as={Link} to="/cart">
               Cart
