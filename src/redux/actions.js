@@ -5,6 +5,13 @@ const getProducts = (products) => {
   };
 };
 
+const getCategory = (option) => {
+  return {
+    type: "GET_CATEGORY",
+    payload: option,
+  };
+};
+
 const changeCarousel = (option) => {
   return {
     type: "CHANGE_CAROUSEL",
@@ -40,6 +47,7 @@ const createUser = (credentials) => {
 };
 export {
   getProducts,
+  getCategory,
   changeCarousel,
   addToCart,
   removeFromCart,

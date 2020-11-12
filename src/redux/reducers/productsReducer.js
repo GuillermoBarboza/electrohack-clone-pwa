@@ -3,6 +3,9 @@ const products = (state = [], action) => {
     case "GET_PRODUCTS":
       return action.payload;
 
+    case "GET_CATEGORY":
+      return action.payload;
+
     default:
       return state;
   }

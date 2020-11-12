@@ -1,14 +1,18 @@
 import React from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Form, FormControl, Nav, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { changeCarousel } from "../redux/actions";
+import { getCategory, changeCarousel } from "../redux/actions";
 
 const NavBar = () => {
   const state = useSelector((state) => state.state);
   const dispatch = useDispatch();
 
   function handleClick(option) {
+    axios.get(`http://localhost:8000/api/v1/products/${option}`).then((res) => {
+      dispatch(getCategory(res.data));
+    });
     dispatch(changeCarousel(option));
   }
 
