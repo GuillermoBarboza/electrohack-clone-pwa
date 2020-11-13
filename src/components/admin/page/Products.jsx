@@ -8,9 +8,9 @@ const Products = () => {
   const [products, setProducts] = useState(null);
   const [search, setSearch] = useState(null);
   const [product, setProduct] = useState(null);
-  let url = "http://localhost:8000/api/v1/products";
 
   useEffect(() => {
+    let url = "http://localhost:8000/api/v1/products";
     search && (url = url.concat(`/search?name=${search}`));
     axios.get(url).then((res) => {
       setProducts(res.data);
@@ -76,9 +76,13 @@ const Products = () => {
         </div>
         <div className="col-md-6">
           {product ? (
-            <UpdateForm product={product} setProduct={setProduct} />
+            <UpdateForm
+              product={product}
+              setProduct={setProduct}
+              setSearch={setSearch}
+            />
           ) : (
-            <CreateForm setProducts={setProducts} />
+            <CreateForm setProducts={setProducts} setSearch={setSearch} />
           )}
         </div>
       </div>

@@ -1,9 +1,5 @@
 import React from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { Navbar, Form, FormControl, Nav, Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { getProducts, changeCarousel } from "../redux/actions";
+import { Form, FormControl, Button } from "react-bootstrap";
 
 const SearchBox = ({ setSearch }) => {
   return (

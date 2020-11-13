@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const UpdateForm = ({ product, setProduct }) => {
+const UpdateForm = ({ product, setProduct, setSearch }) => {
   const [_id, set_id] = useState(product._id);
   const [name, setName] = useState(product.name);
   const [description, setDescription] = useState(product.description);
@@ -30,6 +30,7 @@ const UpdateForm = ({ product, setProduct }) => {
     })
       .then((res) => {
         setProduct(null);
+        setSearch(null);
       })
       .catch((err) => {
         console.log(err);
@@ -137,6 +138,13 @@ const UpdateForm = ({ product, setProduct }) => {
               </button>
             </div>
           </form>
+          <button
+            className="btn btn-danger btn-block mt-3"
+            type="button"
+            onClick={() => setProduct(null)}
+          >
+            Discard changes
+          </button>
         </div>
       </div>
     </div>
