@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
     <div>
-      <div className="sidebar-sticky pt-3">
+      <div className="position-fixed pt-3">
         <ul className="nav flex-column">
           <li className="nav-item">
             <Link className="nav-link active" to="/admin">
