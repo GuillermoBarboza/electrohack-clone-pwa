@@ -37,16 +37,16 @@ const CreateForm = ({ setProducts }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-12 border-bottom border-dark">
           <h1 className="text-center">Insert new item data</h1>
         </div>
-        <div className="col-md-12">
+        <div className="col-md-12 mt-3">
           <form
             id="form-signUp"
             className="form-group m-auto"
             onSubmit={handleSubmit}
           >
-            <label for="name" className="">
+            <label for="name" className="mt-1">
               Name
             </label>
             <input
@@ -57,7 +57,7 @@ const CreateForm = ({ setProducts }) => {
               type="text"
             />
 
-            <label for="description" className="">
+            <label for="description" className="mt-1">
               Description
             </label>
             <input
@@ -68,7 +68,7 @@ const CreateForm = ({ setProducts }) => {
               type="text"
             />
 
-            <label for="image" className="">
+            <label for="image" className="mt-1">
               Image
             </label>
             <input
@@ -79,7 +79,7 @@ const CreateForm = ({ setProducts }) => {
               type="text"
             />
 
-            <label for="price" className="">
+            <label for="price" className="mt-1">
               Price
             </label>
             <input
@@ -90,7 +90,7 @@ const CreateForm = ({ setProducts }) => {
               type="number"
             />
 
-            <label for="category" className="">
+            <label for="category" className="mt-1">
               Category
             </label>
             <input
@@ -101,7 +101,7 @@ const CreateForm = ({ setProducts }) => {
               type="category"
             />
 
-            <label for="stock" className="">
+            <label for="stock" className="mt-1">
               Stock
             </label>
             <input
@@ -112,7 +112,7 @@ const CreateForm = ({ setProducts }) => {
               type="number"
             />
 
-            <label for="featured" className="">
+            <label for="featured" className="mt-1">
               Featured
             </label>
             <input
@@ -122,8 +122,8 @@ const CreateForm = ({ setProducts }) => {
               id="featured"
               type="text"
             />
-            <div className="d-flex justify-content-center mt-2">
-              <button className="btn btn-signUp btn-lg" type="submit">
+            <div className="d-flex justify-content-center mt-3">
+              <button className="btn btn-success btn-block" type="submit">
                 Add Item
               </button>
             </div>

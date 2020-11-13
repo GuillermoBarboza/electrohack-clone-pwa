@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBox from "../../SearchBox";
 import CreateForm from "../CreateForm";
+import UpdateForm from "../UpdateForm";
 
 const Products = () => {
   const [products, setProducts] = useState(null);
   const [search, setSearch] = useState(null);
+  const [product, setProduct] = useState(null);
   let url = "http://localhost:8000/api/v1/products";
 
   useEffect(() => {
@@ -53,9 +55,17 @@ const Products = () => {
                       <td>
                         <button
                           className="btn"
+                          onClick={() => setProduct(product)}
+                        >
+                          <i class="fas fa-edit"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          className="btn"
                           onClick={() => handleDelete(product._id)}
                         >
-                          X
+                          <i class="fas fa-trash-alt"></i>
                         </button>
                       </td>
                     </tr>
@@ -65,7 +75,11 @@ const Products = () => {
           </table>
         </div>
         <div className="col-md-6">
-          <CreateForm setProducts={setProducts} />
+          {product ? (
+            <UpdateForm product={product} setProduct={setProduct} />
+          ) : (
+            <CreateForm setProducts={setProducts} />
+          )}
         </div>
       </div>
     </div>
