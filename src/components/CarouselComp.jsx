@@ -6,7 +6,7 @@ const CarouselComp = () => {
 	const images = useSelector((state) => state.carousel);
 
 	return (
-		<Carousel>
+		<Carousel className="carousel-margin">
 			<Carousel.Item>
 				<div
 					className="carousel-img"
