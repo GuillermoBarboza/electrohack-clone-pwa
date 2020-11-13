@@ -26,3 +26,19 @@ code {
 	background-size: cover;
 	background-position: center center;
 }
+
+.fa-stack[data-count]:after {
+	position: absolute;
+	right: 5px;
+	top: -2px;
+	content: attr(data-count);
+	font-size: 0.5rem;
+	padding: 0.2rem;
+	border-radius: 50%;
+	line-height: 0.75em;
+	text-align: center;
+	font-weight: 600;
+	color: white;
+	border: solid 2px #e42e2e;
+	background-color: #e42e2e;
+}

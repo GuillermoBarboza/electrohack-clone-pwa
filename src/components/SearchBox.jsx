@@ -6,14 +6,12 @@ import { useDispatch } from "react-redux";
 import { getProducts, changeCarousel } from "../redux/actions";
 
 const SearchBox = () => {
-  return (
-    <div>
-      <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <Button variant="outline-success">Search</Button>
-      </Form>
-    </div>
-  );
+	return (
+		<Form inline>
+			<FormControl type="text" placeholder="Search" className="mr-sm-2" />
+			<Button variant="outline-success">Search</Button>
+		</Form>
+	);
 };
 
 export default SearchBox;
