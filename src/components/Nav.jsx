@@ -34,6 +34,7 @@ const NavBar = () => {
 				<Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
 					<Nav>
 						<Nav.Link
+							className="mr-4"
 							as={Link}
 							to="/"
 							onClick={() => {
@@ -47,6 +48,7 @@ const NavBar = () => {
 							Home
 						</Nav.Link>
 						<Nav.Link
+							className="mr-4"
 							as={Link}
 							to="/categories/home-audio"
 							onClick={() => {
@@ -56,6 +58,7 @@ const NavBar = () => {
 							Home Audio
 						</Nav.Link>
 						<Nav.Link
+							className="mr-4"
 							as={Link}
 							to="/categories/bathroom"
 							onClick={() => {
@@ -65,6 +68,7 @@ const NavBar = () => {
 							Bathroom
 						</Nav.Link>
 						<Nav.Link
+							className="mr-4"
 							as={Link}
 							to="/categories/kitchen"
 							onClick={() => {
@@ -80,6 +84,7 @@ const NavBar = () => {
 							<>
 								<Nav.Link>Hello, {user.name}</Nav.Link>
 								<Nav.Link
+									className="mr-4"
 									onClick={() => {
 										dispatch(getUser({}));
 									}}
@@ -88,7 +93,7 @@ const NavBar = () => {
 								</Nav.Link>
 							</>
 						) : (
-							<Nav.Link as={Link} to="/login">
+							<Nav.Link className="mr-4" as={Link} to="/login">
 								Login
 							</Nav.Link>
 						)}
