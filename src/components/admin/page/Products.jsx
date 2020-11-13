@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBox from "../../SearchBox";
+import CreateForm from "../CreateForm";
 
 const Products = () => {
   const [products, setProducts] = useState(null);
@@ -63,7 +64,9 @@ const Products = () => {
             </tbody>
           </table>
         </div>
-        <div className="col-md-6"></div>
+        <div className="col-md-6">
+          <CreateForm setProducts={setProducts} />
+        </div>
       </div>
     </div>
   );

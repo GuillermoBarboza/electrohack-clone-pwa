@@ -38,6 +38,7 @@ const Register = () => {
         console.log(err);
       });
   };
+
   return (
     <div className="container pt-5">
       <div className="row pt-5">
