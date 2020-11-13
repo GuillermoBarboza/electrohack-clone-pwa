@@ -7,6 +7,10 @@ import Category from "./components/page/Category";
 import Product from "./components/page/Product";
 import Cart from "./components/page/Cart";
 import PublicRoute from "./components/PublicRoute";
+import Main from "./components/admin/page/Main";
+import Products from "./components/admin/page/Products";
+import Users from "./components/admin/page/Users";
+import Categories from "./components/admin/page/Categories";
 import PrivateRoute from "./components/PrivateRoute";
 
 import Login from "./components/page/Login";
@@ -37,6 +41,10 @@ function App() {
           path="/register"
           exact
         />
+        <PrivateRoute component={Main} path="/admin" exact />
+        <PrivateRoute component={Products} path="/admin/products" exact />
+        <PrivateRoute component={Users} path="/admin/users" exact />
+        <PrivateRoute component={Categories} path="/admin/categories" exact />
       </Switch>
     </Router>
   );

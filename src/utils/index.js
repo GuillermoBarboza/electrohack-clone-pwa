@@ -1,8 +1,8 @@
-const isLogin = (usertoken) => {
-  if (usertoken) {
+const isAdmin = (user) => {
+  if (user.token && user.admin) {
     return true;
   }
   return false;
 };
 
-export default isLogin;
+export default isAdmin;

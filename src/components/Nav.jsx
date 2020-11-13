@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
@@ -7,6 +7,8 @@ import { getUser, getProducts, changeCarousel } from "../redux/actions";
 import SearchBox from "./SearchBox";
 
 const NavBar = () => {
+  const [search, setSearch] = useState("");
+  const [dropDown, setDropDown] = useState(null);
   const cartQuantity = useSelector((store) =>
     store.cart.reduce((sum, val) => sum + val.quantity, 0)
   );
@@ -14,6 +16,13 @@ const NavBar = () => {
   const user = useSelector((store) => store.user);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    let url = `http://localhost:8000/api/v1/products/search?name=${search}`;
+    axios.get(url).then((res) => {
+      setDropDown(res.data);
+    });
+  }, [search]);
 
   function handleClick(option) {
     axios
@@ -78,7 +87,7 @@ const NavBar = () => {
               Kitchen
             </Nav.Link>
 
-            <SearchBox />
+            <SearchBox setSearch={setSearch} />
 
             {user.token ? (
               <>
