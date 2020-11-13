@@ -37,6 +37,7 @@ const NavBar = () => {
     <Navbar bg="light" expand="lg" fixed="top">
       <div className="container">
         <Navbar.Brand as={Link} to="/">
+          <i class="fas fa-bolt"></i>
           ELECTRO-HACK
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
