@@ -46,20 +46,6 @@ const NavBar = () => {
             <Nav.Link
               className="mr-4"
               as={Link}
-              to="/"
-              onClick={() => {
-                dispatch(
-                  changeCarousel([
-                    "https://image.shutterstock.com/image-vector/brush-sale-banner-promotion-ribbon-260nw-1182942766.jpg",
-                  ])
-                );
-              }}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              className="mr-4"
-              as={Link}
               to="/categories/home-audio"
               onClick={() => {
                 handleClick("home-audio");

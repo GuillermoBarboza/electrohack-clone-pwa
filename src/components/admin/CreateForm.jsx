@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CreateForm = ({ setProducts, setSearch }) => {
+const CreateForm = ({ setProducts, setSearch, handleClose }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
@@ -45,7 +45,7 @@ const CreateForm = ({ setProducts, setSearch }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={handleSubmit}
+            onSubmit={(handleSubmit, handleClose)}
           >
             <label for="name" className="mt-1">
               Name
@@ -124,7 +124,7 @@ const CreateForm = ({ setProducts, setSearch }) => {
               type="text"
             />
             <div className="d-flex justify-content-center mt-3">
-              <button className="btn btn-success btn-block" type="submit">
+              <button className="btn btn-success btn-block mb-3" type="submit">
                 Add Item
               </button>
             </div>

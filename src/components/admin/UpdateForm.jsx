@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const UpdateForm = ({ product, setProduct, setSearch }) => {
-  const [_id, set_id] = useState(product._id);
-  const [name, setName] = useState(product.name);
-  const [description, setDescription] = useState(product.description);
-  const [image, setImage] = useState(product.image);
-  const [price, setPrice] = useState(product.price);
-  const [category, setCategory] = useState(product.category);
-  const [stock, setStock] = useState(product.stock);
-  const [featured, setFeatured] = useState(product.featured);
+const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
+  const [_id, set_id] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [stock, setStock] = useState("");
+  const [featured, setFeatured] = useState("");
+
+  useEffect(() => {
+    set_id(product._id);
+    setName(product.name);
+    setDescription(product.description);
+    setImage(product.image);
+    setPrice(product.price);
+    setCategory(product.category);
+    setStock(product.stock);
+    setFeatured(product.featured);
+  }, [product]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,7 +58,7 @@ const UpdateForm = ({ product, setProduct, setSearch }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={handleSubmit}
+            onSubmit={(handleSubmit, handleClose)}
           >
             <label for="name" className="mt-1">
               Name
@@ -133,18 +144,11 @@ const UpdateForm = ({ product, setProduct, setSearch }) => {
               type="text"
             />
             <div className="d-flex justify-content-center mt-3">
-              <button className="btn btn-success btn-block" type="submit">
+              <button className="btn btn-success btn-block mb-3" type="submit">
                 Update
               </button>
             </div>
           </form>
-          <button
-            className="btn btn-danger btn-block mt-3"
-            type="button"
-            onClick={() => setProduct(null)}
-          >
-            Discard changes
-          </button>
         </div>
       </div>
     </div>

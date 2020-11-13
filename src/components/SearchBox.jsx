@@ -10,7 +10,6 @@ const SearchBox = ({ setSearch }) => {
         className="mr-sm-2"
         onChange={(e) => setSearch(e.target.value)}
       />
-      <Button variant="outline-success">Search</Button>
     </Form>
   );
 };
