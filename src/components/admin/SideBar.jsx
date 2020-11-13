@@ -31,6 +31,10 @@ const SideBar = () => {
             </Link>
           </li>
         </ul>
+        <Link to="/">
+          <i class="fas fa-bolt"></i>
+          ELECTRO-HACK
+        </Link>
       </div>
     </div>
   );
