@@ -74,7 +74,7 @@ const Users = () => {
                     <td>{user.name + " " + user.lastname}</td>
                     <td>{user.email}</td>
                     <td>{user.address}</td>
-                    <td>{user.phone}</td>
+                    <td>{user.telephone}</td>
                     <td>
                       <button
                         className="btn"
