@@ -32,7 +32,7 @@ const SideBar = () => {
           </li>
         </ul>
         <Link to="/">
-          <i class="fas fa-bolt"></i>
+          <i className="fas fa-bolt"></i>
           ELECTRO-HACK
         </Link>
       </div>

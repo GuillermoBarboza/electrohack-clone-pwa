@@ -82,7 +82,7 @@ const Products = () => {
                           return setProduct(product);
                         }}
                       >
-                        <i class="fas fa-edit"></i>
+                        <i className="fas fa-edit"></i>
                       </button>
                     </td>
                     <td>
@@ -90,7 +90,7 @@ const Products = () => {
                         className="btn"
                         onClick={() => handleDelete(product._id)}
                       >
-                        <i class="fas fa-trash-alt"></i>
+                        <i className="fas fa-trash-alt"></i>
                       </button>
                     </td>
                   </tr>

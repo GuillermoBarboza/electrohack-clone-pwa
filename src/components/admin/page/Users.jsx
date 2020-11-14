@@ -83,7 +83,7 @@ const Users = () => {
                           return setUser(user);
                         }}
                       >
-                        <i class="fas fa-edit"></i>
+                        <i className="fas fa-edit"></i>
                       </button>
                     </td>
                     <td>
@@ -91,7 +91,7 @@ const Users = () => {
                         className="btn"
                         onClick={() => handleDelete(user._id)}
                       >
-                        <i class="fas fa-trash-alt"></i>
+                        <i className="fas fa-trash-alt"></i>
                       </button>
                     </td>
                   </tr>
