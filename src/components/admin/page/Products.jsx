@@ -53,7 +53,7 @@ const Products = () => {
           {" "}
           <SearchBox setSearch={setSearch} />
           <button className="btn btn-success" onClick={handleShowCreate}>
-            Create
+            New item
           </button>
         </div>
 

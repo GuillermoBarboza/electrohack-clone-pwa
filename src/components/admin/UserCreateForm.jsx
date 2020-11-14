@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
+const UserCreateForm = ({ setUsers, setSearch, handleClose }) => {
   const [_id, set_id] = useState("");
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -10,24 +10,12 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
   const [telephone, setTelephone] = useState("");
   const [admin, setAdmin] = useState("");
 
-  useEffect(() => {
-    set_id(user._id);
-    setName(user.name);
-    setLastname(user.lastname);
-    setEmail(user.email);
-    setAddress(user.address);
-    setTelephone(user.telephone);
-    setAdmin(user.admin);
-  }, [user]);
-
-  console.log(user);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios({
-      method: "PUT",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
-      url: "http://localhost:8000/api/v1/users",
+      url: "http://localhost:8000/api/v1/users/create",
       data: {
         _id: _id,
         name: name,
@@ -39,7 +27,7 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
       },
     })
       .then((res) => {
-        setUser(null);
+        setUsers((users) => [...users, res.data]);
         setSearch(null);
       })
       .catch((err) => {
@@ -51,7 +39,7 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
     <div className="container">
       <div className="row">
         <div className="col-md-12 border-bottom border-dark">
-          <h1 className="text-center">Update user data</h1>
+          <h1 className="text-center">Insert new user data</h1>
         </div>
         <div className="col-md-12 mt-3">
           <form
@@ -130,10 +118,9 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
               id="admin"
               type="text"
             />
-
             <div className="d-flex justify-content-center mt-3">
               <button className="btn btn-success btn-block mb-3" type="submit">
-                Update
+                Add Item
               </button>
             </div>
           </form>
@@ -143,4 +130,4 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
   );
 };
 
-export default UserUpdateForm;
+export default UserCreateForm;

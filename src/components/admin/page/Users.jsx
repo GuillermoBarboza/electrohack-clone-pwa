@@ -3,11 +3,13 @@ import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import SearchBox from "../../SearchBox";
 import UserUpdateForm from "../UserUpdateForm";
+import UserCreateForm from "../UserCreateForm";
 
 const Users = () => {
   const [users, setUsers] = useState(null);
   const [search, setSearch] = useState(null);
   const [user, setUser] = useState(null);
+  const [showCreate, setShowCreate] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
 
   useEffect(() => {
@@ -18,8 +20,26 @@ const Users = () => {
     });
   }, [search]);
 
+  const handleDelete = (_id) => {
+    axios({
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      url: "http://localhost:8000/api/v1/users",
+      data: {
+        _id: _id,
+      },
+    }).then((res) => {
+      setUsers(users.filter((user) => user._id !== _id));
+    });
+  };
+
   const handleClose = () => {
+    setShowCreate(false);
     setShowUpdate(false);
+  };
+
+  const handleShowCreate = () => {
+    setShowCreate(true);
   };
 
   const handleShowUpdate = () => {
@@ -32,6 +52,9 @@ const Users = () => {
         <div className="d-flex justify-content-between">
           {" "}
           <SearchBox setSearch={setSearch} />
+          <button className="btn btn-success" onClick={handleShowCreate}>
+            New user
+          </button>
         </div>
 
         <table className="table mt-3">
@@ -63,6 +86,14 @@ const Users = () => {
                         <i class="fas fa-edit"></i>
                       </button>
                     </td>
+                    <td>
+                      <button
+                        className="btn"
+                        onClick={() => handleDelete(user._id)}
+                      >
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
                   </tr>
                 );
               })}
@@ -72,6 +103,14 @@ const Users = () => {
           <UserUpdateForm
             user={user}
             setUser={setUser}
+            setSearch={setSearch}
+            handleClose={handleClose}
+          />
+        </Modal>
+
+        <Modal show={showCreate} onHide={handleClose}>
+          <UserCreateForm
+            setUsers={setUsers}
             setSearch={setSearch}
             handleClose={handleClose}
           />
