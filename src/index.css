@@ -13,7 +13,7 @@ code {
 }
 
 .card-height {
-	height: 250px;
+	height: 300px;
 }
 
 .img-cart {
@@ -51,4 +51,18 @@ code {
 	position: absolute;
 	top: 3rem;
 	z-index: 1000;
+}
+
+.btn-custom {
+	background-color: #ffe774;
+	border-radius: 1px;
+}
+
+.btn-custom:hover {
+	background-color: #ddc967;
+}
+
+.btn-custom:focus {
+	outline: #d1bc46 5px auto;
+	box-shadow: none;
 }

@@ -5,32 +5,55 @@ import { addToCart } from "../redux/actions";
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  return (
-    <div className="col-md-4">
-      <div className="card my-2">
-        <img src={product.image} className="card-img-top" alt="..." />
-        <div className="card-body card-height">
-          <Link
-            to={
-              "/products/" +
-              product.name.toLowerCase().trim().replace(/ /g, "-")
-            }
-          >
-            <h5 className="card-title">{product.name}</h5>
-          </Link>
-          <p className="card-text">{product.description}</p>
-          <i
-            className="btn btn-primary btn-block"
-            onClick={() => dispatch(addToCart(product))}
-          >
-            Buy
-          </i>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="col-md-6 col-lg-4 mb-3">
+			<div className="card my-2">
+				<img src={product.image} className="card-img-top" alt="..." />
+				<div className="card-body card-height d-flex flex-column justify-content-between">
+					<div>
+						<Link
+							to={
+								"/products/" +
+								product.name.toLowerCase().trim().replace(/ /g, "-")
+							}
+							className="text-dark"
+						>
+							<h5 className="card-title">{product.name}</h5>
+						</Link>
+						<p className="card-text">{product.description}</p>
+					</div>
+
+					<div>
+						<p className="lead mb-0">$ {product.price}</p>
+						{product.stock > 0 ? (
+							<>
+								<p className="my-2">
+									<small>In stock</small>
+								</p>
+								<button
+									className="btn btn-custom btn-block"
+									onClick={() => dispatch(addToCart(product))}
+								>
+									<i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+								</button>
+							</>
+						) : (
+							<>
+								<p className="my-2">
+									<small>Out of Stock</small>
+								</p>
+								<button disabled className="btn btn-custom btn-block">
+									<i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+								</button>
+							</>
+						)}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Product;
