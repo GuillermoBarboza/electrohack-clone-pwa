@@ -46,3 +46,9 @@ code {
 .carousel-margin {
 	margin: 3.45rem 0 6rem;
 }
+
+.search-results {
+	position: absolute;
+	top: 3rem;
+	z-index: 1000;
+}
