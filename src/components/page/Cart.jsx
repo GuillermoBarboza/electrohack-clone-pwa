@@ -39,12 +39,12 @@ const Cart = () => {
 	return (
 		<div className="container margin-product">
 			<div className="row">
-				<div className="col-md-8">
+				<div className="col-lg-8">
 					<div className="row">
-						<div className="col-8">
+						<div className="col-7">
 							<h5>Shopping Cart</h5>
 						</div>
-						<div className="col-2 text-center">
+						<div className="col-3 text-center">
 							<h5>Quantity</h5>
 						</div>
 						<div className="col-2 text-center">
@@ -63,11 +63,11 @@ const Cart = () => {
 											alt="Product"
 										/>
 									</div>
-									<div className="col-6">
+									<div className="col-5">
 										<h5 className="">{product.name}</h5>
 									</div>
 
-									<div className="col-2 text-center">
+									<div className="col-3 text-center">
 										<p>
 											<span
 												className="btn"
@@ -91,7 +91,7 @@ const Cart = () => {
 							);
 						})}
 				</div>
-				<div className="col-md-4">
+				<div className="col-lg-4">
 					<div className="total-wrapper border">
 						<h5 className="font-italic mb-4">TOTAL:</h5>
 						<p className="lead text-center">${total()}</p>
