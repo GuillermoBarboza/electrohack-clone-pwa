@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import SearchBox from "../../SearchBox";
-import CreateForm from "../CreateForm";
-import UpdateForm from "../UpdateForm";
+import ProductCreateForm from "../ProductCreateForm";
+import ProductUpdateForm from "../ProductUpdateForm";
 
 const Products = () => {
   const [products, setProducts] = useState(null);
@@ -99,7 +99,7 @@ const Products = () => {
           </tbody>
         </table>
         <Modal show={showUpdate} onHide={handleClose}>
-          <UpdateForm
+          <ProductUpdateForm
             product={product}
             setProduct={setProduct}
             setSearch={setSearch}
@@ -108,7 +108,7 @@ const Products = () => {
         </Modal>
 
         <Modal show={showCreate} onHide={handleClose}>
-          <CreateForm
+          <ProductCreateForm
             setProducts={setProducts}
             setSearch={setSearch}
             handleClose={handleClose}

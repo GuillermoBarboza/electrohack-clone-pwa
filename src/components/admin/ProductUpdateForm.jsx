@@ -92,7 +92,7 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
               name="image"
               className="form-control"
               value={image}
-              id="username"
+              id="image"
               type="text"
             />
 
