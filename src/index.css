@@ -75,7 +75,7 @@ code {
 
 /* PRODUCT PAGE */
 .margin-product {
-	margin: 6rem auto 3.45rem;
+	margin: 7rem auto 3.45rem;
 }
 
 .product-header {
@@ -94,4 +94,9 @@ code {
 }
 .product-price h4 span {
 	font-size: 1rem;
+}
+
+/* CART PAGE */
+.total-wrapper {
+	padding: 2rem;
 }

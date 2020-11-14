@@ -5,109 +5,113 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetCart, addToCart, removeFromCart } from "../../redux/actions";
 
 const Cart = () => {
-  const cart = useSelector((store) => store.cart);
-  const token = useSelector((store) => store.user.token);
+	const cart = useSelector((store) => store.cart);
+	const token = useSelector((store) => store.user.token);
 
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  const total = () => {
-    return cart
-      .map((product) => product.quantity * product.price)
-      .reduce((sum, val) => sum + val, 0);
-  };
+	const total = () => {
+		return cart
+			.map((product) => product.quantity * product.price)
+			.reduce((sum, val) => sum + val, 0);
+	};
 
-  const handlePurchase = () => {
-    axios({
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      url: "http://localhost:8000/api/v1/orders",
-      data: {
-        cart: cart,
-      },
-    })
-      .then((res) => {
-        dispatch(resetCart([]));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+	const handlePurchase = () => {
+		axios({
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
+			},
+			url: "http://localhost:8000/api/v1/orders",
+			data: {
+				cart: cart,
+			},
+		})
+			.then((res) => {
+				dispatch(resetCart([]));
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
-  return (
-    <div className="container pt-5">
-      <div className="row pt-5">
-        <div className="col-md-9">
-          <div className="row border-bottom border-dark mb-3">
-            <div className="col-2">
-              {" "}
-              <h3>Item</h3>
-            </div>
-            <div className="col-6"></div>
-            <div className="col-2">
-              <h3>Price</h3>
-            </div>
-            <div className="col-2">
-              <h3>Amount</h3>
-            </div>
-          </div>
-          {cart.length > 0 &&
-            cart.map((product) => {
-              return (
-                <div className="row mb-5">
-                  <div className="col-2">
-                    <img className="img-thumbnail" src={product.image} alt="" />
-                  </div>
-                  <div className="col-6">
-                    <h4 className="">{product.name}</h4>
-                  </div>
-                  <div className="col-2">
-                    <i className="">{"c/u $" + product.price}</i>
-                  </div>
-                  <div className="col-2">
-                    <i
-                      className="btn"
-                      onClick={() => dispatch(removeFromCart(product))}
-                    >
-                      -
-                    </i>
-                    {product.quantity}
-                    <i
-                      className="btn"
-                      onClick={() => dispatch(addToCart(product))}
-                    >
-                      +
-                    </i>
-                  </div>
-                </div>
-              );
-            })}
-        </div>
-        <div className="col-md-3 text-center">
-          <div className="container border">
-            <h3 className="mb-5 border-bottom border-dark font-italic">
-              TOTAL:
-            </h3>
-            <i className="font-italic">${total()}</i>
-            {token ? (
-              <i
-                className="btn btn-primary btn-block my-3"
-                onClick={handlePurchase}
-              >
-                Buy
-              </i>
-            ) : (
-              <Link to="/login">
-                <i className="btn btn-success btn-block my-3">Login</i>
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="container margin-product">
+			<div className="row">
+				<div className="col-md-8">
+					<div className="row">
+						<div className="col-8">
+							<h5>Shopping Cart</h5>
+						</div>
+						<div className="col-2 text-center">
+							<h5>Quantity</h5>
+						</div>
+						<div className="col-2 text-center">
+							<h5>Price</h5>
+						</div>
+					</div>
+					<hr className="mb-5" />
+					{cart.length > 0 &&
+						cart.map((product) => {
+							return (
+								<div className="row mb-5">
+									<div className="col-2">
+										<img
+											className="img-fluid"
+											src={product.image}
+											alt="Product"
+										/>
+									</div>
+									<div className="col-6">
+										<h5 className="">{product.name}</h5>
+									</div>
+
+									<div className="col-2 text-center">
+										<p>
+											<span
+												className="btn"
+												onClick={() => dispatch(removeFromCart(product))}
+											>
+												-
+											</span>
+											{product.quantity}
+											<span
+												className="btn"
+												onClick={() => dispatch(addToCart(product))}
+											>
+												+
+											</span>
+										</p>
+									</div>
+									<div className="col-2 text-center">
+										<p className="lead">${product.price}</p>
+									</div>
+								</div>
+							);
+						})}
+				</div>
+				<div className="col-md-4">
+					<div className="total-wrapper border">
+						<h5 className="font-italic mb-4">TOTAL:</h5>
+						<p className="lead text-center">${total()}</p>
+						{token ? (
+							<button
+								className="btn btn-custom btn-block p-2 my-4"
+								onClick={handlePurchase}
+							>
+								Proceed to checkout
+							</button>
+						) : (
+							<Link to="/login">
+								<i className="btn btn-success btn-block my-3">Login</i>
+							</Link>
+						)}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Cart;
