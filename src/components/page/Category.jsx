@@ -4,9 +4,9 @@ import CarouselComp from "../CarouselComp";
 
 const Category = () => {
   return (
-    <div className="bg-light">
+    <div>
       <CarouselComp />
-      <div className="container bg-light">
+      <div className="container">
         <ProductsList />
       </div>
     </div>

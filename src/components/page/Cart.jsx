@@ -38,9 +38,9 @@ const Cart = () => {
 
   return (
     <div className="container margin-product">
-      <div className="row">
-        <div className="col-lg-8">
-          <div className="row">
+      <div className="row pb-4">
+        <div className="col-lg-8 mt-3 second-color rounded">
+          <div className="row mt-3">
             <div className="col-7">
               <h5>Shopping Cart</h5>
             </div>
@@ -91,8 +91,8 @@ const Cart = () => {
               );
             })}
         </div>
-        <div className="col-lg-4">
-          <div className="total-wrapper border">
+        <div className="col-lg-4 mt-3">
+          <div className="total-wrapper border second-color rounded">
             <h5 className="font-italic mb-4">TOTAL:</h5>
             <p className="lead text-center">${total()}</p>
             {token ? (

@@ -43,7 +43,7 @@ const NavBar = () => {
   }
 
   return (
-    <Navbar bg="light" expand="lg" fixed="top">
+    <Navbar className="bg-nav" expand="lg" fixed="top">
       <div className="container">
         <Navbar.Brand as={Link} to="/">
           <i className="fas fa-bolt"></i>
@@ -92,10 +92,15 @@ const NavBar = () => {
                       <ListGroup.Item>
                         <Link
                           className="text-dark"
-                          to={
-                            "/products/" +
-                            product.name.toLowerCase().trim().replace(/ /g, "-")
-                          }
+                          to={{
+                            pathname:
+                              "/products/" +
+                              product.name
+                                .toLowerCase()
+                                .trim()
+                                .replace(/ /g, "-"),
+                            state: { product },
+                          }}
                           onClick={handleLink}
                         >
                           {product.name}
