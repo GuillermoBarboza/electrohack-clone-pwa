@@ -22,26 +22,29 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
     setFeatured(product.featured);
   }, [product]);
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    let img = document.querySelector("#imageFile1");
+    let formData = new FormData();
+    formData.append('imageFile', img.files[0])
+    formData.append('_id', _id)
+    formData.append('name', name)
+    formData.append('description', description)
+    formData.append('image', image)
+    formData.append('price', price)
+    formData.append('category', category)
+    formData.append('stock', stock)
+    formData.append('featured', featured)
     axios({
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      url: "http://localhost:8000/api/v1/products",
-      data: {
-        _id: _id,
-        name: name,
-        description: description,
-        image: image,
-        price: price,
-        category: category,
-        stock: stock,
-        featured: featured,
-      },
+      url: `http://localhost:8000/api/v1/products`,
+      data: formData,
     })
       .then((res) => {
-        setProduct(null);
         setSearch(null);
+        handleClose()
       })
       .catch((err) => {
         console.log(err);
@@ -58,7 +61,7 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(handleSubmit, handleClose)}
+            onSubmit={(e)=>handleSubmit(e)}
           >
             <label for="name" className="mt-1">
               Name
@@ -148,6 +151,17 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
                 Update
               </button>
             </div>
+          </form>
+          <form>
+          <label for="imageFile1" className="mt-1">
+              Have an Image? upload it!
+            </label>
+            <input
+              name="imageFile1"
+              className="form-control"
+              id="imageFile1"
+              type="file"
+            />
           </form>
         </div>
       </div>

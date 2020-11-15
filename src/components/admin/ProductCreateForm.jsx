@@ -12,23 +12,26 @@ const ProductCreateForm = ({ setProducts, setSearch, handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let img = document.querySelector("#imageFile");
+    let formData = new FormData();
+    formData.append('imageFile', img.files[0])
+    formData.append('name', name)
+    formData.append('description', description)
+    formData.append('image', image)
+    formData.append('price', price)
+    formData.append('category', category)
+    formData.append('stock', stock)
+    formData.append('featured', featured)
     axios({
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      url: "http://localhost:8000/api/v1/products",
-      data: {
-        name: name,
-        description: description,
-        image: image,
-        price: price,
-        category: category,
-        stock: stock,
-        featured: featured,
-      },
+      url: `http://localhost:8000/api/v1/products`,
+      data: formData,
     })
       .then((res) => {
         setProducts((products) => [...products, res.data]);
+        
         setSearch(null);
+        handleClose()
       })
       .catch((err) => {
         console.log(err);
@@ -45,7 +48,7 @@ const ProductCreateForm = ({ setProducts, setSearch, handleClose }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(handleSubmit, handleClose)}
+            onSubmit={(handleSubmit)}
           >
             <label for="name" className="mt-1">
               Name
@@ -128,6 +131,17 @@ const ProductCreateForm = ({ setProducts, setSearch, handleClose }) => {
                 Add Item
               </button>
             </div>
+          </form>
+          <form>
+          <label for="imageFile" className="mt-1">
+              Have an Image? upload it!
+            </label>
+            <input
+              name="imageFile"
+              className="form-control"
+              id="imageFile"
+              type="file"
+            />
           </form>
         </div>
       </div>
