@@ -110,7 +110,7 @@ const NavBar = () => {
                   })}
               </ListGroup>
             </div>
-
+            {console.log(user)}
             {user.token ? (
               <>
                 <Nav.Link>Hello, {user.name}</Nav.Link>
@@ -120,6 +120,9 @@ const NavBar = () => {
                   }}
                 >
                   Logout
+                </Nav.Link>
+                <Nav.Link as={Link} to="/admin">
+                  Admin Dashboard
                 </Nav.Link>
               </>
             ) : (
