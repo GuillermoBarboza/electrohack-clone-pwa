@@ -67,9 +67,8 @@ code {
 }
 
 /* SHOPPING CART PAGE */
-.img-cart {
-  height: 100px;
-  width: 100px;
+.cart-bg {
+  min-height: 100vh;
 }
 
 /* BUTTONS */

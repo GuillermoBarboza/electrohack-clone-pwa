@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,6 +9,10 @@ const Cart = () => {
   const token = useSelector((store) => store.user.token);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const total = () => {
     return cart
@@ -37,7 +41,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container margin-product">
+    <div className="container margin-product cart-bg">
       <div className="row pb-4">
         <div className="col-lg-8 mt-3 second-color rounded">
           <div className="row mt-3">

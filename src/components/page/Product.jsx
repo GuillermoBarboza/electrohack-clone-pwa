@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { addToCart } from "../../redux/actions";
 
@@ -8,6 +8,10 @@ const Product = ({ state }) => {
 
   const location = useLocation();
   const { product } = location.state;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

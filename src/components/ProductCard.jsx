@@ -1,12 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/actions";
-
 import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
-
   return (
     <div className="col-md-6 col-lg-4 mb-3">
       <div className="card my-2">

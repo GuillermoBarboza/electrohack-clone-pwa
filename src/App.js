@@ -12,7 +12,6 @@ import Products from "./components/admin/page/Products";
 import Users from "./components/admin/page/Users";
 import Categories from "./components/admin/page/Categories";
 import PrivateRoute from "./components/PrivateRoute";
-
 import Login from "./components/page/Login";
 import Register from "./components/page/Register";
 
@@ -27,6 +26,7 @@ function App() {
           path="/categories/:category"
           exact
         />
+
         <PublicRoute
           restricted={false}
           component={Product}
@@ -34,6 +34,7 @@ function App() {
           exact
         />
         <PublicRoute restricted={false} component={Cart} path="/cart" exact />
+
         <PublicRoute restricted={false} component={Login} path="/login" />
         <PublicRoute
           restricted={false}
