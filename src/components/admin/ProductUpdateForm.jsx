@@ -22,21 +22,19 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
     setFeatured(product.featured);
   }, [product]);
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     let img = document.querySelector("#imageFile1");
     let formData = new FormData();
-    formData.append('imageFile', img.files[0])
-    formData.append('_id', _id)
-    formData.append('name', name)
-    formData.append('description', description)
-    formData.append('image', image)
-    formData.append('price', price)
-    formData.append('category', category)
-    formData.append('stock', stock)
-    formData.append('featured', featured)
+    formData.append("imageFile", img.files[0]);
+    formData.append("_id", _id);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("image", image);
+    formData.append("price", price);
+    formData.append("category", category);
+    formData.append("stock", stock);
+    formData.append("featured", featured);
     axios({
       method: "PUT",
       url: `http://localhost:8000/api/v1/products`,
@@ -44,7 +42,7 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
     })
       .then((res) => {
         setSearch(null);
-        handleClose()
+        handleClose();
       })
       .catch((err) => {
         console.log(err);
@@ -61,7 +59,7 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(e)=>handleSubmit(e)}
+            onSubmit={(e) => handleSubmit(e)}
           >
             <label for="name" className="mt-1">
               Name
@@ -153,7 +151,7 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
             </div>
           </form>
           <form>
-          <label for="imageFile1" className="mt-1">
+            <label for="imageFile1" className="mt-1">
               Have an Image? upload it!
             </label>
             <input

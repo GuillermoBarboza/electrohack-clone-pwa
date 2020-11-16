@@ -14,14 +14,14 @@ const ProductCreateForm = ({ setProducts, setSearch, handleClose }) => {
     e.preventDefault();
     let img = document.querySelector("#imageFile");
     let formData = new FormData();
-    formData.append('imageFile', img.files[0])
-    formData.append('name', name)
-    formData.append('description', description)
-    formData.append('image', image)
-    formData.append('price', price)
-    formData.append('category', category)
-    formData.append('stock', stock)
-    formData.append('featured', featured)
+    formData.append("imageFile", img.files[0]);
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("image", image);
+    formData.append("price", price);
+    formData.append("category", category);
+    formData.append("stock", stock);
+    formData.append("featured", featured);
     axios({
       method: "POST",
       url: `http://localhost:8000/api/v1/products`,
@@ -29,9 +29,9 @@ const ProductCreateForm = ({ setProducts, setSearch, handleClose }) => {
     })
       .then((res) => {
         setProducts((products) => [...products, res.data]);
-        
+
         setSearch(null);
-        handleClose()
+        handleClose();
       })
       .catch((err) => {
         console.log(err);
@@ -48,7 +48,7 @@ const ProductCreateForm = ({ setProducts, setSearch, handleClose }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(handleSubmit)}
+            onSubmit={handleSubmit}
           >
             <label for="name" className="mt-1">
               Name
@@ -133,7 +133,7 @@ const ProductCreateForm = ({ setProducts, setSearch, handleClose }) => {
             </div>
           </form>
           <form>
-          <label for="imageFile" className="mt-1">
+            <label for="imageFile" className="mt-1">
               Have an Image? upload it!
             </label>
             <input

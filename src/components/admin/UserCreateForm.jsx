@@ -7,6 +7,7 @@ const UserCreateForm = ({ setUsers, setSearch, handleClose }) => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [password, setPassword] = useState("");
   const [telephone, setTelephone] = useState("");
   const [admin, setAdmin] = useState("");
 
@@ -17,12 +18,12 @@ const UserCreateForm = ({ setUsers, setSearch, handleClose }) => {
       headers: { "Content-Type": "application/json" },
       url: "http://localhost:8000/api/v1/users/create",
       data: {
-        _id: _id,
         name: name,
         lastname: lastname,
         email: email,
         address: address,
         telephone: telephone,
+        password: password,
         admin: admin,
       },
     })
@@ -105,6 +106,17 @@ const UserCreateForm = ({ setUsers, setSearch, handleClose }) => {
               value={telephone}
               id="telephone"
               type="text"
+            />
+
+            <label for="password" className="">
+              Password
+            </label>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              className="form-control"
+              id="password"
+              type="password"
             />
 
             <label for="admin" className="mt-1">
