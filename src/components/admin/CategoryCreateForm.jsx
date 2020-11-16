@@ -12,11 +12,13 @@ const CategoryCreateForm = ({ setCategories, setSearch, handleClose }) => {
 			url: "http://localhost:8000/api/v1/categories",
 			data: {
 				name: name,
+				productsList: [],
 			},
 		})
 			.then((res) => {
 				setCategories((categories) => [...categories, res.data]);
 				setSearch(null);
+				handleClose();
 			})
 			.catch((err) => {
 				console.log(err);
@@ -33,7 +35,7 @@ const CategoryCreateForm = ({ setCategories, setSearch, handleClose }) => {
 					<form
 						id="form-signUp"
 						className="form-group m-auto"
-						onSubmit={(handleSubmit, handleClose)}
+						onSubmit={handleSubmit}
 					>
 						<label for="name" className="mt-1">
 							Name

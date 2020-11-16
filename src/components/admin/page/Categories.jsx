@@ -84,7 +84,7 @@ const Categories = () => {
 											</button>
 										</td>
 										<td>
-											{category.productsList.length > 0 && (
+											{category.productsList.length === 0 && (
 												<button
 													className="btn"
 													onClick={() => handleDelete(category._id)}
