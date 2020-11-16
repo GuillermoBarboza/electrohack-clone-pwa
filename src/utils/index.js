@@ -1,3 +1,10 @@
+const isLogin = (token) => {
+  if (token) {
+    return true;
+  }
+  return false;
+};
+
 const isAdmin = (user) => {
   if (user.token && user.admin) {
     return true;
@@ -5,4 +12,4 @@ const isAdmin = (user) => {
   return false;
 };
 
-export default isAdmin;
+export { isLogin, isAdmin };

@@ -35,9 +35,9 @@ function App() {
         />
         <PublicRoute restricted={false} component={Cart} path="/cart" exact />
 
-        <PublicRoute restricted={false} component={Login} path="/login" />
+        <PublicRoute restricted={true} component={Login} path="/login" />
         <PublicRoute
-          restricted={false}
+          restricted={true}
           component={Register}
           path="/register"
           exact
