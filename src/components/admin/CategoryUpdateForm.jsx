@@ -11,8 +11,10 @@ const CategoryUpdateForm = ({
   const [name, setName] = useState("");
 
   useEffect(() => {
-    set_id(category._id);
-    setName(category.name);
+    if (category !== null) {
+      set_id(category._id);
+      setName(category.name);
+    }
   }, [category]);
 
   const handleSubmit = (e) => {
@@ -28,7 +30,8 @@ const CategoryUpdateForm = ({
     })
       .then((res) => {
         setCategory(null);
-        setSearch(null);
+		setSearch(null);
+		handleClose()
       })
       .catch((err) => {
         console.log(err);
@@ -45,7 +48,7 @@ const CategoryUpdateForm = ({
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(handleSubmit, handleClose)}
+            onSubmit={(handleSubmit)}
           >
             <label for="name" className="mt-1">
               Name

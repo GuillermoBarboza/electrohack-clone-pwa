@@ -18,7 +18,7 @@ const Categories = () => {
 		axios.get(url).then((res) => {
 			setCategories(res.data);
 		});
-	}, [search]);
+	}, [search, category]);
 
 	const handleDelete = (_id) => {
 		axios({
