@@ -84,12 +84,14 @@ const Categories = () => {
 											</button>
 										</td>
 										<td>
-											<button
-												className="btn"
-												onClick={() => handleDelete(category._id)}
-											>
-												<i className="fas fa-trash-alt"></i>
-											</button>
+											{category.productsList.length > 0 && (
+												<button
+													className="btn"
+													onClick={() => handleDelete(category._id)}
+												>
+													<i className="fas fa-trash-alt"></i>
+												</button>
+											)}
 										</td>
 									</tr>
 								);
