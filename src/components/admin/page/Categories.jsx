@@ -14,7 +14,7 @@ const Categories = () => {
 
 	useEffect(() => {
 		let url = "http://localhost:8000/api/v1/categories";
-		search && (url = url.concat(`/${search}`));
+		search && (url = url.concat(`/search?name=${search}`));
 		axios.get(url).then((res) => {
 			setCategories(res.data);
 		});
