@@ -7,9 +7,11 @@ const CategoryUpdateForm = ({
 	setSearch,
 	handleClose,
 }) => {
+	const [_id, set_id] = useState("");
 	const [name, setName] = useState("");
 
 	useEffect(() => {
+		set_id(category._id);
 		setName(category.name);
 	}, [category]);
 
@@ -20,6 +22,7 @@ const CategoryUpdateForm = ({
 			headers: { "Content-Type": "application/json" },
 			url: "http://localhost:8000/api/v1/categories",
 			data: {
+				_id: _id,
 				name: name,
 			},
 		})
