@@ -247,6 +247,10 @@ footer {
 	color: #d4d0d0;
 }
 
+.admin-wrapper {
+	margin: 2rem 3rem 3rem 1rem;
+}
+
 @media (min-width: 1400px) {
 	.sidebar {
 		padding: 3rem 3rem 3rem 2rem;
@@ -258,6 +262,10 @@ footer {
 	.sidebar h6 {
 		font-size: 1.3rem;
 	}
+}
+
+.bg-table-head {
+	background-color: #beb6b6;
 }
 
 /* MODAL */
@@ -273,5 +281,5 @@ footer {
 .chart-wrapper {
 	border: 1px solid #afa4a4;
 	padding: 1rem;
-	margin: 3rem 1rem;
+	margin: 2rem 1rem;
 }
