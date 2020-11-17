@@ -38,11 +38,11 @@ const Categories = () => {
     setShowUpdate(false);
   };
 
-  const handleShowCreate = () => {
+  const showModalCreate = () => {
     setShowCreate(true);
   };
 
-  const handleShowUpdate = () => {
+  const showModalUpdate = () => {
     setShowUpdate(true);
   };
 
@@ -52,7 +52,7 @@ const Categories = () => {
         <div className="d-flex justify-content-between">
           {" "}
           <SearchBox setSearch={setSearch} />
-          <button className="btn btn-success" onClick={handleShowCreate}>
+          <button className="btn btn-success" onClick={showModalCreate}>
             New category
           </button>
         </div>
@@ -76,7 +76,7 @@ const Categories = () => {
                       <button
                         className="btn"
                         onClick={() => {
-                          handleShowUpdate();
+                          showModalUpdate();
                           return setCategory(category);
                         }}
                       >

@@ -18,7 +18,7 @@ const Products = () => {
     axios.get(url).then((res) => {
       setProducts(res.data);
     });
-  }, [search]);
+  }, [search, product]);
 
   const handleDelete = (_id) => {
     axios({
@@ -38,11 +38,11 @@ const Products = () => {
     setShowUpdate(false);
   };
 
-  const handleShowCreate = () => {
+  const showModalCreate = () => {
     setShowCreate(true);
   };
 
-  const handleShowUpdate = () => {
+  const showModalUpdate = () => {
     setShowUpdate(true);
   };
 
@@ -52,7 +52,7 @@ const Products = () => {
         <div className="d-flex justify-content-between">
           {" "}
           <SearchBox setSearch={setSearch} />
-          <button className="btn btn-success" onClick={handleShowCreate}>
+          <button className="btn btn-success" onClick={showModalCreate}>
             New item
           </button>
         </div>
@@ -78,7 +78,7 @@ const Products = () => {
                       <button
                         className="btn"
                         onClick={() => {
-                          handleShowUpdate();
+                          showModalUpdate();
                           return setProduct(product);
                         }}
                       >

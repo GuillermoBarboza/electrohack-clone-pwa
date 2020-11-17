@@ -11,13 +11,15 @@ const UserUpdateForm = ({ user, setUser, setSearch, closeModal }) => {
   const [admin, setAdmin] = useState("");
 
   useEffect(() => {
-    set_id(user._id);
-    setName(user.name);
-    setLastname(user.lastname);
-    setEmail(user.email);
-    setAddress(user.address);
-    setTelephone(user.telephone);
-    setAdmin(user.admin);
+    if (user !== null) {
+      set_id(user._id);
+      setName(user.name);
+      setLastname(user.lastname);
+      setEmail(user.email);
+      setAddress(user.address);
+      setTelephone(user.telephone);
+      setAdmin(user.admin);
+    }
   }, [user]);
 
   const handleSubmit = (e) => {
