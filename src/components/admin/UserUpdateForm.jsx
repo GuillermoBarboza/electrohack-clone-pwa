@@ -32,7 +32,7 @@ const UserUpdateForm = ({ user, setUser, setSearch, closeModal }) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8000/api/v1/users",
+      url: "http://localhost:8000/api/v1/auth/users",
       data: {
         _id: _id,
         name: name,
