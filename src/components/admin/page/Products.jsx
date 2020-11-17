@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import SearchBox from "../../SearchBox";
@@ -6,6 +7,7 @@ import ProductCreateForm from "../ProductCreateForm";
 import ProductUpdateForm from "../ProductUpdateForm";
 
 const Products = () => {
+  const token = useSelector((store) => store.user.token);
   const [products, setProducts] = useState(null);
   const [search, setSearch] = useState(null);
   const [product, setProduct] = useState(null);
@@ -23,7 +25,10 @@ const Products = () => {
   const handleDelete = (_id) => {
     axios({
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       url: "http://localhost:8000/api/v1/products",
       data: {
         _id: _id,

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 
 const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
+  const token = useSelector((store) => store.user.token);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
@@ -24,6 +26,7 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
     formData.append("featured", featured);
     axios({
       method: "POST",
+      header: { Authorization: `Bearer ${token}` },
       url: `http://localhost:8000/api/v1/products`,
       data: formData,
     })

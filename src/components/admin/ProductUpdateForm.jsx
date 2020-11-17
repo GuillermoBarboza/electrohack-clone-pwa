@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 
 const UpdateForm = ({ product, setProduct, setSearch, closeModal }) => {
@@ -23,6 +24,7 @@ const UpdateForm = ({ product, setProduct, setSearch, closeModal }) => {
   }, [product]);
 
   const handleSubmit = (e) => {
+    const token = useSelector((store) => store.user.token);
     e.preventDefault();
     let img = document.querySelector("#imageFile1");
     let formData = new FormData();
@@ -37,6 +39,7 @@ const UpdateForm = ({ product, setProduct, setSearch, closeModal }) => {
     formData.append("featured", featured);
     axios({
       method: "PUT",
+      header: { Authorization: `Bearer ${token}` },
       url: `http://localhost:8000/api/v1/products`,
       data: formData,
     })

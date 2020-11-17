@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import SearchBox from "../../SearchBox";
@@ -6,6 +7,7 @@ import CategoryCreateForm from "../CategoryCreateForm";
 import CategoryUpdateForm from "../CategoryUpdateForm";
 
 const Categories = () => {
+  const token = useSelector((store) => store.user.token);
   const [categories, setCategories] = useState(null);
   const [search, setSearch] = useState(null);
   const [category, setCategory] = useState(null);
@@ -23,7 +25,10 @@ const Categories = () => {
   const handleDelete = (_id) => {
     axios({
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       url: "http://localhost:8000/api/v1/categories",
       data: {
         _id: _id,
