@@ -126,6 +126,28 @@ code {
 }
 
 /* PRODUCT PAGE */
+.product-wrapper {
+	margin: 3rem auto;
+	padding: 0 3rem;
+}
+
+.product-wrapper .card {
+	border: none;
+}
+
+@media (min-width: 1000px) {
+	.product-wrapper {
+		margin: 8rem auto;
+		padding: 0 8rem;
+	}
+}
+
+@media (min-width: 1400px) {
+	.product-wrapper {
+		max-width: 1200px;
+	}
+}
+
 .margin-product {
 	margin: 0 auto;
 	padding-top: 6rem;
@@ -138,8 +160,9 @@ code {
 }
 
 .product-price {
-	padding: 0 3rem;
-	margin: 3.5rem auto;
+	padding: 3.5rem 3rem;
+	margin: auto;
+	background-color: #fff;
 }
 
 .product-price h4 {
