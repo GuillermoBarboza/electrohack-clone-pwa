@@ -31,6 +31,7 @@ const Main = () => {
                   <th scope="col">Buyer name</th>
                   <th scope="col">Amount of items</th>
                   <th scope="col">State</th>
+                  <th scope="col">Total</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,6 +42,7 @@ const Main = () => {
                         <td>{order.buyer.name}</td>
                         <td>{order.products.length}</td>
                         <td>{order.state}</td>
+                        <td>${order.total}</td>
                       </tr>
                     );
                   })}
