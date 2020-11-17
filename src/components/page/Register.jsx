@@ -66,7 +66,7 @@ const Register = () => {
 						type="text"
 					/>
 
-					<label htmlFor="address">Adress</label>
+					<label htmlFor="address">Address</label>
 					<input
 						onChange={(e) => setAddress(e.target.value)}
 						name="address"
