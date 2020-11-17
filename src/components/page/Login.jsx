@@ -31,28 +31,27 @@ const Login = () => {
 	};
 
 	return (
-		<div className="container margin-product">
-			<h1 className="text-center">Carlitos</h1>
+		<div className="container">
 			<div className="form-wrapper">
+				<div className="login-avatar">
+					<i class="fas fa-user-circle"></i>
+				</div>
+				<h4 className="text-center">Log In</h4>
 				<form
 					id="form-logIn"
 					className="form-group m-auto"
 					onSubmit={handleLogin}
 				>
-					<label for="email" className="">
-						Username or Email
-					</label>
+					<label htmlFor="email">Username or Email</label>
 					<input
 						onChange={(e) => setEmail(e.target.value)}
 						name="email"
-						className="form-control"
+						className="form-control mb-3"
 						id="email"
 						type="text"
 					/>
 
-					<label for="password" className="">
-						Password
-					</label>
+					<label htmlFor="password">Password</label>
 					<input
 						onChange={(e) => setPassword(e.target.value)}
 						name="password"
@@ -60,15 +59,18 @@ const Login = () => {
 						id="password"
 						type="password"
 					/>
-					<div className="d-flex justify-content-center">
-						<button className="btn btn-logIn btn-lg mt-2" type="submit">
-							Log In
-						</button>
-					</div>
-					<div className="text-center">
-						<Link className="link-logIn" to="/register">
-							Register
-						</Link>
+					<button className="btn btn-logIn btn-block" type="submit">
+						Log In
+					</button>
+					<div className="d-flex justify-content-between">
+						<p>
+							<small>Forgot password?</small>
+						</p>
+						<p className="">
+							<Link className="link-logIn" to="/register">
+								Sign Up
+							</Link>
+						</p>
 					</div>
 				</form>
 			</div>

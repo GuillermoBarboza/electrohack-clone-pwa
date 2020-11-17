@@ -15,7 +15,7 @@ const Users = () => {
   const [showUpdate, setShowUpdate] = useState(false);
 
   useEffect(() => {
-    let url = "http://localhost:8000/api/v1/users";
+    let url = "http://localhost:8000/api/v1/auth/users";
     search && (url = url.concat(`/search?name=${search}`));
     axios({
       method: "GET",
@@ -36,7 +36,7 @@ const Users = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8000/api/v1/users",
+      url: "http://localhost:8000/api/v1/auth/users",
       data: {
         _id: _id,
       },

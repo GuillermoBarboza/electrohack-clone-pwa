@@ -109,6 +109,22 @@ code {
 	background: #459b7a;
 }
 
+.btn-logIn {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	background-color: #f3e08e;
+	border-radius: 2px;
+}
+
+.btn-logIn:hover {
+	background-color: #ddc767;
+}
+
+.btn-logIn:focus {
+	outline: #d1bc46 5px auto;
+	box-shadow: none;
+}
+
 /* PRODUCT PAGE */
 .margin-product {
 	margin: 0 auto;
@@ -138,11 +154,37 @@ code {
 	padding: 2rem;
 }
 
-/* LOGIN */
+/* LOGIN AND REGISTER */
 .form-wrapper {
-	margin: 3rem auto 6rem;
+	margin: 8rem auto 7rem;
+	max-width: 400px;
+	min-width: 300px;
+}
+
+.form-signup-wrapper {
+	margin: 8rem auto 7rem;
 	max-width: 600px;
 	min-width: 300px;
+}
+
+.login-avatar {
+	text-align: center;
+	font-size: 3rem;
+}
+
+.signup-avatar {
+	text-align: center;
+	font-size: 2rem;
+}
+
+.link-logIn {
+	margin-top: 2rem;
+	text-align: center;
+	color: #353232;
+}
+
+.link-logIn:hover {
+	color: #353232;
 }
 
 /* FOOTER */

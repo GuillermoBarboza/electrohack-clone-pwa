@@ -21,7 +21,7 @@ const UserCreateForm = ({ setUsers, setSearch, closeModal }) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8000/api/v1/users/create",
+      url: "http://localhost:8000/api/v1/auth/users",
       data: {
         name: name,
         lastname: lastname,
