@@ -8,7 +8,7 @@ const Product = ({ product }) => {
   return (
     <div className="col-md-6 col-lg-4 mb-3">
       <div className="card my-2">
-        <img src={product.image} className="card-img-top" alt="..." />
+        <img src={product.image} className="img-card" alt="..." />
         <div
           className="card-body card-height second-color d-flex flex-column justify-content-between"
           bg="snow"
@@ -25,7 +25,6 @@ const Product = ({ product }) => {
             >
               <h5 className="card-title">{product.name}</h5>
             </Link>
-            <p className="card-text">{product.description}</p>
           </div>
 
           <div>
