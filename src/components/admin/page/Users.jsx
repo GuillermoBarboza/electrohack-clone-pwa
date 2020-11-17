@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
 import SearchBox from "../../SearchBox";
@@ -6,6 +7,7 @@ import UserUpdateForm from "../UserUpdateForm";
 import UserCreateForm from "../UserCreateForm";
 
 const Users = () => {
+  const token = useSelector((store) => store.user.token);
   const [users, setUsers] = useState(null);
   const [search, setSearch] = useState(null);
   const [user, setUser] = useState(null);
@@ -15,7 +17,14 @@ const Users = () => {
   useEffect(() => {
     let url = "http://localhost:8000/api/v1/users";
     search && (url = url.concat(`/search?name=${search}`));
-    axios.get(url).then((res) => {
+    axios({
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      url: url,
+    }).then((res) => {
       setUsers(res.data);
     });
   }, [search, user]);
@@ -23,7 +32,10 @@ const Users = () => {
   const handleDelete = (_id) => {
     axios({
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       url: "http://localhost:8000/api/v1/users",
       data: {
         _id: _id,
