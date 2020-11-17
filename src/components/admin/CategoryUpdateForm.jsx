@@ -5,7 +5,7 @@ const CategoryUpdateForm = ({
   category,
   setCategory,
   setSearch,
-  handleClose,
+  closeModal,
 }) => {
   const [_id, set_id] = useState("");
   const [name, setName] = useState("");
@@ -30,8 +30,8 @@ const CategoryUpdateForm = ({
     })
       .then((res) => {
         setCategory(null);
-		setSearch(null);
-		handleClose()
+        setSearch(null);
+        closeModal();
       })
       .catch((err) => {
         console.log(err);
@@ -48,7 +48,7 @@ const CategoryUpdateForm = ({
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(handleSubmit)}
+            onSubmit={handleSubmit}
           >
             <label for="name" className="mt-1">
               Name

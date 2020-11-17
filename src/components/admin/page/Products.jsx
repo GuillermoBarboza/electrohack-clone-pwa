@@ -33,7 +33,7 @@ const Products = () => {
     });
   };
 
-  const handleClose = () => {
+  const closeModal = () => {
     setShowCreate(false);
     setShowUpdate(false);
   };
@@ -98,20 +98,20 @@ const Products = () => {
               })}
           </tbody>
         </table>
-        <Modal show={showUpdate} onHide={handleClose}>
+        <Modal show={showUpdate} onHide={closeModal}>
           <ProductUpdateForm
             product={product}
             setProduct={setProduct}
             setSearch={setSearch}
-            handleClose={handleClose}
+            closeModal={closeModal}
           />
         </Modal>
 
-        <Modal show={showCreate} onHide={handleClose}>
+        <Modal show={showCreate} onHide={closeModal}>
           <ProductCreateForm
             setProducts={setProducts}
             setSearch={setSearch}
-            handleClose={handleClose}
+            closeModal={closeModal}
           />
         </Modal>
       </div>

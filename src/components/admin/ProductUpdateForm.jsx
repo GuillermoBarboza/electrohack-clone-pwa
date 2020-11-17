@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
+const UpdateForm = ({ product, setProduct, setSearch, closeModal }) => {
   const [_id, set_id] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -42,7 +42,7 @@ const UpdateForm = ({ product, setProduct, setSearch, handleClose }) => {
     })
       .then((res) => {
         setSearch(null);
-        handleClose();
+        closeModal();
       })
       .catch((err) => {
         console.log(err);

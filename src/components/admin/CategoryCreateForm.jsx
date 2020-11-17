@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CategoryCreateForm = ({ setCategories, setSearch, handleClose }) => {
+const CategoryCreateForm = ({ setCategories, setSearch, closeModal }) => {
   const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
@@ -18,7 +18,7 @@ const CategoryCreateForm = ({ setCategories, setSearch, handleClose }) => {
       .then((res) => {
         setCategories((categories) => [...categories, res.data]);
         setSearch(null);
-        handleClose();
+        closeModal();
       })
       .catch((err) => {
         console.log(err);

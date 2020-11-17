@@ -33,7 +33,7 @@ const Users = () => {
     });
   };
 
-  const handleClose = () => {
+  const closeModal = () => {
     setShowCreate(false);
     setShowUpdate(false);
   };
@@ -99,20 +99,20 @@ const Users = () => {
               })}
           </tbody>
         </table>
-        <Modal show={showUpdate} onHide={handleClose}>
+        <Modal show={showUpdate} onHide={closeModal}>
           <UserUpdateForm
             user={user}
             setUser={setUser}
             setSearch={setSearch}
-            handleClose={handleClose}
+            closeModal={closeModal}
           />
         </Modal>
 
-        <Modal show={showCreate} onHide={handleClose}>
+        <Modal show={showCreate} onHide={closeModal}>
           <UserCreateForm
             setUsers={setUsers}
             setSearch={setSearch}
-            handleClose={handleClose}
+            closeModal={closeModal}
           />
         </Modal>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const UserCreateForm = ({ setUsers, setSearch, handleClose }) => {
+const UserCreateForm = ({ setUsers, setSearch, closeModal }) => {
   const [_id, set_id] = useState("");
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -30,6 +30,7 @@ const UserCreateForm = ({ setUsers, setSearch, handleClose }) => {
       .then((res) => {
         setUsers((users) => [...users, res.data]);
         setSearch(null);
+        closeModal();
       })
       .catch((err) => {
         console.log(err);
@@ -46,7 +47,7 @@ const UserCreateForm = ({ setUsers, setSearch, handleClose }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(handleSubmit, handleClose)}
+            onSubmit={handleSubmit}
           >
             <label for="name" className="mt-1">
               Name

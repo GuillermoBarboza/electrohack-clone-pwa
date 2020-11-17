@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
+const UserUpdateForm = ({ user, setUser, setSearch, closeModal }) => {
   const [_id, set_id] = useState("");
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
@@ -19,8 +19,6 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
     setTelephone(user.telephone);
     setAdmin(user.admin);
   }, [user]);
-
-  console.log(user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,6 +39,7 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
       .then((res) => {
         setUser(null);
         setSearch(null);
+        closeModal();
       })
       .catch((err) => {
         console.log(err);
@@ -57,7 +56,7 @@ const UserUpdateForm = ({ user, setUser, setSearch, handleClose }) => {
           <form
             id="form-signUp"
             className="form-group m-auto"
-            onSubmit={(handleSubmit, handleClose)}
+            onSubmit={handleSubmit}
           >
             <label for="name" className="mt-1">
               Name
