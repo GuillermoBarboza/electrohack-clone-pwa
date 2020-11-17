@@ -4,7 +4,7 @@ import axios from "axios";
 const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState("default");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [stock, setStock] = useState("");
@@ -13,15 +13,19 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let img = document.querySelector("#imageFile");
+    let imageToSend = img.files[0] || image;
+    
+
+    
     let formData = new FormData();
-    formData.append("imageFile", img.files[0]);
     formData.append("name", name);
     formData.append("description", description);
-    formData.append("image", image);
+    formData.append("image", imageToSend);
     formData.append("price", price);
     formData.append("category", category);
     formData.append("stock", stock);
     formData.append("featured", featured);
+    
     axios({
       method: "POST",
       url: `http://localhost:8000/api/v1/products`,
@@ -73,7 +77,7 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
             />
 
             <label for="image" className="mt-1">
-              Image
+              Image Link or...
             </label>
             <input
               onChange={(e) => setImage(e.target.value)}
@@ -81,6 +85,16 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
               className="form-control"
               id="username"
               type="text"
+            />
+
+            <label for="imageFile" className="mt-1">
+              Have an Image? upload it!
+            </label>
+            <input
+              name="imageFile"
+              className="form-control"
+              id="imageFile"
+              type="file"
             />
 
             <label for="price" className="mt-1">
@@ -131,17 +145,6 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
                 Add Item
               </button>
             </div>
-          </form>
-          <form>
-            <label for="imageFile" className="mt-1">
-              Have an Image? upload it!
-            </label>
-            <input
-              name="imageFile"
-              className="form-control"
-              id="imageFile"
-              type="file"
-            />
           </form>
         </div>
       </div>
