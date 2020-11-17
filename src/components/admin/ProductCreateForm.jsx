@@ -6,7 +6,7 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
   const token = useSelector((store) => store.user.token);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState("default");
+  const [image, setImage] = useState("https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [stock, setStock] = useState("");
@@ -16,8 +16,6 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
     e.preventDefault();
     let img = document.querySelector("#imageFile");
     let imageToSend = img.files[0] || image;
-    
-
     
     let formData = new FormData();
     formData.append("name", name);

@@ -11,16 +11,27 @@ const CategoryUpdateForm = ({
   const token = useSelector((store) => store.user.token);
   const [_id, set_id] = useState("");
   const [name, setName] = useState("");
+  const [banner, setBanner] = useState("https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081");
 
   useEffect(() => {
     if (category !== null) {
       set_id(category._id);
       setName(category.name);
+      setBanner(category.banner);
     }
   }, [category]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    let img = document.querySelector("#imageFile");
+    let imageToSend = img.files[0] || banner;
+
+	let formData = new FormData();
+	formData.append("_id", _id);
+    formData.append("name", name);
+    formData.append("banner", imageToSend);
+
     axios({
       method: "PUT",
       headers: {
@@ -28,10 +39,7 @@ const CategoryUpdateForm = ({
         Authorization: `Bearer ${token}`,
       },
       url: "http://localhost:8000/api/v1/categories",
-      data: {
-        _id: _id,
-        name: name,
-      },
+      data: formData,
     })
       .then((res) => {
         setCategory(null);
@@ -60,6 +68,27 @@ const CategoryUpdateForm = ({
           value={name}
           id="name"
           type="text"
+        />
+
+        <label for="image" className="mt-1">
+          Image Link or...
+        </label>
+        <input
+          onChange={(e) => setBanner(e.target.value)}
+          name="image"
+          className="form-control"
+          id="username"
+          type="text"
+        />
+
+        <label for="imageFile" className="mt-1">
+          Have an Image? upload it!
+        </label>
+        <input
+          name="imageFile"
+          className="form-control"
+          id="imageFile"
+          type="file"
         />
 
         <button className="btn btn-modal btn-block mt-4 mb-3" type="submit">
