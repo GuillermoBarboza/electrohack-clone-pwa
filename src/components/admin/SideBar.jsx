@@ -2,42 +2,39 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SideBar = () => {
-  return (
-    <div>
-      <div className="position-fixed pt-3">
-        <ul className="nav flex-column">
-          <li className="nav-item">
-            <Link className="nav-link active" to="/admin">
-              <span data-feather="home"></span>
-              Dashboard <span className="sr-only">(current)</span>
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/products">
-              <span data-feather="shopping-cart"></span>
-              Products
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/users">
-              <span data-feather="users"></span>
-              Users
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admin/categories">
-              <span data-feather="users"></span>
-              Categories
-            </Link>
-          </li>
-        </ul>
-        <Link to="/">
-          <i className="fas fa-bolt"></i>
-          ELECTRO-HACK
-        </Link>
-      </div>
-    </div>
-  );
+	return (
+		<div>
+			<div className="sidebar d-flex flex-column justify-content-between">
+				<ul className="nav d-flex flex-column ">
+					<li className="nav-item">
+						<Link className="nav-link active" to="/admin">
+							Dashboard <span className="sr-only">(current)</span>
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link className="nav-link" to="/admin/products">
+							Products
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link className="nav-link" to="/admin/users">
+							Users
+						</Link>
+					</li>
+					<li className="nav-item">
+						<Link className="nav-link" to="/admin/categories">
+							Categories
+						</Link>
+					</li>
+				</ul>
+				<Link to="/" className="text-decoration-none">
+					<h6>
+						<i className="fas fa-bolt"></i> ELECTRO-HACK
+					</h6>
+				</Link>
+			</div>
+		</div>
+	);
 };
 
 export default SideBar;

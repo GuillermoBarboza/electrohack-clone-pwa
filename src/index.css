@@ -5,6 +5,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
 }
 
 code {
@@ -134,4 +135,40 @@ footer {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+}
+
+/* ADMIN */
+.sidebar {
+	position: fixed;
+	background-color: #3a4b55;
+	height: 100vh;
+	padding: 2rem 2rem 2rem 1rem;
+}
+
+.sidebar h6 {
+	color: #f3f1f1;
+}
+
+.sidebar h6:hover {
+	color: #d4d0d0;
+}
+
+.sidebar .nav-link {
+	color: #f3f1f1;
+}
+.sidebar .nav-link:hover {
+	color: #d4d0d0;
+}
+
+@media (min-width: 1400px) {
+	.sidebar {
+		padding: 3rem 3rem 3rem 2rem;
+		min-width: 15rem;
+	}
+	.sidebar li {
+		font-size: 1.2rem;
+	}
+	.sidebar h6 {
+		font-size: 1.3rem;
+	}
 }
