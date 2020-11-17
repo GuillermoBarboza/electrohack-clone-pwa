@@ -7,7 +7,6 @@ const OrderChart = () => {
   const token = useSelector((store) => store.user.token);
   const [orders, setOrders] = useState([]);
   const [timelapse, setTimelapse] = useState([]);
-  console.log();
 
   useEffect(() => {
     axios({
@@ -20,7 +19,6 @@ const OrderChart = () => {
     })
       .then((res) => {
         setOrders(res.data);
-        console.log(res.data);
         setTimelapse([...Array(30)].map((_, idx) => idx + 1));
       })
       .catch((err) => {
