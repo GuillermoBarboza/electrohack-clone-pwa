@@ -30,12 +30,10 @@ const NavBar = () => {
   }, [search]);
 
   function handleClick(option) {
-    axios
-      .get(`http://localhost:8000/api/v1/categories/${option}`)
-      .then((res) => {
-        dispatch(getProducts(res.data[0].productsList));
-        dispatch(changeCarousel(res.data[0].banner));
-      });
+    axios.get(`http://localhost:8000/api/v1/products/${option}`).then((res) => {
+      dispatch(getProducts(res.data[0].productsList));
+      dispatch(changeCarousel(res.data[0].banner));
+    });
   }
 
   function handleLink() {

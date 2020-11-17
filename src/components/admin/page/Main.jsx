@@ -38,7 +38,7 @@ const Main = () => {
                   orders.map((order) => {
                     return (
                       <tr>
-                        <td>{order.buyer}</td>
+                        <td>{order.buyer.name}</td>
                         <td>{order.products.length}</td>
                         <td>{order.state}</td>
                       </tr>
