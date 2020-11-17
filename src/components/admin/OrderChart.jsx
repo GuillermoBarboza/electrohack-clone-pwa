@@ -15,7 +15,7 @@ const OrderChart = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8000/api/v1/orders",
+      url: "http://localhost:8000/api/v1/orders/chart",
     })
       .then((res) => {
         setOrders(res.data);

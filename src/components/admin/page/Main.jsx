@@ -37,9 +37,9 @@ const Main = () => {
             <table className="table mt-3">
               <thead>
                 <tr>
-                  <th scope="col">Orders</th>
+                  <th scope="col">Buyer name</th>
                   <th scope="col">Amount of items</th>
-                  <th scope="col"></th>
+                  <th scope="col">State</th>
                 </tr>
               </thead>
               <tbody>
@@ -47,9 +47,9 @@ const Main = () => {
                   orders.map((order) => {
                     return (
                       <tr>
-                        <td>{order.buyer.name}</td>
+                        <td>{order.buyer}</td>
                         <td>{order.products.length}</td>
-                        <td></td>
+                        <td>{order.state}</td>
                       </tr>
                     );
                   })}
