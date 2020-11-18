@@ -44,7 +44,7 @@ const NavBar = () => {
 	return (
 		<Navbar className="bg-nav" variant="dark" expand="lg" fixed="top">
 			<div className="container">
-				<Navbar.Brand as={Link} to="/">
+				<Navbar.Brand as={Link} to="/" className="brand-font">
 					<i className="fas fa-bolt"></i> ELECTRO-HACK
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />

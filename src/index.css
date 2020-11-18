@@ -1,8 +1,6 @@
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-		sans-serif;
+	font-family: "maven pro", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
@@ -323,4 +321,15 @@ footer {
 .chart-wrapper {
 	padding: 1.5rem;
 	margin-bottom: 3rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Oxygen", sans-serif;
+}
+
+.brand-font {
+	font-family: "Oxygen", sans-serif;
 }
