@@ -307,7 +307,7 @@ footer {
 }
 
 .bg-table-head {
-	background-color: #beb6b6;
+	background-color: #9eb9e2;
 }
 
 /* MODAL */
@@ -321,7 +321,6 @@ footer {
 
 /* CHART */
 .chart-wrapper {
-	border: 1px solid #afa4a4;
-	padding: 1rem;
-	margin: 2rem 1rem;
+	padding: 1.5rem;
+	margin-bottom: 3rem;
 }
