@@ -102,7 +102,10 @@ const Register = () => {
 						type="password"
 					/>
 					<div className="d-flex justify-content-center mt-2">
-						<button className="btn btn-logIn btn-block" type="submit">
+						<button
+							className="btn btn-logIn custom-shadow btn-block"
+							type="submit"
+						>
 							Sign Up
 						</button>
 					</div>

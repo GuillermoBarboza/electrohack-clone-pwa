@@ -59,7 +59,10 @@ const Login = () => {
 						id="password"
 						type="password"
 					/>
-					<button className="btn btn-logIn btn-block" type="submit">
+					<button
+						className="btn btn-logIn btn-block custom-shadow"
+						type="submit"
+					>
 						Log In
 					</button>
 					<div className="d-flex justify-content-between">
