@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { getUser } from "../../redux/actions";
 import axios from "axios";
+import globalUrl from "../../utils/url";
 
 const Register = () => {
   const [name, setName] = useState("");
