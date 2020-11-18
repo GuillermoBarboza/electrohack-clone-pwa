@@ -26,7 +26,7 @@ const SideBar = () => {
 					</Link>
 				</li>
 			</ul>
-			<Link to="/" className="text-decoration-none">
+			<Link to="/" className="text-decoration-none brand-font">
 				<h6>
 					<i className="fas fa-bolt"></i> ELECTRO-HACK
 				</h6>

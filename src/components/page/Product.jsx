@@ -20,7 +20,7 @@ const Product = ({ state }) => {
 					<div class="card">
 						<img src={product.image} class="card-img-top" alt="Product" />
 						<div class="card-body p-5">
-							<h4 class="card-title font-italic">Specifications:</h4>
+							<h4 class="card-title">Specifications:</h4>
 							<hr className="my-3" />
 							<h5>Model: {product.name}</h5>
 							<p class="card-text">Description: {product.description}</p>
