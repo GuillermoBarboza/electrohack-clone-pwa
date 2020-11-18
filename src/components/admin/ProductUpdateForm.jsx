@@ -46,7 +46,9 @@ const UpdateForm = ({ product, setProduct, setSearch, closeModal }) => {
     formData.append("featured", featured);
     axios({
       method: "PUT",
-      header: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       url: `${globalUrl}/api/v1/products`,
       data: formData,
     })

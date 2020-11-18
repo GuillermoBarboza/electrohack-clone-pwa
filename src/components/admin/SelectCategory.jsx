@@ -11,7 +11,6 @@ const SelectCategory = ({ setCategory, category }) => {
       url: "http://localhost:8000/api/v1/categories",
     })
       .then((response) => {
-        console.log(response.data);
         setCategoriesAvailable(response.data);
       })
       .catch((err) => {
@@ -22,10 +21,14 @@ const SelectCategory = ({ setCategory, category }) => {
   return (
     <>
       <Form.Label for="category">Category</Form.Label>
-      <Form.Control as="select" id='category' onChange={(e) => {
-        setCategory(e.target.value);
-        console.log(e.target.value);
-        }}>
+      <Form.Control
+        as="select"
+        id="category"
+        onChange={(e) => {
+          setCategory(e.target.value);
+          console.log(e.target.value);
+        }}
+      >
         {categoriesAvailable &&
           categoriesAvailable.map((categoryOption) => {
             if (categoryOption._id === category) {

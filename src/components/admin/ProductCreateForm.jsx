@@ -31,7 +31,7 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
 
     axios({
       method: "POST",
-      header: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}` },
       url: `${globalUrl}/api/v1/products`,
       data: formData,
     })
