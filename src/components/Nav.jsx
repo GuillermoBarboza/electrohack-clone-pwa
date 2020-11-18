@@ -64,7 +64,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <NavDropdown title="Dropdown" id="nav-dropdown">
+            <NavDropdown title="Categories" id="nav-dropdown">
               {categoriesAvailable &&
                 categoriesAvailable.map((categoryOption) => (
                   <>
