@@ -17,10 +17,6 @@ code {
 	background: linear-gradient(to bottom right, #c6e3eb 0, #e2c7d8 100%);
 }
 
-.second-color {
-	background-color: white;
-}
-
 /* NAV */
 .bg-nav {
 	background-color: #323755;
@@ -83,8 +79,22 @@ code {
 }
 
 /* SHOPPING CART PAGE */
-.cart-bg {
+.cart-wrapper {
 	min-height: 100vh;
+}
+
+.cart-product-title {
+	font-size: 1.18rem;
+}
+
+.cart-bg {
+	background-color: #fdfcfb;
+	padding: 2rem 3rem;
+	margin-bottom: 4rem;
+}
+
+.price-bg {
+	background-color: #fdfcfb;
 }
 
 /* BUTTONS */
@@ -135,6 +145,20 @@ code {
 	box-shadow: none;
 }
 
+.btn-login-cart {
+	background-color: #6edbcd;
+	border-radius: 2px;
+}
+
+.btn-login-cart:hover {
+	background-color: #59bbae;
+}
+
+.btn-login-cart:focus {
+	outline: #4d968c 5px auto;
+	box-shadow: none;
+}
+
 /* PRODUCT PAGE */
 .product-wrapper {
 	margin: 3rem auto;
@@ -160,7 +184,7 @@ code {
 
 .margin-product {
 	margin: 0 auto;
-	padding-top: 6rem;
+	padding-top: 8rem;
 }
 
 .product-header {
@@ -185,6 +209,7 @@ code {
 /* CART PAGE */
 .total-wrapper {
 	padding: 2rem;
+	margin-bottom: 4rem;
 }
 
 /* LOGIN AND REGISTER */
