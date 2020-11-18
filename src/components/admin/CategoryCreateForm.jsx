@@ -5,24 +5,26 @@ import axios from "axios";
 const CategoryCreateForm = ({ setCategories, setSearch, closeModal }) => {
   const token = useSelector((store) => store.user.token);
   const [name, setName] = useState("");
-  const [banner, setBanner] = useState("https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081");
+  const [banner, setBanner] = useState(
+    "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081"
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let img = document.querySelector("#imageFile");
     let imageToSend = img.files[0] || banner;
-    
+
     let formData = new FormData();
     formData.append("name", name);
     formData.append("banner", imageToSend);
-    
+
     axios({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8000/api/v1/categories",
+      url: "https://back-end-swart.vercel.app/api/v1/categories",
       data: formData,
     })
       .then((res) => {

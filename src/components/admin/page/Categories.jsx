@@ -15,7 +15,7 @@ const Categories = () => {
 	const [showUpdate, setShowUpdate] = useState(false);
 
 	useEffect(() => {
-		let url = "http://localhost:8000/api/v1/categories";
+		let url = "https://back-end-swart.vercel.app/api/v1/categories";
 		search && (url = url.concat(`/search?name=${search}`));
 		axios.get(url).then((res) => {
 			setCategories(res.data);
@@ -29,7 +29,7 @@ const Categories = () => {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${token}`,
 			},
-			url: "http://localhost:8000/api/v1/categories",
+			url: "https://back-end-swart.vercel.app/api/v1/categories",
 			data: {
 				_id: _id,
 			},

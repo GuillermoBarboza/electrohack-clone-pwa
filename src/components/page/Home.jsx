@@ -9,9 +9,11 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/v1/products").then((res) => {
-      dispatch(getProducts(res.data));
-    });
+    axios
+      .get("https://back-end-swart.vercel.app/api/v1/products")
+      .then((res) => {
+        dispatch(getProducts(res.data));
+      });
     dispatch(
       changeCarousel([
         "https://image.shutterstock.com/image-vector/brush-sale-banner-promotion-ribbon-260nw-1182942766.jpg",
