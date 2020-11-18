@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import SelectCategory from "./SelectCategory"
 import globalUrl from "../../utils/url";
 
 const UpdateForm = ({ product, setProduct, setSearch, closeModal }) => {
@@ -122,15 +123,7 @@ const UpdateForm = ({ product, setProduct, setSearch, closeModal }) => {
               type="number"
             />
 
-            <label for="category">Category</label>
-            <input
-              onChange={(e) => setCategory(e.target.value)}
-              name="category"
-              className="form-control mb-2"
-              value={category}
-              id="category"
-              type="category"
-            />
+            <SelectCategory setCategory={setCategory} category={category} />
 
             <label for="stock">Stock</label>
             <input
