@@ -14,8 +14,7 @@ code {
 }
 
 .bg-color {
-	background: #8cd0e3;
-	background: linear-gradient(to bottom right, #8cd0e3 0, #f08ccd 100%);
+	background: linear-gradient(to bottom right, #c6e3eb 0, #e2c7d8 100%);
 }
 
 .second-color {
@@ -24,7 +23,7 @@ code {
 
 /* NAV */
 .bg-nav {
-	background-color: #73cae2;
+	background-color: #323755;
 }
 
 /* CAROUSEL */
