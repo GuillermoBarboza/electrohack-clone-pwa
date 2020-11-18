@@ -30,7 +30,7 @@ const Products = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "globalUrl/api/v1/products",
+      url: `${globalUrl}/api/v1/products`,
       data: {
         _id: _id,
       },
