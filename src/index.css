@@ -71,6 +71,17 @@ code {
 	z-index: 1000;
 }
 
+.custom-form-control {
+	border: none;
+	border-bottom: 1px solid #323755;
+	border-radius: 0px;
+}
+.custom-form-control:focus {
+	box-shadow: none;
+	outline: none;
+	border-color: #323755;
+}
+
 /* SHOPPING CART PAGE */
 .cart-bg {
 	min-height: 100vh;
