@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import globalUrl from "../../utils/url";
 
 const UserUpdateForm = ({ user, setUser, setSearch, closeModal }) => {
   const token = useSelector((store) => store.user.token);
@@ -32,7 +33,7 @@ const UserUpdateForm = ({ user, setUser, setSearch, closeModal }) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "https://back-end-swart.vercel.app/api/v1/auth/users",
+      url: `${globalUrl}/api/v1/auth/users`,
       data: {
         _id: _id,
         name: name,

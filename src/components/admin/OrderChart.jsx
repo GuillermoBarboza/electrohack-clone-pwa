@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Chart from "chart.js";
 import axios from "axios";
+import globalUrl from "../../utils/url";
 
 const OrderChart = () => {
   const token = useSelector((store) => store.user.token);
@@ -15,7 +16,7 @@ const OrderChart = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "https://back-end-swart.vercel.app/api/v1/orders/chart",
+      url: `${globalUrl}/api/v1/orders/chart`,
     })
       .then((res) => {
         setOrders(res.data);

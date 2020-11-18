@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, ListGroup, Dropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, getProducts, changeCarousel } from "../redux/actions";
+import globalUrl from "../utils/url";
 import SearchBox from "./SearchBox";
 
 const NavBar = () => {
@@ -23,19 +24,17 @@ const NavBar = () => {
   }
 
   useEffect(() => {
-    let url = `https://back-end-swart.vercel.app/api/v1/products/search?name=${search}`;
+    let url = `${globalUrl}/api/v1/products/search?name=${search}`;
     axios.get(url).then((res) => {
       setDropDown(res.data);
     });
   }, [search]);
 
   function handleClick(option) {
-    axios
-      .get(`https://back-end-swart.vercel.app/api/v1/products/${option}`)
-      .then((res) => {
-        dispatch(getProducts(res.data[0].productsList));
-        dispatch(changeCarousel(res.data[0].banner));
-      });
+    axios.get(`${globalUrl}/api/v1/products/${option}`).then((res) => {
+      dispatch(getProducts(res.data[0].productsList));
+      dispatch(changeCarousel(res.data[0].banner));
+    });
   }
 
   function handleLink() {

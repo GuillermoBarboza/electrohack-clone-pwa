@@ -20,7 +20,7 @@ const Register = () => {
     axios({
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      url: "https://back-end-swart.vercel.app/api/v1/users/create",
+      url: `${globalUrl}/api/v1/users/create`,
       data: {
         name: name,
         lastname: lastname,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Modal from "react-bootstrap/Modal";
+import globalUrl from "../../../utils/url";
 import SearchBox from "../../SearchBox";
 import ProductCreateForm from "../ProductCreateForm";
 import ProductUpdateForm from "../ProductUpdateForm";
@@ -15,7 +16,7 @@ const Products = () => {
   const [showUpdate, setShowUpdate] = useState(false);
 
   useEffect(() => {
-    let url = "https://back-end-swart.vercel.app/api/v1/products";
+    let url = `${globalUrl}/api/v1/products`;
     search && (url = url.concat(`/search?name=${search}`));
     axios.get(url).then((res) => {
       setProducts(res.data);
@@ -29,7 +30,7 @@ const Products = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "https://back-end-swart.vercel.app/api/v1/products",
+      url: "globalUrl/api/v1/products",
       data: {
         _id: _id,
       },

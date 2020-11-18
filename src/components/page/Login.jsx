@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { getUser } from "../../redux/actions";
 import axios from "axios";
+import globalUrl from "../../utils/url";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ const Login = () => {
     axios({
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      url: "https://back-end-swart.vercel.app/api/v1/users/find",
+      url: `${globalUrl}/api/v1/users/find`,
       data: {
         email: email,
         password: password,

@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { resetCart, addToCart, removeFromCart } from "../../redux/actions";
+import globalUrl from "../../utils/url";
 
 const Cart = () => {
   const cart = useSelector((store) => store.cart);
@@ -27,7 +28,7 @@ const Cart = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "https://back-end-swart.vercel.app/api/v1/orders",
+      url: `${globalUrl}/api/v1/orders`,
       data: {
         cart: cart,
         total: total(),

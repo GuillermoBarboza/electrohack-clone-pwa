@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import globalUrl from "../../../utils/url";
 import OrderChart from "../OrderChart";
 
 const Main = () => {
@@ -14,7 +15,7 @@ const Main = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "https://back-end-swart.vercel.app/api/v1/orders",
+      url: `${globalUrl}/api/v1/orders`,
     }).then((res) => {
       setOrders(res.data);
     });

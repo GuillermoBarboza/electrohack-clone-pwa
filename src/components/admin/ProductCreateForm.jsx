@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import globalUrl from "../../utils/url";
 
 const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
   const token = useSelector((store) => store.user.token);
@@ -31,7 +32,7 @@ const ProductCreateForm = ({ setProducts, setSearch, closeModal }) => {
     axios({
       method: "POST",
       header: { Authorization: `Bearer ${token}` },
-      url: `https://back-end-swart.vercel.app/api/v1/products`,
+      url: `${globalUrl}/api/v1/products`,
       data: formData,
     })
       .then((res) => {
