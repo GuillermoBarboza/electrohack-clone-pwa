@@ -110,11 +110,9 @@ const Cart = () => {
 								Proceed to checkout
 							</button>
 						) : (
-							<p className="btn btn-login-cart  btn-block p-2 my-4">
-								<Link to="/login" className="text-dark text-decoration-none">
-									Login
-								</Link>
-							</p>
+							<Link to="/login" className="text-dark text-decoration-none">
+								<p className="btn btn-login-cart  btn-block p-2 my-4">Login</p>
+							</Link>
 						)}
 					</div>
 				</div>
