@@ -3,7 +3,7 @@ import { Form, FormControl } from "react-bootstrap";
 
 const SearchBox = ({ setSearch }) => {
 	return (
-		<Form className="mr-4" inline>
+		<Form inline>
 			<FormControl
 				type="text"
 				placeholder="Search..."
