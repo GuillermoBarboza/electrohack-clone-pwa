@@ -23,6 +23,12 @@ code {
 	background-color: #323755;
 }
 
+.btn-outline-custom {
+	border: 1px solid #999baa;
+	border-radius: 1px;
+	padding: 0.5rem 0.7rem;
+}
+
 /* CAROUSEL */
 .carousel-img {
 	height: 500px;

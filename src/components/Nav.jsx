@@ -66,6 +66,9 @@ const NavBar = () => {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
 					<Nav>
+						<Nav.Link as={Link} to="/about-us" className="mr-4">
+							<span className="btn-outline-custom">About Us</span>
+						</Nav.Link>
 						{user.admin && (
 							<Nav.Link as={Link} to="/admin" className="mr-4">
 								Admin
