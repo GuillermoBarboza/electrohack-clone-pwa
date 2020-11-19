@@ -4,30 +4,25 @@ import axios from "axios";
 import globalUrl from "../../utils/url";
 import ProductsList from "../ProductsList";
 import CarouselComp from "../CarouselComp";
-import { getProducts, changeCarousel } from "../../redux/actions";
+import { getProducts } from "../../redux/actions";
 
 const Home = () => {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    axios.get(`${globalUrl}/api/v1/products`).then((res) => {
-      dispatch(getProducts(res.data));
-    });
-    dispatch(
-      changeCarousel([
-        "https://image.shutterstock.com/image-vector/brush-sale-banner-promotion-ribbon-260nw-1182942766.jpg",
-      ])
-    );
-  }, []);
+	useEffect(() => {
+		axios.get(`${globalUrl}/api/v1/products`).then((res) => {
+			dispatch(getProducts(res.data));
+		});
+	}, []);
 
-  return (
-    <div>
-      <CarouselComp />
-      <div className="container">
-        <ProductsList />
-      </div>
-    </div>
-  );
+	return (
+		<div>
+			<CarouselComp />
+			<div className="container">
+				<ProductsList />
+			</div>
+		</div>
+	);
 };
 
 export default Home;
