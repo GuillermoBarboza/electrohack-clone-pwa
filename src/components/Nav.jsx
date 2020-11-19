@@ -22,7 +22,7 @@ const NavBar = () => {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `${global}/api/v1/categories`,
+      url: `${globalUrl}/api/v1/categories`,
     })
       .then((response) => {
         setCategoriesAvailable(
