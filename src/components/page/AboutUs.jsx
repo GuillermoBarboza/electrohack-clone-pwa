@@ -1,4 +1,5 @@
 import React from "react";
+import logoMongo from "../../logoMongo.svg";
 
 const AboutUs = () => {
 	return (
@@ -26,94 +27,68 @@ const AboutUs = () => {
 
 			<div className="technologies-wrapper">
 				<ul className="d-flex lead list-unstyled justify-content-around">
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
+					<li>
+						<img src={logoMongo} alt="" />
+					</li>
+					<li>
+						<i class="fab fa-2x fa-react"></i>
+					</li>
+					<li>
+						<i class="fab fa-2x fa-node-js"></i>
+					</li>
 				</ul>
 				<ul className="d-flex lead list-unstyled justify-content-around">
-					<li>React</li>
-					<li>Redux</li>
-					<li>Node.js</li>
-					<li>Express</li>
 					<li>MongoDB</li>
+					<li>React.js</li>
+					<li>Node.js</li>
 				</ul>
 			</div>
 
 			<h3 className="page-header mt-5">Our Team</h3>
 			<hr className="mb-5" />
 
-			<div className="card-deck">
-				<div className="card text-center">
+			<div className="card-deck card-deck-custom">
+				<div className="card text-center shadow-about-us">
 					<img className="card-img-top" src="" alt="Team" />
 					<div className="card-body">
-						<h3 className="card-title">Juan Pérez</h3>
-						<p className="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
-							saepe et quisquam nesciunt maxime. This content is a little bit
-							longer.
-						</p>
+						<h4 className="card-title">Guillermo Barboza</h4>
+						<p className="card-text">Developer</p>
 						<ul className="list-inline">
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-facebook-square"></i>
+								<i className="fab fa-2x fa-github-square"></i>
 							</li>
 							<li className="list-inline-item">
 								<i className="fab fa-2x fa-linkedin"></i>
-							</li>
-							<li className="list-inline-item">
-								<i className="fab fa-2x fa-twitter-square"></i>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div className="card text-center">
-					<img
-						className="card-img-top"
-						src="img/about_us/cofounder_2.jpg"
-						alt="Team"
-					/>
+				<div className="card text-center shadow-about-us">
+					<img className="card-img-top" src="" alt="Team" />
 					<div className="card-body">
-						<h3 className="card-title">María Rodríguez</h3>
-						<p className="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
-							saepe et quisquam nesciunt maxime.
-						</p>
+						<h4 className="card-title">Fernando Cuadro</h4>
+						<p className="card-text">Developer</p>
 						<ul className="list-inline">
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-facebook-square"></i>
+								<i className="fab fa-2x fa-github-square"></i>
 							</li>
 							<li className="list-inline-item">
 								<i className="fab fa-2x fa-linkedin"></i>
-							</li>
-							<li className="list-inline-item">
-								<i className="fab fa-2x fa-twitter-square"></i>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div className="card text-center">
-					<img
-						className="card-img-top"
-						src="img/about_us/cofounder_3.jpg"
-						alt="Team"
-					/>
+				<div className="card text-center shadow-about-us">
+					<img className="card-img-top" src="" alt="Team" />
 					<div className="card-body">
-						<h3 className="card-title">Juan Gómez</h3>
-						<p className="card-text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
-							saepe et quisquam nesciunt maxime. This card has even longer
-							content than the first to show that equal height action.
-						</p>
+						<h4 className="card-title">María José Marra</h4>
+						<p className="card-text">Developer</p>
 						<ul className="list-inline">
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-facebook-square"></i>
+								<i className="fab fa-2x fa-github-square"></i>
 							</li>
 							<li className="list-inline-item">
 								<i className="fab fa-2x fa-linkedin"></i>
-							</li>
-							<li className="list-inline-item">
-								<i className="fab fa-2x fa-twitter-square"></i>
 							</li>
 						</ul>
 					</div>
