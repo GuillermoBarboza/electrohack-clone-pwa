@@ -18,8 +18,8 @@ const Product = ({ state }) => {
       <div className="row">
         <div className="col-md-7">
           <div class="card">
-            <div className="p-3">
-              <img src={product.image} class="card-img-top" alt="Product" />
+            <div className="">
+              <img src={product.image} class="img-fluid" alt="Product" />
             </div>
             <div class="card-body p-5">
               <h4 class="card-title">Specifications:</h4>
