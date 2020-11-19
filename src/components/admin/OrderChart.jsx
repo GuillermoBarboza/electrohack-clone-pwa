@@ -19,7 +19,8 @@ const OrderChart = () => {
       url: `${globalUrl}/api/v1/orders/chart`,
     })
       .then((res) => {
-        setOrders(res.data);
+        console.log(res.data)
+        setOrders(res.data.map(order => order.total));
         setTimelapse([...Array(30)].map((_, idx) => idx + 1));
       })
       .catch((err) => {
