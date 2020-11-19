@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,10 +8,11 @@ import globalUrl from "../../utils/url";
 const Cart = () => {
   const cart = useSelector((store) => store.cart);
   const token = useSelector((store) => store.user.token);
-
+  const [sayThanks, setSayThanks] = useState()
   const dispatch = useDispatch();
 
   useEffect(() => {
+    setSayThanks(false)
     window.scrollTo(0, 0);
   }, []);
 
@@ -22,6 +23,7 @@ const Cart = () => {
   };
 
   const handlePurchase = () => {
+    
     axios({
       method: "POST",
       headers: {
@@ -36,6 +38,7 @@ const Cart = () => {
     })
       .then((res) => {
         dispatch(resetCart([]));
+        setSayThanks(true)
       })
       .catch((err) => {
         console.log(err);
@@ -45,6 +48,7 @@ const Cart = () => {
   return (
     <div className="container margin-product cart-wrapper">
       <div className="row">
+      {sayThanks && <h1>Thank you For buying with us!</h1>}
         <div className="col-lg-8 ">
           <div className="cart-bg">
             <div className="row">
