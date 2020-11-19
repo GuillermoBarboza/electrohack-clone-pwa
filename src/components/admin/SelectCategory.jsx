@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { InputGroup, DropdownButton, FormControl, Form } from "react-bootstrap";
+import globalUrl from "../../utils/url";
 import axios from "axios";
 
 const SelectCategory = ({ setCategory, category }) => {
@@ -8,7 +9,7 @@ const SelectCategory = ({ setCategory, category }) => {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "http://localhost:8000/api/v1/categories",
+      url: `${globalUrl}/api/v1/categories`,
     })
       .then((response) => {
         setCategoriesAvailable(response.data);
