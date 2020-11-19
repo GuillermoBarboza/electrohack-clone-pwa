@@ -18,8 +18,11 @@ const Home = () => {
   return (
     <div>
       <CarouselComp />
-      <div className="container text-center">
-	  <h2 className="mb-4">Featured Products</h2>
+      <div className="container">
+        <div className="text-center">
+          <h2 className="mb-4 ">Featured Products</h2>
+        </div>
+
         <ProductsList />
       </div>
     </div>
