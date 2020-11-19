@@ -1,5 +1,8 @@
 import React from "react";
 import logoMongo from "../../logoMongo.svg";
+import foto1 from "../../img/foto1.jpeg";
+import foto2 from "../../img/foto2.jpeg";
+import foto3 from "../../img/foto3.jpeg";
 
 const AboutUs = () => {
 	return (
@@ -48,8 +51,8 @@ const AboutUs = () => {
 			<hr className="mb-5" />
 
 			<div className="card-deck card-deck-custom">
-				<div className="card text-center shadow-about-us">
-					<img className="card-img-top" src="../../img/foto1.jpg" alt="Team" />
+				<div className="card border-0 text-center shadow-about-us">
+					<img className="img-fluid" src={foto2} alt="Team" />
 					<div className="card-body">
 						<h4 className="card-title">Guillermo Barboza</h4>
 						<p className="card-text">Developer</p>
@@ -63,8 +66,8 @@ const AboutUs = () => {
 						</ul>
 					</div>
 				</div>
-				<div className="card text-center shadow-about-us">
-					<img className="card-img-top" src="" alt="Team" />
+				<div className="card border-0 text-center shadow-about-us">
+					<img className="img-fluid" src={foto1} alt="Team" />
 					<div className="card-body">
 						<h4 className="card-title">Fernando Cuadro</h4>
 						<p className="card-text">Developer</p>
@@ -78,8 +81,8 @@ const AboutUs = () => {
 						</ul>
 					</div>
 				</div>
-				<div className="card text-center shadow-about-us">
-					<img className="card-img-top" src="" alt="Team" />
+				<div className="card border-0 text-center shadow-about-us">
+					<img className="img-fluid" src={foto3} alt="Team" />
 					<div className="card-body">
 						<h4 className="card-title">María José Marra</h4>
 						<p className="card-text">Developer</p>
