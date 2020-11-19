@@ -49,7 +49,7 @@ const AboutUs = () => {
 
 			<div className="card-deck card-deck-custom">
 				<div className="card text-center shadow-about-us">
-					<img className="card-img-top" src="" alt="Team" />
+					<img className="card-img-top" src="../../img/foto1.jpg" alt="Team" />
 					<div className="card-body">
 						<h4 className="card-title">Guillermo Barboza</h4>
 						<p className="card-text">Developer</p>
