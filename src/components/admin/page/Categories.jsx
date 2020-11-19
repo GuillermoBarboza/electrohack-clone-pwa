@@ -53,61 +53,59 @@ const Categories = () => {
 	};
 
 	return (
-		<div className="admin-wrapper">
-			<div className="row">
-				<div className="col-md-10">
-					<div className="d-flex justify-content-between">
-						<SearchBox setSearch={setSearch} />
-						<button className="btn btn-modal" onClick={showModalCreate}>
-							New category
-						</button>
-					</div>
-					<div className="table-responsive">
-						<table className="table table-hover table-bordered mt-5">
-							<thead className="bg-table-head">
-								<tr className="text-center">
-									<th scope="col">Category</th>
-									<th scope="col">Category Items</th>
-									<th scope="col">Update</th>
-									<th scope="col">Delete</th>
-								</tr>
-							</thead>
-							<tbody>
-								{categories &&
-									categories.map((category) => {
-										return (
-											<tr>
-												<td>{category.name}</td>
-												<td className="text-center">
-													{category.productsList.length}
-												</td>
-												<td className="text-center">
+		<div className="container-fluid">
+			<div className="admin-wrapper">
+				<div className="d-flex justify-content-between">
+					<SearchBox setSearch={setSearch} />
+					<button className="btn btn-modal" onClick={showModalCreate}>
+						New category
+					</button>
+				</div>
+				<div className="table-responsive">
+					<table className="table table-hover table-bordered mt-5">
+						<thead className="bg-table-head">
+							<tr className="text-center">
+								<th scope="col">Category</th>
+								<th scope="col">Category Items</th>
+								<th scope="col">Update</th>
+								<th scope="col">Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							{categories &&
+								categories.map((category) => {
+									return (
+										<tr>
+											<td>{category.name}</td>
+											<td className="text-center">
+												{category.productsList.length}
+											</td>
+											<td className="text-center">
+												<button
+													className="btn"
+													onClick={() => {
+														showModalUpdate();
+														return setCategory(category);
+													}}
+												>
+													<i className="fas fa-edit"></i>
+												</button>
+											</td>
+											<td className="text-center">
+												{category.productsList.length === 0 && (
 													<button
 														className="btn"
-														onClick={() => {
-															showModalUpdate();
-															return setCategory(category);
-														}}
+														onClick={() => handleDelete(category._id)}
 													>
-														<i className="fas fa-edit"></i>
+														<i className="fas fa-trash-alt"></i>
 													</button>
-												</td>
-												<td className="text-center">
-													{category.productsList.length === 0 && (
-														<button
-															className="btn"
-															onClick={() => handleDelete(category._id)}
-														>
-															<i className="fas fa-trash-alt"></i>
-														</button>
-													)}
-												</td>
-											</tr>
-										);
-									})}
-							</tbody>
-						</table>
-					</div>
+												)}
+											</td>
+										</tr>
+									);
+								})}
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<Modal show={showUpdate} onHide={closeModal}>
