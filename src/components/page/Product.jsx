@@ -18,7 +18,7 @@ const Product = ({ state }) => {
       <div className="row">
         <div className="col-md-7">
           <div class="card">
-            <div className="">
+            <div className="p-5">
               <img src={product.image} class="img-fluid" alt="Product" />
             </div>
             <div class="card-body p-5">
