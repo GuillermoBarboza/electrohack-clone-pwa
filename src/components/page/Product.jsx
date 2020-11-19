@@ -18,7 +18,7 @@ const Product = ({ state }) => {
       <div className="row">
         <div className="col-md-7">
           <div class="card">
-            <img src={product.image} class="card-img-top m-5" alt="Product" />
+            <img src={product.image} class="card-img-top m-2" alt="Product" />
             <div class="card-body p-5">
               <h4 class="card-title">Specifications:</h4>
               <hr className="my-3" />
