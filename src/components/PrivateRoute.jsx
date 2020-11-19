@@ -8,10 +8,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 	const user = useSelector((state) => state.user);
 	return (
 		<div className="row">
-			<div className="col-md-2" id="sidebar-wrapper">
+			<div className="col-md-2">
 				<SideBar />
 			</div>
-			<div className="col-md-10" id="page-content-wrapper">
+			<div className="col-md-10">
 				<Route
 					{...rest}
 					render={(props) =>

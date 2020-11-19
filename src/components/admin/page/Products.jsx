@@ -53,59 +53,57 @@ const Products = () => {
 	};
 
 	return (
-		<div className="admin-wrapper">
-			<div className="row">
-				<div className="col-md-10">
-					<div className="d-flex justify-content-between">
-						<SearchBox setSearch={setSearch} />
-						<button className="btn btn-modal" onClick={showModalCreate}>
-							New item
-						</button>
-					</div>
-					<div className="table-responsive">
-						<table className="table table-hover table-bordered mt-5">
-							<thead className="bg-table-head">
-								<tr className="text-center">
-									<th scope="col">Product</th>
-									<th scope="col">Price</th>
-									<th scope="col">Stock</th>
-									<th scope="col">Update</th>
-									<th scope="col">Delete</th>
-								</tr>
-							</thead>
-							<tbody>
-								{products &&
-									products.map((product) => {
-										return (
-											<tr>
-												<td>{product.name}</td>
-												<td className="text-center">$ {product.price}</td>
-												<td className="text-center">{product.stock}</td>
-												<td className="text-center">
-													<button
-														className="btn"
-														onClick={() => {
-															showModalUpdate();
-															return setProduct(product);
-														}}
-													>
-														<i className="fas fa-edit"></i>
-													</button>
-												</td>
-												<td className="text-center">
-													<button
-														className="btn"
-														onClick={() => handleDelete(product._id)}
-													>
-														<i className="fas fa-trash-alt"></i>
-													</button>
-												</td>
-											</tr>
-										);
-									})}
-							</tbody>
-						</table>
-					</div>
+		<div className="container-fluid">
+			<div className="admin-wrapper">
+				<div className="d-flex justify-content-between">
+					<SearchBox setSearch={setSearch} />
+					<button className="btn btn-modal" onClick={showModalCreate}>
+						New item
+					</button>
+				</div>
+				<div className="table-responsive">
+					<table className="table table-hover table-bordered mt-5">
+						<thead className="bg-table-head">
+							<tr className="text-center">
+								<th scope="col">Product</th>
+								<th scope="col">Price</th>
+								<th scope="col">Stock</th>
+								<th scope="col">Update</th>
+								<th scope="col">Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							{products &&
+								products.map((product) => {
+									return (
+										<tr>
+											<td>{product.name}</td>
+											<td className="text-center">$ {product.price}</td>
+											<td className="text-center">{product.stock}</td>
+											<td className="text-center">
+												<button
+													className="btn"
+													onClick={() => {
+														showModalUpdate();
+														return setProduct(product);
+													}}
+												>
+													<i className="fas fa-edit"></i>
+												</button>
+											</td>
+											<td className="text-center">
+												<button
+													className="btn"
+													onClick={() => handleDelete(product._id)}
+												>
+													<i className="fas fa-trash-alt"></i>
+												</button>
+											</td>
+										</tr>
+									);
+								})}
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<Modal size="lg" show={showUpdate} onHide={closeModal}>

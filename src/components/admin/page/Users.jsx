@@ -60,63 +60,62 @@ const Users = () => {
 	};
 
 	return (
-		<div className="admin-wrapper">
-			<div className="row">
-				<div className="col-md-10">
-					<div className="d-flex justify-content-between">
-						<SearchBox setSearch={setSearch} />
-						<button className="btn btn-modal" onClick={showModalCreate}>
-							New user
-						</button>
-					</div>
-					<div className="table-responsive">
-						<table className="table  table-hover table-bordered mt-5">
-							<thead className="bg-table-head">
-								<tr className="text-center">
-									<th scope="col">User</th>
-									<th scope="col">Email</th>
-									<th scope="col">Address</th>
-									<th scope="col">Phone</th>
-									<th scope="col">Update</th>
-									<th scope="col">Delete</th>
-								</tr>
-							</thead>
-							<tbody>
-								{users &&
-									users.map((user) => {
-										return (
-											<tr>
-												<td>{user.name + " " + user.lastname}</td>
-												<td>{user.email}</td>
-												<td>{user.address}</td>
-												<td>{user.telephone}</td>
-												<td className="text-center">
-													<button
-														className="btn"
-														onClick={() => {
-															showModalUpdate();
-															return setUser(user);
-														}}
-													>
-														<i className="fas fa-edit"></i>
-													</button>
-												</td>
-												<td className="text-center">
-													<button
-														className="btn"
-														onClick={() => handleDelete(user._id)}
-													>
-														<i className="fas fa-trash-alt"></i>
-													</button>
-												</td>
-											</tr>
-										);
-									})}
-							</tbody>
-						</table>
-					</div>
+		<div className="container-fluid">
+			<div className="admin-wrapper">
+				<div className="d-flex justify-content-between">
+					<SearchBox setSearch={setSearch} />
+					<button className="btn btn-modal" onClick={showModalCreate}>
+						New user
+					</button>
+				</div>
+				<div className="table-responsive">
+					<table className="table  table-hover table-bordered mt-5">
+						<thead className="bg-table-head">
+							<tr className="text-center">
+								<th scope="col">User</th>
+								<th scope="col">Email</th>
+								<th scope="col">Address</th>
+								<th scope="col">Phone</th>
+								<th scope="col">Update</th>
+								<th scope="col">Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							{users &&
+								users.map((user) => {
+									return (
+										<tr>
+											<td>{user.name + " " + user.lastname}</td>
+											<td>{user.email}</td>
+											<td>{user.address}</td>
+											<td>{user.telephone}</td>
+											<td className="text-center">
+												<button
+													className="btn"
+													onClick={() => {
+														showModalUpdate();
+														return setUser(user);
+													}}
+												>
+													<i className="fas fa-edit"></i>
+												</button>
+											</td>
+											<td className="text-center">
+												<button
+													className="btn"
+													onClick={() => handleDelete(user._id)}
+												>
+													<i className="fas fa-trash-alt"></i>
+												</button>
+											</td>
+										</tr>
+									);
+								})}
+						</tbody>
+					</table>
 				</div>
 			</div>
+
 			<Modal size="lg" show={showUpdate} onHide={closeModal}>
 				<UserUpdateForm
 					user={user}
