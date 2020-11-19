@@ -8,11 +8,11 @@ import globalUrl from "../../utils/url";
 const Cart = () => {
   const cart = useSelector((store) => store.cart);
   const token = useSelector((store) => store.user.token);
-  const [sayThanks, setSayThanks] = useState()
+  const [sayThanks, setSayThanks] = useState();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setSayThanks(false)
+    setSayThanks(false);
     window.scrollTo(0, 0);
   }, []);
 
@@ -23,7 +23,6 @@ const Cart = () => {
   };
 
   const handlePurchase = () => {
-    
     axios({
       method: "POST",
       headers: {
@@ -38,7 +37,7 @@ const Cart = () => {
     })
       .then((res) => {
         dispatch(resetCart([]));
-        setSayThanks(true)
+        setSayThanks(true);
       })
       .catch((err) => {
         console.log(err);
@@ -48,8 +47,12 @@ const Cart = () => {
   return (
     <div className="container margin-product cart-wrapper">
       <div className="row">
-      {sayThanks && <h1>Thank you For buying with us!</h1>}
-        <div className="col-lg-8 ">
+        {sayThanks && (
+          <div className="container text-center mb-5 alert-success thanks-container">
+            <h1>Thank you for buying with us!</h1>
+          </div>
+        )}
+        <div className="col-lg-8">
           <div className="cart-bg">
             <div className="row">
               <div className="col-7">
