@@ -7,7 +7,7 @@ const Product = ({ product }) => {
   const dispatch = useDispatch();
   return (
     <div className="col-md-6 col-lg-4 mb-3">
-      <div className="card my-2">
+      <div className="card m-2">
         <img src={product.image} className="img-card" alt="..." />
         <div
           className="card-body card-height second-color d-flex flex-column justify-content-between"
