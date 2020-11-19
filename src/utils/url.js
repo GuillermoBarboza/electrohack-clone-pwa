@@ -1,6 +1,6 @@
 const vercelUrl = "https://back-end-swart.vercel.app";
 const localUrl = "http://localhost:8000";
 
-const globalUrl = vercelUrl;
+const globalUrl = localUrl;
 
 export default globalUrl;
