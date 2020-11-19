@@ -342,7 +342,27 @@ h4 {
 }
 
 .technologies-wrapper {
+	color: #a1a1aa;
 	margin-top: 6rem;
-	height: 5rem;
+	padding-top: 1rem;
+	height: 8rem;
 	background-color: #353232;
+}
+
+.card-deck-custom {
+	color: #353232;
+}
+
+.shadow-about-us {
+	-moz-box-shadow: 0 0 5px #808080;
+	-webkit-box-shadow: 0 0 5px #808080;
+	box-shadow: 0 0 5px #808080;
+}
+
+.card {
+	border-radius: 0px;
+}
+
+.card-deck .card {
+	background-color: #fdf7f7;
 }
