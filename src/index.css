@@ -334,3 +334,15 @@ h4 {
 .brand-font {
 	font-family: "Oxygen", sans-serif;
 }
+
+/* ABOUT US */
+.margin-aboutus {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+
+.technologies-wrapper {
+	margin-top: 6rem;
+	height: 5rem;
+	background-color: #353232;
+}

@@ -61,7 +61,7 @@ const NavBar = () => {
 		<Navbar className="bg-nav" variant="dark" expand="lg" fixed="top">
 			<div className="container">
 				<Navbar.Brand as={Link} to="/" className="brand-font">
-					<i className="fas fa-bolt"></i> ELECTRO-HACK
+					<i className="fas fa-xs fa-bolt"></i> Electro<strong>Hack</strong>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
