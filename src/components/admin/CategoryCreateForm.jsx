@@ -12,12 +12,9 @@ const CategoryCreateForm = ({ setCategories, setSearch, closeModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let img = document.querySelector("#imageFile");
-    let imageToSend = img.files[0] || banner;
 
     let formData = new FormData();
     formData.append("name", name);
-    formData.append("banner", imageToSend);
 
     axios({
       method: "POST",
@@ -55,27 +52,6 @@ const CategoryCreateForm = ({ setCategories, setSearch, closeModal }) => {
           value={name}
           id="name"
           type="text"
-        />
-
-        <label for="image" className="mt-1">
-          Image Link or...
-        </label>
-        <input
-          onChange={(e) => setBanner(e.target.value)}
-          name="image"
-          className="form-control"
-          id="username"
-          type="text"
-        />
-
-        <label for="imageFile" className="mt-1">
-          Have an Image? upload it!
-        </label>
-        <input
-          name="imageFile"
-          className="form-control"
-          id="imageFile"
-          type="file"
         />
 
         <button className="btn btn-modal btn-block mt-4 mb-3" type="submit">
