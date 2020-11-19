@@ -43,6 +43,10 @@ code {
   max-height: 300px;
   object-fit: contain;
 }
+.card-logo-size {
+  height: 40px;
+  width: auto;
+}
 
 /* SHOPPING CART NAVBAR */
 .fa-stack[data-count]:after {
