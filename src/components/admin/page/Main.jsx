@@ -22,42 +22,36 @@ const Main = () => {
 	}, []);
 
 	return (
-		<div className="admin-wrapper">
-			<div className="row">
-				<div className="col-md-10">
-					<div className="chart-wrapper bg-light shadow">
-						<h5>Monthly Sales</h5>
-						<OrderChart />
-					</div>
+		<div className="container-fluid">
+			<div className="admin-wrapper">
+				<div className="chart-wrapper bg-light shadow">
+					<h5>Monthly Sales</h5>
+					<OrderChart />
 				</div>
-			</div>
-			<div className="row">
-				<div className="col-md-10">
-					<div className="table-responsive">
-						<table className="table table-hover table-bordered mt-4">
-							<thead className="bg-table-head">
-								<tr className="text-center">
-									<th scope="col">Buyer name</th>
-									<th scope="col">Items Qty</th>
-									<th scope="col">State</th>
-									<th scope="col">Total</th>
-								</tr>
-							</thead>
-							<tbody>
-								{orders &&
-									orders.map((order) => {
-										return (
-											<tr>
-												<td>{order.buyer.name}</td>
-												<td className="text-center">{order.products.length}</td>
-												<td className="text-center">{order.state}</td>
-												<td className="text-center">${order.total}</td>
-											</tr>
-										);
-									})}
-							</tbody>
-						</table>
-					</div>
+				<div className="table-responsive">
+					<table className="table table-hover table-bordered mt-4">
+						<thead className="bg-table-head">
+							<tr className="text-center">
+								<th scope="col">Buyer name</th>
+								<th scope="col">Items Qty</th>
+								<th scope="col">State</th>
+								<th scope="col">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							{orders &&
+								orders.map((order) => {
+									return (
+										<tr>
+											<td>{order.buyer.name}</td>
+											<td className="text-center">{order.products.length}</td>
+											<td className="text-center">{order.state}</td>
+											<td className="text-center">${order.total}</td>
+										</tr>
+									);
+								})}
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
