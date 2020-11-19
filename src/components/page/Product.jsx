@@ -14,7 +14,7 @@ const Product = ({ state }) => {
   }, []);
 
   return (
-    <div className="product-wrapper">
+    <div className="container margin-product">
       <div className="row">
         <div className="col-md-7">
           <div class="card">
