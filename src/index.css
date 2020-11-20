@@ -432,6 +432,12 @@ h4 {
 	padding-bottom: 6rem;
 }
 
+@media (max-width: 800px) {
+	.margin-aboutus {
+		padding: 4rem 2rem;
+	}
+}
+
 .technologies-wrapper {
 	color: #a1a1aa;
 	margin-top: 6rem;
@@ -456,4 +462,13 @@ h4 {
 
 .card-deck .card {
 	background-color: #fdf7f7;
+}
+
+.technologies-wrapper {
+	font-size: 1.5rem;
+	padding-bottom: 8rem;
+}
+
+.page-header {
+	font-size: 2rem;
 }

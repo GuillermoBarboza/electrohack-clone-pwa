@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import logoMongo from "../../logoMongo.svg";
+import logoExpress from "../../img/express.png";
 import foto1 from "../../img/foto1.jpeg";
 import foto2 from "../../img/foto2.jpeg";
 import foto3 from "../../img/foto3.jpeg";
@@ -9,15 +10,15 @@ import { getUser } from "../../redux/actions";
 import globalUrl from "../../utils/url";
 
 const AboutUs = () => {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const [database, setDatabase] = useState("dbOnline");
 	const [databaseClass, setDatabaseClass] = useState("");
 	const [serverResponse, setServerResponse] = useState();
 
 	useEffect(() => {
-    if(database === "dbOnline"){
-      window.scrollTo(0, 0);
-    }
+		if (database === "dbOnline") {
+			window.scrollTo(0, 0);
+		}
 		switch (database) {
 			case "dbOnline":
 				return setDatabaseClass("alert-danger");
@@ -27,13 +28,12 @@ const AboutUs = () => {
 				return setDatabaseClass("alert-success");
 			default:
 				return setDatabaseClass("");
-    }
-    
+		}
 	}, [database]);
 
 	function refreshDB() {
-    setDatabase("dbRefreshing");
-    dispatch(getUser({}));
+		setDatabase("dbRefreshing");
+		dispatch(getUser({}));
 		axios({
 			method: "GET",
 			url: `${globalUrl}/api/v1/seed`,
@@ -75,14 +75,18 @@ const AboutUs = () => {
 						<img src={logoMongo} alt="" />
 					</li>
 					<li>
+						<img src={logoExpress} style={{ width: "6rem" }} alt="" />
+					</li>
+					<li>
 						<i class="fab fa-2x fa-react"></i>
 					</li>
 					<li>
 						<i class="fab fa-2x fa-node-js"></i>
 					</li>
 				</ul>
-				<ul className="d-flex lead list-unstyled justify-content-around">
+				<ul className="d-flex list-unstyled justify-content-around">
 					<li>MongoDB</li>
+					<li>Express.js</li>
 					<li>React.js</li>
 					<li>Node.js</li>
 				</ul>
@@ -90,7 +94,7 @@ const AboutUs = () => {
 
 			<div className="row mx-4 mt-4">
 				<div className="col-md-6">
-					<div className="p-5">
+					<div className="p-md-5">
 						<h5 className="mb-3">Use these credentials to try our page!</h5>
 						<div className="ml-5">
 							<p className="m-0">As a Customer</p>
@@ -103,13 +107,13 @@ const AboutUs = () => {
 					</div>
 				</div>
 				<div className="col-md-6 d-flex flex-column justify-content-center">
-					<div className="text-center">
+					<div className="text-center mt-4">
 						<button
 							onClick={refreshDB}
 							className={`btn btn:block shadow-sm py-3 px-5 ${databaseClass}`}
 						>
-							{database === "dbOnline" && "Refresh Database"}
-							{database === "dbRefreshing" && "Refreshing Database..."}
+							{database === "dbOnline" && "Reset Database"}
+							{database === "dbRefreshing" && "Resetting Database..."}
 							{database === "dbRestored" && serverResponse}
 						</button>
 					</div>
@@ -127,10 +131,22 @@ const AboutUs = () => {
 						<p className="card-text">Developer</p>
 						<ul className="list-inline">
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-github-square"></i>
+								<a
+									className="text-dark"
+									href="https://github.com/GuillermoBarboza"
+									target="_blank"
+								>
+									<i className="fab fa-2x fa-github-square"></i>
+								</a>
 							</li>
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-linkedin"></i>
+								<a
+									className="text-dark"
+									href="https://www.linkedin.com/in/guillermo-barboza/"
+									target="_blank"
+								>
+									<i className="fab fa-2x fa-linkedin"></i>
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -142,10 +158,22 @@ const AboutUs = () => {
 						<p className="card-text">Developer</p>
 						<ul className="list-inline">
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-github-square"></i>
+								<a
+									className="text-dark"
+									href="http://github.com/FernandoJavierCuadro"
+									target="_blank"
+								>
+									<i className="fab fa-2x fa-github-square"></i>
+								</a>
 							</li>
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-linkedin"></i>
+								<a
+									className="text-dark"
+									href="http://linkedin.com/in/fernando-javier-cuadro"
+									target="_blank"
+								>
+									<i className="fab fa-2x fa-linkedin"></i>
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -157,10 +185,22 @@ const AboutUs = () => {
 						<p className="card-text">Developer</p>
 						<ul className="list-inline">
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-github-square"></i>
+								<a
+									className="text-dark"
+									href="https://github.com/mjmarra"
+									target="_blank"
+								>
+									<i className="fab fa-2x fa-github-square"></i>
+								</a>
 							</li>
 							<li className="list-inline-item">
-								<i className="fab fa-2x fa-linkedin"></i>
+								<a
+									className="text-dark"
+									href="https://www.linkedin.com/in/mariajosemarra/"
+									target="_blank"
+								>
+									<i className="fab fa-2x fa-linkedin"></i>
+								</a>
 							</li>
 						</ul>
 					</div>
