@@ -435,6 +435,9 @@ h4 {
 	.margin-aboutus {
 		padding: 4rem 2rem;
 	}
+	.technologies-wrapper {
+		margin-bottom: 5rem;
+	}
 }
 
 .technologies-wrapper {
