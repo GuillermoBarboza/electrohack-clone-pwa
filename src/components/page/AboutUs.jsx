@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import logoMongo from "../../logoMongo.svg";
 import foto1 from "../../img/foto1.jpeg";
 import foto2 from "../../img/foto2.jpeg";
@@ -7,6 +8,7 @@ import axios from "axios";
 import globalUrl from "../../utils/url";
 
 const AboutUs = () => {
+  const dispatch = useDispatch();
 	const [database, setDatabase] = useState("dbOnline");
 	const [databaseClass, setDatabaseClass] = useState("");
 	const [serverResponse, setServerResponse] = useState();
@@ -25,7 +27,8 @@ const AboutUs = () => {
 	}, [database]);
 
 	function refreshDB() {
-		setDatabase("dbRefreshing");
+    setDatabase("dbRefreshing");
+    dispatch(getUser({}));
 		axios({
 			method: "GET",
 			url: `${globalUrl}/api/v1/seed`,
