@@ -1,5 +1,9 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import img1 from "../img/carousel1.jpeg";
+import img2 from "../img/carousel2.jpg";
+import img3 from "../img/carousel3.jpeg";
+import img4 from "../img/carousel4.jpg";
 
 const CarouselComp = () => {
 	return (
@@ -8,7 +12,7 @@ const CarouselComp = () => {
 				<div
 					className="carousel-img"
 					style={{
-						backgroundImage: `url(https://images.unsplash.com/photo-1571843439991-dd2b8e051966?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)`,
+						backgroundImage: `url(${img2})`,
 					}}
 					alt="First slide"
 				></div>
@@ -17,7 +21,7 @@ const CarouselComp = () => {
 				<div
 					className="carousel-img"
 					style={{
-						backgroundImage: `url(https://images.pexels.com/photos/2747901/pexels-photo-2747901.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)`,
+						backgroundImage: `url(${img3})`,
 					}}
 					alt="Second slide"
 				></div>
@@ -26,7 +30,7 @@ const CarouselComp = () => {
 				<div
 					className="carousel-img"
 					style={{
-						backgroundImage: `url(https://images.pexels.com/photos/3623785/pexels-photo-3623785.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)`,
+						backgroundImage: `url(${img1})`,
 					}}
 					alt="Third slide"
 				></div>
@@ -35,7 +39,7 @@ const CarouselComp = () => {
 				<div
 					className="carousel-img"
 					style={{
-						backgroundImage: `url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)`,
+						backgroundImage: `url(${img4})`,
 					}}
 					alt="Fourth slide"
 				></div>

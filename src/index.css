@@ -36,19 +36,31 @@ code {
 	background-position: center center;
 }
 
+@media (max-width: 500px) {
+	.carousel-img {
+		height: 400px;
+	}
+	/* .carousel-heading {
+		font-size: 1.5rem;
+	}
+	.carousel-subheading {
+		font-size: 1rem;
+	} */
+}
+
 .carousel-margin {
 	margin: 3.45rem 0 4rem;
 }
 
 .overlay {
-	margin-top: 3.45rem;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
 	position: absolute;
 	z-index: 1000;
-	top: 0;
-	left: 0;
 	height: 500px;
-	width: 100%;
-	background-color: #9da9df54;
+	width: 30rem;
 }
 
 .carousel-heading,
@@ -60,7 +72,7 @@ code {
 }
 
 .carousel-heading {
-	margin-top: 13rem;
+	margin-top: 15rem;
 	font-size: 3rem;
 }
 
