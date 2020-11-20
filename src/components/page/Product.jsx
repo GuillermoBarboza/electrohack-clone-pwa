@@ -17,18 +17,18 @@ const Product = ({ state }) => {
     <div className="container margin-product">
       <div className="row">
         <div className="col-md-7">
-          <div class="card">
+          <div className="card">
             <div className="p-5">
-              <img src={product.image} class="img-fluid" alt="Product" />
+              <img src={product.image} className="img-fluid" alt="Product" />
             </div>
-            <div class="card-body p-5">
-              <h4 class="card-title">Specifications:</h4>
+            <div className="card-body p-5">
+              <h4 className="card-title">Specifications:</h4>
               <hr className="my-3" />
               <h5>Model: {product.name}</h5>
-              <p class="card-text">Description: {product.description}</p>
-              <p class="card-text">
-                <small class="text-muted">
-                  <i class="far fa-comment-alt mr-1"></i> Report incorrect
+              <p className="card-text">Description: {product.description}</p>
+              <p className="card-text">
+                <small className="text-muted">
+                  <i className="far fa-comment-alt mr-1"></i> Report incorrect
                   product information.
                 </small>
               </p>
@@ -51,7 +51,7 @@ const Product = ({ state }) => {
               className="btn btn-custom btn-block"
               onClick={() => dispatch(addToCart(product))}
             >
-              <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+              <i className="fas fa-shopping-cart mr-2"></i> Add to Cart
             </button>
           </div>
         </div>

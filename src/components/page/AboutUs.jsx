@@ -78,10 +78,10 @@ const AboutUs = () => {
             <img src={logoExpress} style={{ width: "6rem" }} alt="" />
           </li>
           <li>
-            <i class="fab fa-2x fa-react"></i>
+            <i className="fab fa-2x fa-react"></i>
           </li>
           <li>
-            <i class="fab fa-2x fa-node-js"></i>
+            <i className="fab fa-2x fa-node-js"></i>
           </li>
         </ul>
         <ul className="d-flex list-unstyled justify-content-around">

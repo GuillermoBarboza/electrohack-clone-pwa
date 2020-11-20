@@ -147,7 +147,7 @@ const Register = () => {
     <div className="container">
       <div className="form-signup-wrapper">
         <div className="signup-avatar">
-          <i class="fas fa-user-plus"></i>
+          <i className="fas fa-user-plus"></i>
         </div>
 
         <h4 className="text-center">Sign Up</h4>

@@ -41,7 +41,7 @@ const Product = ({ product }) => {
                   className="btn btn-custom btn-block"
                   onClick={() => dispatch(addToCart(product))}
                 >
-                  <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                  <i className="fas fa-shopping-cart mr-2"></i> Add to Cart
                 </button>
               </>
             ) : (
@@ -50,7 +50,7 @@ const Product = ({ product }) => {
                   <small>Out of Stock</small>
                 </p>
                 <button disabled className="btn btn-custom btn-block">
-                  <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                  <i className="fas fa-shopping-cart mr-2"></i> Add to Cart
                 </button>
               </>
             )}
