@@ -11,26 +11,25 @@ const AboutUs = () => {
 
   return (
     <div className="container margin-aboutus">
-      <h2 className="page-header">About Us</h2>
-      <hr className="mb-4" />
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate
-        nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi
-        dolores delectus reprehenderit voluptatem perferendis dicta dolorem non
-        blanditiis ex fugiat.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni,
-        aperiam vitae illum voluptatum aut sequi impedit non velit ab ea
-        pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit
-        dolorum!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et,
-        consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione
-        ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus
-        perspiciatis quis?
-      </p>
+      <div className="pt-3">
+        <h2 className="page-header">About this page</h2>
+        <hr className="mb-4" />
+        <p>
+          Thank you for checking out this page, this was a team effort made by 3
+          participants as the final project of the Hack Academy's 2020 Coding
+          Bootcamp.
+        </p>
+        <p>
+          This page was made using the MERN stack, JWT for token validation,
+          bcrypt for password encryption, mongoose as ORM, Bootstrap for
+          styling, Redux for persistency, aws S3 for image cloud saving, vercel
+          for back-end deploy, and netlify for front-end deploy.
+        </p>
+        <p>
+          We used the agile methodology, having daily meetings, testing the
+          application and modifying our goals based on the data collected.
+        </p>
+      </div>
 
       <div className="technologies-wrapper">
         <ul className="d-flex lead list-unstyled justify-content-around">
