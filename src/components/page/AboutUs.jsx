@@ -15,6 +15,9 @@ const AboutUs = () => {
 	const [serverResponse, setServerResponse] = useState();
 
 	useEffect(() => {
+    if(database === "dbOnline"){
+      window.scrollTo(0, 0);
+    }
 		switch (database) {
 			case "dbOnline":
 				return setDatabaseClass("alert-danger");
@@ -24,7 +27,8 @@ const AboutUs = () => {
 				return setDatabaseClass("alert-success");
 			default:
 				return setDatabaseClass("");
-		}
+    }
+    
 	}, [database]);
 
 	function refreshDB() {
