@@ -5,6 +5,7 @@ import foto1 from "../../img/foto1.jpeg";
 import foto2 from "../../img/foto2.jpeg";
 import foto3 from "../../img/foto3.jpeg";
 import axios from "axios";
+import { getUser } from "../../redux/actions";
 import globalUrl from "../../utils/url";
 
 const AboutUs = () => {
