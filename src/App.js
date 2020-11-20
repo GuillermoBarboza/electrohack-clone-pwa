@@ -17,40 +17,40 @@ import Login from "./components/page/Login";
 import Register from "./components/page/Register";
 
 function App() {
-	return (
-		<Router>
-			<Switch>
-				<PublicRoute restricted={false} component={Home} path="/" exact />
-				<PublicRoute
-					restricted={false}
-					component={Category}
-					path="/categories/:category"
-					exact
-				/>
+  return (
+    <Router>
+      <Switch>
+        <PublicRoute restricted={false} component={Home} path="/" exact />
+        <PublicRoute
+          restricted={false}
+          component={Category}
+          path="/categories/:category"
+          exact
+        />
 
-				<PublicRoute
-					restricted={false}
-					component={Product}
-					path="/products/:product"
-					exact
-				/>
-				<PublicRoute restricted={false} component={Cart} path="/cart" exact />
+        <PublicRoute
+          restricted={false}
+          component={Product}
+          path="/products/:product"
+          exact
+        />
+        <PublicRoute restricted={false} component={Cart} path="/cart" exact />
 
-				<PublicRoute restricted={true} component={Login} path="/login" />
-				<PublicRoute
-					restricted={true}
-					component={Register}
-					path="/register"
-					exact
-				/>
-				<PublicRoute restricted={false} component={AboutUs} path="/about-us" />
-				<PrivateRoute component={Main} path="/admin" exact />
-				<PrivateRoute component={Products} path="/admin/products" exact />
-				<PrivateRoute component={Users} path="/admin/users" exact />
-				<PrivateRoute component={Categories} path="/admin/categories" exact />
-			</Switch>
-		</Router>
-	);
+        <PublicRoute restricted={true} component={Login} path="/login" />
+        <PublicRoute
+          restricted={true}
+          component={Register}
+          path="/register"
+          exact
+        />
+        <PublicRoute restricted={false} component={AboutUs} path="/about" />
+        <PrivateRoute component={Main} path="/admin" exact />
+        <PrivateRoute component={Products} path="/admin/products" exact />
+        <PrivateRoute component={Users} path="/admin/users" exact />
+        <PrivateRoute component={Categories} path="/admin/categories" exact />
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
