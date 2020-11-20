@@ -1,13 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logoMongo from "../../logoMongo.svg";
 import foto1 from "../../img/foto1.jpeg";
 import foto2 from "../../img/foto2.jpeg";
 import foto3 from "../../img/foto3.jpeg";
+import axios from "axios";
+import globalUrl from "../../utils/url"
 
 const AboutUs = () => {
+  const [database, setDatabase] = useState("dbOnline");
+  const [databaseClass, setDatabaseClass] = useState("");
+  const [serverResponse, setServerResponse] = useState();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    switch (database) {
+      case "dbOnline":
+        return setDatabaseClass("alert-danger");
+      case "dbRefreshing":
+        return setDatabaseClass("alert-primary");
+      case "dbRestored":
+        return setDatabaseClass("alert-success");
+      default:
+        return setDatabaseClass("");
+    }
+  }, [database]);
+
+  function refreshDB() {
+    setDatabase("dbRefreshing");
+    axios({
+      method: "GET",
+      url: `${globalUrl}/api/v1/seed`,
+    })
+      .then((response) => {
+        setDatabase("dbRestored");
+        setServerResponse(response.data)
+        
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div className="container margin-aboutus">
@@ -48,6 +79,32 @@ const AboutUs = () => {
           <li>React.js</li>
           <li>Node.js</li>
         </ul>
+      </div>
+
+      <div className="row mx-4 mt-4">
+        <div className="col-md-6">
+          <h5>Use these credentials to try our page!</h5>
+          <div>
+            <p>...as a Customer</p>
+            <p>user@user.com</p>
+            <p>user</p>
+          </div>
+          <div>
+            <p>...as Admin, with full CRUD access!</p>
+            <p>admin@admin.com</p>
+            <p>admin</p>
+          </div>
+        </div>
+        <div className="col-md-6 d-flex">
+          <button
+            onClick={refreshDB}
+            className={`btn btn:block w-100 ${databaseClass}`}
+          >
+            {database === "dbOnline" && "Refresh Database"}
+            {database === 'dbRefreshing' && "Refreshing Database..."}
+            {database === "dbRestored" && serverResponse }
+          </button>
+        </div>
       </div>
 
       <h3 className="page-header mt-5">Our Team</h3>
