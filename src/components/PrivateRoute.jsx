@@ -7,7 +7,7 @@ import SideBar from "./admin/SideBar";
 const PrivateRoute = ({ component: Component, ...rest }) => {
 	const user = useSelector((state) => state.user);
 	return (
-		<div className="row">
+		<div className="row bg-admin-color">
 			<div className="col-md-2">
 				<SideBar />
 			</div>

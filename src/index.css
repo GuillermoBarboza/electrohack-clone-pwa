@@ -107,11 +107,14 @@ code {
 }
 
 .custom-form-control {
+	background-color: #e1eaf1;
 	border: none;
 	border-bottom: 1px solid #323755;
 	border-radius: 0px;
 }
 .custom-form-control:focus {
+	background-color: #e1eaf1;
+
 	box-shadow: none;
 	outline: none;
 	border-color: #323755;
@@ -337,6 +340,10 @@ footer {
 }
 
 /* ADMIN */
+.bg-admin-color {
+	background-color: #e1eaf1;
+	min-height: 100vh;
+}
 .sidebar {
 	position: fixed;
 	background-color: #3a4b55;
