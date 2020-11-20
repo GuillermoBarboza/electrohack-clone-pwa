@@ -126,7 +126,6 @@ code {
 }
 .custom-form-control:focus {
 	background-color: #e1eaf1;
-
 	box-shadow: none;
 	outline: none;
 	border-color: #323755;
