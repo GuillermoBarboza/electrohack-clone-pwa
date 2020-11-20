@@ -474,3 +474,7 @@ h4 {
 .page-header {
 	font-size: 2rem;
 }
+
+#imageFile {
+	padding: 0.2rem;
+}
