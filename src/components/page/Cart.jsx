@@ -55,13 +55,13 @@ const Cart = () => {
 				<div className="col-lg-8">
 					<div className="cart-bg">
 						<div className="row">
-							<div className="col-md-7 col-md-7">
+							<div className="col-6">
 								<h5>Shopping Cart</h5>
 							</div>
-							<div className="col-md-3 text-center">
+							<div className="col-3 text-center">
 								<h5>Quantity</h5>
 							</div>
-							<div className="col-md-2 text-center">
+							<div className="col-3 text-center">
 								<h5>Price</h5>
 							</div>
 						</div>
