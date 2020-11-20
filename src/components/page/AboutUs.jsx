@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logoMongo from "../../logoMongo.svg";
 import foto1 from "../../img/foto1.jpeg";
 import foto2 from "../../img/foto2.jpeg";
