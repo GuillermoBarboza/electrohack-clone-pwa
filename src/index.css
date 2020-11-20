@@ -395,6 +395,13 @@ footer {
 	}
 }
 
+@media (max-width: 800px) {
+	.admin-wrapper {
+		padding-top: 4rem;
+		margin: 1rem;
+	}
+}
+
 .bg-table-head {
 	background-color: #9eb9e2;
 }
@@ -477,4 +484,8 @@ h4 {
 
 #imageFile {
 	padding: 0.2rem;
+}
+
+.bg-nav-admin {
+	background-color: #3a4b55;
 }
