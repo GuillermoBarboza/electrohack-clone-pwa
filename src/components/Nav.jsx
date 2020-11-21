@@ -67,7 +67,7 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
             <Nav.Link as={Link} to="/about" className="mr-4">
-              <span className="btn-outline-custom">About this project</span>
+              <span className="btn-outline-custom">About</span>
             </Nav.Link>
             {user.admin && (
               <Nav.Link as={Link} to="/admin" className="mr-4">
