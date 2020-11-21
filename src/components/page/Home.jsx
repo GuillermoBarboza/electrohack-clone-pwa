@@ -17,7 +17,7 @@ const Home = () => {
 
 	return (
 		<div>
-			<div className="overlay">
+			<div className="d-none d-md-block  overlay">
 				<h1 className="d-none d-md-block carousel-heading">Home Appliances</h1>
 				<h4 className="d-none d-md-block carousel-subheading">
 					Your perfect house is here
