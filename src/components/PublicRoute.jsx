@@ -7,13 +7,7 @@ import Footer from "./Footer";
 
 const PublicRoute = ({ component: Component, restricted, ...rest }) => {
   const token = useSelector((state) => state.user.token);
-  /* {token === undefined && (
-	<div className="alert alert-success">
-	  <h4 className="font-weight-bold">
-		Please go to "About this project" to get the full experience
-	  </h4>
-	</div>
-  )} */
+
   return (
     <div className="bg-color custom-height">
       <NavBar />
