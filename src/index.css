@@ -125,8 +125,9 @@ code {
 		display: none;
 	}
 	#navCartMobile {
-		position: absolute;
-		top: 88vh;
+		position: fixed;
+		bottom: 20px;
+		left: 30px;
 	}
 	.circle-cart {
 		background-color: #323755;
@@ -259,7 +260,7 @@ code {
 	border: none;
 	outline: none;
 	background-color: #323755;
-	color: white;
+	color: #cfd2e0;
 	cursor: pointer;
 	padding: 8px 15px;
 	border-radius: 50%;
