@@ -45,6 +45,12 @@ const HomeModal = () => {
 
   return (
     <div className="modal-color rounded">
+      <div className="text-center">
+        <h4 className="p-md-3">Welcome!</h4>
+        <p>For more info please go to the "about" page</p>
+        <hr />
+      </div>
+
       <div className="row mx-4">
         <div className="col-md-6">
           <div className="p-md-5">
