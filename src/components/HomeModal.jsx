@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { getUser } from "../redux/actions";
+import { getUser, showModal } from "../redux/actions";
 import globalUrl from "../utils/url";
 
-const HomeModal = ({ setShowModal }) => {
+const HomeModal = () => {
   const dispatch = useDispatch();
   const [database, setDatabase] = useState("dbOnline");
   const [databaseClass, setDatabaseClass] = useState("");
@@ -36,7 +36,7 @@ const HomeModal = ({ setShowModal }) => {
       .then((response) => {
         setDatabase("dbRestored");
         setServerResponse(response.data);
-        setShowModal(false);
+        dispatch(showModal(false));
       })
       .catch((err) => {
         console.log(err);

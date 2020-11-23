@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import globalUrl from "../../utils/url";
@@ -10,17 +10,13 @@ import { getProducts } from "../../redux/actions";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const [showModal, setShowModal] = useState(true);
+  const modal = useSelector((state) => state.modal);
 
   useEffect(() => {
     axios.get(`${globalUrl}/api/v1/products/featured`).then((res) => {
       dispatch(getProducts(res.data));
     });
   }, []);
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   return (
     <div>
@@ -38,14 +34,8 @@ const Home = () => {
 
         <ProductsList />
       </div>
-      <Modal
-        size="lg"
-        backdrop="static"
-        keyboard="false"
-        show={showModal}
-        onHide={closeModal}
-      >
-        <HomeModal setShowModal={setShowModal} />
+      <Modal size="lg" backdrop="static" keyboard="false" show={modal}>
+        <HomeModal />
       </Modal>
     </div>
   );
