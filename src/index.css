@@ -120,6 +120,16 @@ code {
 	background-color: #e42e2e;
 }
 
+@media (max-width: 991px) {
+  #navCartDesktop {
+    display: none;
+  } 
+  #navCartMobile {
+    position: absolute;
+    top: 92vh;
+  }
+}
+
 /* SEARCH DROPDOWN */
 .search-results {
 	position: absolute;

@@ -10,9 +10,7 @@ import SearchBox from "./SearchBox";
 const NavBar = () => {
   const [search, setSearch] = useState("");
   const [dropDown, setDropDown] = useState(null);
-  const [cartFromMobile, setCartFromMobile] = useState();
   const [categoriesAvailable, setCategoriesAvailable] = useState();
-  const [pageWidth, setPageWidth] = useState();
   const cartQuantity = useSelector((store) =>
     store.cart.reduce((sum, val) => sum + val.quantity, 0)
   );
@@ -20,21 +18,6 @@ const NavBar = () => {
   const user = useSelector((store) => store.user);
 
   const dispatch = useDispatch();
-  
-
-  useEffect(() => {
-    window.addEventListener("resize", setPageWidth(window.innerWidth));
-
-    if (pageWidth > 991) {
-      setCartFromMobile(false);
-    } else {
-      setCartFromMobile(true);
-    }
-    
-    return (_) => {
-      window.removeEventListener("resize", setPageWidth);
-    };
-  }, [pageWidth]);
 
   useEffect(() => {
     axios({
@@ -82,19 +65,6 @@ const NavBar = () => {
           <i className="fas fa-xs fa-bolt"></i> Electro<strong>Hack</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        {cartFromMobile && (
-          <Nav.Link as={Link} to="/cart">
-            {cartQuantity > 0 ? (
-              <span className="fa-stack has-badge" data-count={cartQuantity}>
-                <i className="fas fa-lg fa-shopping-cart"></i>
-              </span>
-            ) : (
-              <span className="fa-stack">
-                <i className="fas fa-lg fa-shopping-cart"></i>
-              </span>
-            )}
-          </Nav.Link>
-        )}
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
             <Nav.Link as={Link} to="/about" className="mr-4">
@@ -174,28 +144,35 @@ const NavBar = () => {
                 Login
               </Nav.Link>
             )}
-            {!cartFromMobile && (
-              <Nav.Link as={Link} to="/cart">
-                {cartQuantity > 0 ? (
-                  <span
-                    className="fa-stack has-badge"
-                    data-count={cartQuantity}
-                  >
-                    <i className="fas fa-lg fa-shopping-cart"></i>
-                  </span>
-                ) : (
-                  <span className="fa-stack">
-                    <i className="fas fa-lg fa-shopping-cart"></i>
-                  </span>
-                )}
-              </Nav.Link>
-            )}
+
+            <Nav.Link as={Link} to="/cart" className="d-md-none d-lg-block d-sm-none" id="navCartDesktop">
+              {cartQuantity > 0 ? (
+                <span className="fa-stack has-badge" data-count={cartQuantity}>
+                  <i className="fas fa-lg fa-shopping-cart"></i>
+                </span>
+              ) : (
+                <span className="fa-stack">
+                  <i className="fas fa-lg fa-shopping-cart"></i>
+                </span>
+              )}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        
       </div>
+      <Nav.Link as={Link} to="/cart" id="navCartMobile" className="d-lg-none d-md-block">
+              {cartQuantity > 0 ? (
+                <span className="fa-stack has-badge" data-count={cartQuantity}>
+                  <i className="fas fa-lg fa-shopping-cart"></i>
+                </span>
+              ) : (
+                <span className="fa-stack">
+                  <i className="fas fa-lg fa-shopping-cart"></i>
+                </span>
+              )}
+            </Nav.Link>
     </Navbar>
   );
 };
-
 
 export default NavBar;
