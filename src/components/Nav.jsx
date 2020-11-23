@@ -178,7 +178,9 @@ const NavBar = () => {
 					</span>
 				) : (
 					<span className="fa-stack">
-						<i className="fas fa-lg fa-shopping-cart"></i>
+						<div className="circle-cart ">
+							<i className="fas fa-lg fa-shopping-cart"></i>
+						</div>
 					</span>
 				)}
 			</Nav.Link>
