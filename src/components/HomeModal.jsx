@@ -71,7 +71,7 @@ const HomeModal = () => {
     <div className="modal-color rounded">
       <div className="text-center">
         <h4 className="p-md-3">Welcome!</h4>
-        <button className={`btn btn:block shadow-sm py-3 px-5 ${databaseClass}`}>
+        <button className={`install btn btn:block shadow-sm py-3 px-5 ${databaseClass}`}>
           Install our app!
         </button>
         <p>For more info please go to the "about" page</p>
