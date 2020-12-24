@@ -11,7 +11,29 @@ const HomeModal = () => {
   const [serverResponse, setServerResponse] = useState();
 
   useEffect(() => {
-    
+    // Installation
+    let deferredPrompt;
+
+    window.addEventListener("beforeinstallprompt", function (e) {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+    const installBtn = document.querySelector(".install");
+    installBtn.addEventListener("click", (e) => {
+      installBtn.style.display = "none";
+      // Show the prompt
+      document.getElementById("log").innerHTML = deferredPrompt;
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          document.querySelector(".install").innerHTML = "accepted";
+        } else {
+          document.querySelector(".install").innerHTML = "what";
+        }
+        deferredPrompt = null;
+      });
+    });
 
     if (database === "dbOnline") {
       window.scrollTo(0, 0);
