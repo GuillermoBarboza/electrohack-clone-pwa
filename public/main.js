@@ -15,7 +15,7 @@ window.onload = () => {
       });
   }
 };
-
+/* 
 let deferredPrompt;
 const installBtn = document.querySelector(".install");
 installBtn.style.display = "none";
@@ -41,4 +41,4 @@ window.addEventListener("beforeinstallprompt", (e) => {
       deferredPrompt = null;
     });
   });
-});
+}); */
