@@ -1,5 +1,5 @@
 window.onload = () => {
-  "use strict"
+  "use strict";
   
 
   if ("serviceWorker" in navigator) {

@@ -1,4 +1,4 @@
-var cacheName = 'electrohack1.0.2';
+var cacheName = 'electrohackclonepwa1.0.2';
 var filesToCache = [
   '/',
   '/index.html',
@@ -32,7 +32,6 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
         if (cacheKeeplist.indexOf(key) === -1) {
-        console.log("deleted", key);
         
           return caches.delete(key);
         }
