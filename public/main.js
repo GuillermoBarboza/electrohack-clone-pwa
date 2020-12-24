@@ -1,5 +1,5 @@
 window.onload = () => {
-  "use strict";
+  
   let deferredPrompt;
 
   window.addEventListener("beforeinstallprompt", function (e) {
@@ -8,8 +8,6 @@ window.onload = () => {
   });
 
   if ("serviceWorker" in navigator) {
-    console.log("navigator", navigator);
-    console.log(navigator.serviceWorker);
     navigator.serviceWorker
       .register("./serviceWorker.js")
       .then((res) => {
