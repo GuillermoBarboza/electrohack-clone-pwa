@@ -17,12 +17,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     // Installation
-    let deferredPrompt;
-
-    window.addEventListener("beforeinstallprompt", function (e) {
-      e.preventDefault();
-      deferredPrompt = e;
-    });
+    
     let installBtn = document.querySelector(".installBtn");
     installBtn.addEventListener("click", (e) => {
       installBtn.style.display = "none";
