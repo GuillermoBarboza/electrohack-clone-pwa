@@ -34,10 +34,9 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
-        console.log(cacheKeeplist.indexOf(key));
-        console.log(key);
-        
         if (cacheKeeplist.indexOf(key) === -1) {
+        console.log("deleted", key);
+        
           return caches.delete(key);
         }
       }));
