@@ -1,4 +1,4 @@
-var cacheName = 'electrohack1.0.2';
+var cacheName = 'electrohack';
 var filesToCache = [
   '/',
   '/index.html',
@@ -18,11 +18,8 @@ self.addEventListener('install', function(e) {
 
 /* Serve cached content when offline */
 self.addEventListener('fetch', function(e) {
-  console.log('on fetch')
   e.respondWith(
     caches.match(e.request).then(function(response) {
-      console.log(response)
-      
       return response || fetch(e.request);
     })
   );
