@@ -1,4 +1,4 @@
-var cacheName = 'electrohack1.0.4';
+var cacheName = 'electrohackpwa1.0.0';
 var filesToCache = [
   '/',
   '/index.html',
