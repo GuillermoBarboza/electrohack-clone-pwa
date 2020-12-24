@@ -18,18 +18,18 @@ const HomeModal = () => {
       e.preventDefault();
       deferredPrompt = e;
     });
-    const installBtn = document.querySelector(".install");
+    let installBtn = document.querySelector(".installBtn");
     installBtn.addEventListener("click", (e) => {
       installBtn.style.display = "none";
       // Show the prompt
-      document.getElementById("log").innerHTML = deferredPrompt;
+      document.getElementById("log").innerHTML = `${installBtn}, ${deferredPrompt}`;
       deferredPrompt.prompt();
       // Wait for the user to respond to the prompt
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === "accepted") {
-          document.querySelector(".install").innerHTML = "accepted";
+          document.querySelector(".installBtn").innerHTML = "accepted";
         } else {
-          document.querySelector(".install").innerHTML = "what";
+          document.querySelector(".installBtn").innerHTML = "what";
         }
         deferredPrompt = null;
       });
@@ -74,6 +74,7 @@ const HomeModal = () => {
         <button className={`installBtn btn:block shadow-sm py-3 px-5 ${databaseClass}`}>
           Install our app!
         </button>
+        <p id="log"></p>
         <p>For more info please go to the "about" page</p>
         <hr />
       </div>
