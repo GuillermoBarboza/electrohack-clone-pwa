@@ -16,26 +16,9 @@ const AboutUs = () => {
   const [serverResponse, setServerResponse] = useState();
 
   useEffect(() => {
-    // Installation
+    // Installation prompt do later
     
-    let installBtn = document.querySelector(".installBtn");
-    installBtn.addEventListener("click", (e) => {
-      installBtn.style.display = "none";
-      // Show the prompt
-      document.getElementById(
-        "log"
-      ).innerHTML = `${installBtn}, ${window.deferredPrompt}`;
-      window.deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      window.deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === "accepted") {
-          document.querySelector(".installBtn").innerHTML = "accepted";
-        } else {
-          document.querySelector(".installBtn").innerHTML = "what";
-        }
-        window.deferredPrompt = null;
-      });
-    });
+    
 
     if (database === "dbOnline") {
       window.scrollTo(0, 0);

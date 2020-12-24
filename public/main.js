@@ -1,11 +1,6 @@
 window.onload = () => {
   
-  let deferredPrompt;
-
-  window.addEventListener("beforeinstallprompt", function (e) {
-    e.preventDefault();
-    deferredPrompt = e;
-  });
+  
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
