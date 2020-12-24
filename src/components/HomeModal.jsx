@@ -11,30 +11,7 @@ const HomeModal = () => {
   const [serverResponse, setServerResponse] = useState();
 
   useEffect(() => {
-    // Installation
-    let deferredPrompt;
-
-    window.addEventListener("beforeinstallprompt", function (e) {
-      e.preventDefault();
-      deferredPrompt = e;
-    });
-    let installBtn = document.querySelector(".installBtn");
-    installBtn.addEventListener("click", (e) => {
-      installBtn.style.display = "none";
-      // Show the prompt
-      document.getElementById("log").innerHTML = `${installBtn}, ${deferredPrompt}`;
-      deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === "accepted") {
-          document.querySelector(".installBtn").innerHTML = "accepted";
-        } else {
-          document.querySelector(".installBtn").innerHTML = "what";
-        }
-        deferredPrompt = null;
-      });
-    });
-
+    
     if (database === "dbOnline") {
       window.scrollTo(0, 0);
     }
@@ -71,10 +48,7 @@ const HomeModal = () => {
     <div className="modal-color rounded">
       <div className="text-center">
         <h4 className="p-md-3">Welcome!</h4>
-        <button className={`installBtn btn:block shadow-sm py-3 px-5 ${databaseClass}`}>
-          Install our app!
-        </button>
-        <p id="log"></p>
+        
         <p>For more info please go to the "about" page</p>
         <hr />
       </div>
