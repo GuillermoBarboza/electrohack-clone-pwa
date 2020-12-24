@@ -24,16 +24,16 @@ const AboutUs = () => {
       // Show the prompt
       document.getElementById(
         "log"
-      ).innerHTML = `${installBtn}, ${deferredPrompt}`;
-      deferredPrompt.prompt();
+      ).innerHTML = `${installBtn}, ${window.deferredPrompt}`;
+      window.deferredPrompt.prompt();
       // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
+      window.deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === "accepted") {
           document.querySelector(".installBtn").innerHTML = "accepted";
         } else {
           document.querySelector(".installBtn").innerHTML = "what";
         }
-        deferredPrompt = null;
+        window.deferredPrompt = null;
       });
     });
 
@@ -162,6 +162,7 @@ const AboutUs = () => {
                   className="text-dark"
                   href="https://github.com/GuillermoBarboza"
                   target="_blank"
+				  rel="noreferrer"
                 >
                   <i className="fab fa-2x fa-github-square"></i>
                 </a>
@@ -171,6 +172,7 @@ const AboutUs = () => {
                   className="text-dark"
                   href="https://www.linkedin.com/in/guillermo-barboza/"
                   target="_blank"
+				  rel="noreferrer"
                 >
                   <i className="fab fa-2x fa-linkedin"></i>
                 </a>
@@ -189,6 +191,7 @@ const AboutUs = () => {
                   className="text-dark"
                   href="http://github.com/FernandoJavierCuadro"
                   target="_blank"
+				  rel="noreferrer"
                 >
                   <i className="fab fa-2x fa-github-square"></i>
                 </a>
@@ -198,6 +201,7 @@ const AboutUs = () => {
                   className="text-dark"
                   href="http://linkedin.com/in/fernando-javier-cuadro"
                   target="_blank"
+				  rel="noreferrer"
                 >
                   <i className="fab fa-2x fa-linkedin"></i>
                 </a>
@@ -216,6 +220,7 @@ const AboutUs = () => {
                   className="text-dark"
                   href="https://github.com/mjmarra"
                   target="_blank"
+				  rel="noreferrer"
                 >
                   <i className="fab fa-2x fa-github-square"></i>
                 </a>
@@ -225,6 +230,7 @@ const AboutUs = () => {
                   className="text-dark"
                   href="https://www.linkedin.com/in/mariajosemarra/"
                   target="_blank"
+				  rel="noreferrer"
                 >
                   <i className="fab fa-2x fa-linkedin"></i>
                 </a>
