@@ -1,4 +1,4 @@
-var cacheName = 'electrohackV1.0.1';
+var cacheName = 'electrohackV1.0.2';
 var filesToCache = [
   '/',
   '/index.html',
@@ -8,18 +8,13 @@ var filesToCache = [
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      console.log(cache, 'on install')
-      return cache.addAll(filesToCache);
-    })
-  );
+  const preCache = async () => {
+    const cache = await caches.open(cacheName);
+    return cache.addAll(filesToCache);
+  };
+  e.waitUntil(preCache());
 });
 
-self.addEventListener('beforeinstallprompt', e=>{
-  e.waitUntil(console.log(localStorage.clear()))
-  
-})
 
 /* Serve cached content when offline */
 self.addEventListener('fetch', function(e) {
@@ -30,8 +25,8 @@ self.addEventListener('fetch', function(e) {
   );
 });
 
-self.addEventListener('activate', (event) => {
-  var cacheKeeplist = cacheName;
+/* self.addEventListener('activate', (event) => {
+  let cacheKeeplist = cacheName;
 
   event.waitUntil(
     caches.keys().then((keyList) => {
@@ -43,4 +38,4 @@ self.addEventListener('activate', (event) => {
       }));
     })
   );
-});
+}); */

@@ -126,7 +126,6 @@ const AboutUs = () => {
             >
               Install our app!
             </button>
-            <p id="log"></p>
           </div>
         </div>
       </div>
