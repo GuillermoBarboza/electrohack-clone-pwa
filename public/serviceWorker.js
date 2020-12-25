@@ -1,4 +1,4 @@
-var cacheName = 'electrohackclonepwa1.0.2';
+var cacheName = 'electrohackV1.0.1';
 var filesToCache = [
   '/',
   '/index.html',
@@ -15,6 +15,11 @@ self.addEventListener('install', function(e) {
     })
   );
 });
+
+self.addEventListener('beforeinstallprompt', e=>{
+  e.waitUntil(console.log(localStorage.clear()))
+  
+})
 
 /* Serve cached content when offline */
 self.addEventListener('fetch', function(e) {
