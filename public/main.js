@@ -1,6 +1,6 @@
 window.onload = () => {
   "use strict";
-  
+  localStorage.clear()
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
