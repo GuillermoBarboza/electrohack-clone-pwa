@@ -1,4 +1,4 @@
-var cacheName = 'electrohackV1.0.3';
+var cacheName = 'electrohackV1.0.4';
 var filesToCache = [
   '/',
   '/index.html',
@@ -10,6 +10,14 @@ var filesToCache = [
 self.addEventListener('install', function(e) {
   const preCache = async () => {
     const cache = await caches.open(cacheName);
+    const caches = await caches.keys().map((key) => {
+      if (cacheName.indexOf(key) === -1) {
+      
+        return caches.delete(key);
+      }
+    })
+
+    console.log(caches)
     return cache.addAll(filesToCache);
   };
   e.waitUntil(preCache());
@@ -25,7 +33,7 @@ self.addEventListener('fetch', function(e) {
   );
 });
 
-/* self.addEventListener('activate', (event) => {
+self.addEventListener('activate', (event) => {
   let cacheKeeplist = cacheName;
 
   event.waitUntil(
@@ -38,4 +46,4 @@ self.addEventListener('fetch', function(e) {
       }));
     })
   );
-}); */
+});
