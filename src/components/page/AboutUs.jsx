@@ -121,6 +121,7 @@ const AboutUs = () => {
               {database === "dbRestored" && serverResponse}
             </button>
             <button
+            onClick={()=>{ window.dispatchEvent('install')}}
               className={`installBtn btn:block shadow-sm py-3 px-5 ${databaseClass}`}
             >
               Install our app!
