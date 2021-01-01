@@ -70,7 +70,7 @@ const NavBar = () => {
             <button
               onClick={() => {
                 let install = new Event("beforeinstallprompt");
-                document.dispatchEvent("install");
+                return document.dispatchEvent("install");
               }}
               className={`btn:block shadow-sm py-3 px-5`}
             >
