@@ -1,7 +1,6 @@
 window.onload = () => {
   "use strict";
 
-
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("./serviceWorker.js")
@@ -14,4 +13,11 @@ window.onload = () => {
       });
   }
   
+  window.addEventListener("beforeinstallprompt", function (e) {
+    console.log(document.querySelector('.installBtn'));
+    
+    
+
+    
+  });
 };

@@ -120,12 +120,7 @@ const AboutUs = () => {
               {database === "dbRefreshing" && "Resetting Database..."}
               {database === "dbRestored" && serverResponse}
             </button>
-            <button
-            onClick={()=>{ return document.BeforeInstallPromptEvent()}}
-              className={`installBtn btn:block shadow-sm py-3 px-5 ${databaseClass}`}
-            >
-              Install our app!
-            </button>
+            
           </div>
         </div>
       </div>

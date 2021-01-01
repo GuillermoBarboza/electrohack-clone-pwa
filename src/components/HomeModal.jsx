@@ -11,7 +11,6 @@ const HomeModal = () => {
   const [serverResponse, setServerResponse] = useState();
 
   useEffect(() => {
-    
     if (database === "dbOnline") {
       window.scrollTo(0, 0);
     }
@@ -48,9 +47,14 @@ const HomeModal = () => {
     <div className="modal-color rounded">
       <div className="text-center">
         <h4 className="p-md-3">Welcome!</h4>
-        
+
         <p>For more info please go to the "about" page</p>
         <hr />
+        <button
+          className={`installBtn btn:block shadow-sm py-3 px-5 ${databaseClass}`}
+        >
+          Install our app!
+        </button>
       </div>
 
       <div className="row mx-4">
