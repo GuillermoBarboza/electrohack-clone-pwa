@@ -6,6 +6,7 @@ window.onload = () => {
       .register("./serviceWorker.js")
       .then((res) => {
         console.log(res.scope);
+        console.log('so far so good')
       })
       .catch((error) => {
         // registration failed
