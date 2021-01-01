@@ -5,6 +5,7 @@ window.onload = () => {
     navigator.serviceWorker
       .register("./serviceWorker.js")
       .then((res) => {
+        console.log(res)
         console.log(res.scope);
       })
       .catch((error) => {
