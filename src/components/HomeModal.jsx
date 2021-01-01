@@ -50,11 +50,7 @@ const HomeModal = () => {
 
         <p>For more info please go to the "about" page</p>
         <hr />
-        <button
-          className={`installBtn btn:block shadow-sm py-3 px-5 ${databaseClass}`}
-        >
-          Install our app!
-        </button>
+        
       </div>
 
       <div className="row mx-4">
