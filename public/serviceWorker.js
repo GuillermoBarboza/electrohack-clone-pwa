@@ -1,4 +1,4 @@
-const cacheName = 'electrohack';
+const cacheName = 'electrohackpro';
 const filesToCache = [
   '/',
   '/index.html',
@@ -22,7 +22,7 @@ self.addEventListener('fetch', function(e) {
 });
 
 self.addEventListener('activate', (event) => {
-  let cacheKeeplist = cacheName;
+  let cacheKeeplist = [cacheName];
 
   event.waitUntil(
     caches.keys().then((keyList) => {
