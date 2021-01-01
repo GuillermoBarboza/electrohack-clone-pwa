@@ -67,15 +67,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <button
-              onClick={() => {
-                let install = new Event("beforeinstallprompt");
-                return document.dispatchEvent("install");
-              }}
-              className={`btn:block shadow-sm py-3 px-5`}
-            >
-              Install our app!
-            </button>
+            
             <Nav.Link as={Link} to="/about" className="mr-4">
               <span className="btn-outline-custom">About</span>
             </Nav.Link>
