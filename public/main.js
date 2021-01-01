@@ -1,6 +1,7 @@
 window.onload = () => {
   "use strict";
 
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("./serviceWorker.js")
@@ -12,4 +13,5 @@ window.onload = () => {
         console.log("Registration failed with " + error);
       });
   }
+  
 };
