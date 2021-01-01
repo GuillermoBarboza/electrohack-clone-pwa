@@ -1,4 +1,4 @@
-const cacheName = 'electrohack2';
+const cacheName = 'electrohackPRO';
 const filesToCache = [
   '/',
   '/index.html',
@@ -8,17 +8,7 @@ const filesToCache = [
 console.log('from worker') 
 
 self.addEventListener('install', e => {
-  let preCache = async () => {
-    let cache = await caches.open(cacheName);
-    let caches = await caches.keys().map((key) => {
-      if (cacheName.indexOf(key) === -1) {
-        return caches.delete(key);
-      }
-    })
-    
-    return cache.addAll(filesToCache);
-  };
-  e.waitUntil(preCache());
+  e.waitUntil(caches.open(cacheName).then(cache => cache.addAll(filesToCache)));
 });
 
 
