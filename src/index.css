@@ -34,7 +34,10 @@ code {
 	border-radius: 1px;
 	padding: 0.5rem 0.7rem;
 }
-
+#installBtn {
+	display: none;
+	color: rgba(255,255,255,.5);
+}
 /* CAROUSEL */
 .carousel-img {
 	height: 500px;

@@ -1,4 +1,4 @@
-const cacheName = 'electrohackv0.6';
+const cacheName = 'electrohackV1.0.0';
 const filesToCache = [
   '/',
   '/index.html',
