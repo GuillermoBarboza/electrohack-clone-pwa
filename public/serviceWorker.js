@@ -1,4 +1,4 @@
-const cacheName = 'electrohackv0.4';
+const cacheName = 'electrohackv0.5';
 const filesToCache = [
   '/',
   '/index.html',
@@ -28,7 +28,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((keyList) => {
       return Promise.all(keyList.map((key) => {
         if (cacheKeeplist.indexOf(key) === -1) {
-        
+          console.log('cache deleteado')
           return caches.delete(key);
         }
       }));
