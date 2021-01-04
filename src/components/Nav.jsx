@@ -67,7 +67,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            
+            <Nav.item><p id="installBtn">Instalame!</p></Nav.item>
             <Nav.Link as={Link} to="/about" className="mr-4">
               <span className="btn-outline-custom">About</span>
             </Nav.Link>
