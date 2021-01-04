@@ -60,33 +60,34 @@
         e.preventDefault();
         prompt = e;
         console.log(e);
-      });
-      let button;
-      console.log(document.getElementById("installBtn"));
-      if (document.getElementById("installBtn") != null) {
-        button = document.getElementById("installBtn");
-        console.log(button);
-      } else {
-        console.log("no button");
-        setTimeout(() => {
-          console.log("10s no button");
+        let button;
+        console.log(document.getElementById("installBtn"));
+        if (document.getElementById("installBtn") != null) {
           button = document.getElementById("installBtn");
-          console.log("btn ready", button);
-          button.style.display = "block"
-          button.onclick = () => {
-            prompt.prompt();
-            prompt.userChoice.then((choiceResult) => {
-              if (choiceResult.outcome === "accepted") {
-                console.log("User accepted the A2HS prompt");
-              } else {
-                console.log("User dismissed the A2HS prompt");
-              }
-              prompt = null;
-              button.style.display = "none"
-            });
-          };
-        }, 10000);
-      }
+          console.log(button);
+        } else {
+          console.log("no button");
+
+          setTimeout(() => {
+            console.log("10s no button");
+            button = document.getElementById("installBtn");
+            console.log("btn ready", button);
+            button.style.display = "block";
+            button.onclick = () => {
+              prompt.prompt();
+              prompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === "accepted") {
+                  console.log("User accepted the A2HS prompt");
+                } else {
+                  console.log("User dismissed the A2HS prompt");
+                }
+                prompt = null;
+                button.style.display = "none";
+              });
+            };
+          }, 10000);
+        }
+      });
     </script>
     <script src="main.js"></script>
   </body>
