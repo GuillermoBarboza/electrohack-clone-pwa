@@ -65,6 +65,19 @@
         if (document.getElementById("installBtn") != null) {
           button = document.getElementById("installBtn");
           console.log(button);
+          button.style.display = "block";
+          button.onclick = () => {
+            prompt.prompt();
+            prompt.userChoice.then((choiceResult) => {
+              if (choiceResult.outcome === "accepted") {
+                console.log("User accepted the A2HS prompt");
+              } else {
+                console.log("User dismissed the A2HS prompt");
+              }
+              prompt = null;
+              button.style.display = "none";
+            });
+          };
         } else {
           console.log("no button");
 
