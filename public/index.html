@@ -43,6 +43,21 @@
   
   
   <script src="main.js"></script>
+  <script>
+    let prompt;
+    document.addEventListener("beforeinstallprompt", e=>{
+      e.preventDefault();
+      prompt = e;
+      console.log(e)
+    })
+    let button;
+    if(document.getElementById('installBtn')){
+      button = document.getElementById('installBtn')
+      console.log(button)
+    } else {
+      console.log('no button')
+    }
+  </script>
 </body>
 
 </html>
