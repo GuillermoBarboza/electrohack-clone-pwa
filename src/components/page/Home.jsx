@@ -34,9 +34,7 @@ const Home = () => {
 
         <ProductsList />
       </div>
-      <Modal size="lg" backdrop="static" keyboard="false" show={modal}>
-        <HomeModal />
-      </Modal>
+      
     </div>
   );
 };
