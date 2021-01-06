@@ -13,6 +13,11 @@ window.onload = () => {
         console.log("Registration failed with " + error);
       });
   }
+  Notification.requestPermission(function(result) {
+    if (result === 'granted') {
+      console.log('Electrohack notifications on the house!')
+    }
+  });
 
 };
 

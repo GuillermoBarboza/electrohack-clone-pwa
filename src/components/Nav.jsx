@@ -67,7 +67,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
+          {/* app functionality buttons */}
             <Nav.Item className="mr-4"><p id="installBtn" className="btn-outline-custom">Instalame!</p></Nav.Item>
+            
+            <Nav.Item className="mr-4"><p className="btn-outline-custom notification">Activate notifications!</p></Nav.Item>
+
+
             <Nav.Link as={Link} to="/about" className="mr-4">
               <span className="btn-outline-custom">About</span>
             </Nav.Link>

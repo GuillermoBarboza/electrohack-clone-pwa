@@ -55,6 +55,7 @@
     <div id="root"></div>
 
     <script>
+      // Install button thing
       let prompt;
       window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
@@ -101,6 +102,23 @@
           }, 10000);
         }
       });
+
+      //notification button thingy
+      setTimeout(() => {
+        let notification = document.querySelector(".notification");
+        notification.addEventListener("click", askAndshowNotification);
+        function askAndshowNotification() {
+          notification.innerHTML = "try and spamm xD";
+          //thanks mdn
+          navigator.serviceWorker.ready.then(function (registration) {
+            registration.showNotification("Vibration Sample", {
+              body: "Wild notification appears!",
+              vibrate: [100, 100],
+              tag: "vibration-sample",
+            });
+          });
+        }
+      }, 10500);
     </script>
     <script src="main.js"></script>
   </body>
