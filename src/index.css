@@ -38,6 +38,9 @@ code {
 	display: none;
 	color: rgba(255,255,255,.5);
 }
+.notification {
+	color: rgba(255,255,255,.5);
+}
 /* CAROUSEL */
 .carousel-img {
 	height: 500px;
