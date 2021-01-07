@@ -111,10 +111,10 @@
           notification.innerHTML = "try and spamm xD";
           //thanks mdn
           navigator.serviceWorker.ready.then(function (registration) {
-            registration.showNotification("Vibration Sample", {
+            registration.showNotification("Electrohack notifications on the house!", {
               body: "Wild notification appears!",
-              vibrate: [100, 100],
-              tag: "vibration-sample",
+              vibrate: [100, 100, 200],
+              tag: "Improving, always.",
             });
           });
         }
